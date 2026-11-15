@@ -1,0 +1,287 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [
+        "nfcorpus"
+      ],
+      "max_docs": 100000,
+      "max_queries": 2000,
+      "name": "scifact",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "en_small",
+    "out_dir": "results/en_small",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      },
+      {
+        "id": "bge-m3-512",
+        "kind": "dense",
+        "model": "bge-m3-512"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 5400
+  },
+  "config_path": "configs/en_small.yaml",
+  "config_sha256": "6680e4fb6367fb25956db6c08fff0d9afeffcbc4dfee1dcc20ba8900b01e4eb0",
+  "created_utc": "2026-09-12T03:00:21+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "scifact",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "83824fbe6112ee2614496dbdbaead3d32ad9cf0507c3b6ca244850f2303cea7e",
+      "language": "en",
+      "license": "CC BY-NC 4.0 (SciFact, Wadden et al. 2020)",
+      "n_answers": 0,
+      "n_docs": 5183,
+      "n_qrels": 339,
+      "n_queries": 300,
+      "name": "beir-scifact",
+      "notes": [
+        "BEIR mirror on Hugging Face; the canonical zips are outside this kit's network allowlist."
+      ],
+      "qrels_sha256": "bf94ee91c4bbfd16f4c80d1ae5a4855b855dcb797de85a358afee373b53581c7",
+      "queries_sha256": "afb8f4682aaadee3afef7bdf2e1dfffd16b812a6bdcca9aafbafaea97a4e7f24",
+      "source": "https://huggingface.co/datasets/BeIR/scifact (split test)"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 61466,
+      "sha256": "52595a1a9efa6a86d8722ec8735adf7c6ff0e85be8af419e88e05645d984babe"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 65280,
+      "sha256": "48c388579cc5f24940c6e6dedf6d4ff0d28f41d71069b6726bf781b3419c1dc0"
+    },
+    "results.csv": {
+      "bytes": 1836,
+      "sha256": "d8a6235527388452d666cdf5bbc685c9ad929918cd41367410b7291e479c20b4"
+    },
+    "results.json": {
+      "bytes": 20684,
+      "sha256": "9801883d03fb1be292af578c7f9050af4e8f2f051005f8ce9367eacbbb2a4554"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.1.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": null,
+      "config_id": "bm25",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.73,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6618348472096938,
+        "ndcg@100": 0.6855557055975097,
+        "recall@10": 0.7817777777777778,
+        "recall@100": 0.8852222222222222
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "tfidf-svd",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.48,
+        "n_queries": 300.0,
+        "ndcg@10": 0.38708929685807236,
+        "ndcg@100": 0.45467160626147585,
+        "recall@10": 0.5433888888888889,
+        "recall@100": 0.8543333333333334
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-small",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.7566666666666667,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6769970211725783,
+        "ndcg@100": 0.7029273310710533,
+        "recall@10": 0.8065555555555556,
+        "recall@100": 0.925
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-base",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.7766666666666666,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6938951849071131,
+        "ndcg@100": 0.7236038748492155,
+        "recall@10": 0.8072222222222222,
+        "recall@100": 0.9393333333333334
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "simcse-cs-en",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.5966666666666667,
+        "n_queries": 300.0,
+        "ndcg@10": 0.515480709608345,
+        "ndcg@100": 0.5603922449742317,
+        "recall@10": 0.6772222222222222,
+        "recall@100": 0.8753333333333334
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "simcse-cs-en",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "bge-m3",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.74,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6436624071293366,
+        "ndcg@100": 0.6710477806183086,
+        "recall@10": 0.7834444444444444,
+        "recall@100": 0.9036666666666667
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "bge-m3",
+      "retriever_name": "bge-m3+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "bge-m3-512",
+      "dataset": "beir-scifact",
+      "metrics": {
+        "gold_in_context@5": 0.74,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6414978375862479,
+        "ndcg@100": 0.6706393768554632,
+        "recall@10": 0.7751111111111111,
+        "recall@100": 0.9036666666666667
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retriever_id": "bge-m3-512",
+      "retriever_name": "bge-m3-512+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "4012271df49842b34aa782ac421cc5c3fe2f324760a7272c44db3611f97469cb",
+  "schema": "measurerag/manifest/1",
+  "seed": 20260101,
+  "wall_seconds": 1142.19
+}

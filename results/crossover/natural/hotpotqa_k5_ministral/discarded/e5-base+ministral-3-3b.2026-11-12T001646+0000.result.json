@@ -1,0 +1,176 @@
+{
+  "answers": {
+    "em": 0.364,
+    "f1": 0.46433003663003664,
+    "n_answered": 500.0
+  },
+  "build": {
+    "build_seconds": 1823.7392296249745,
+    "device": "cpu",
+    "dim": 768,
+    "index_bytes": 307200045,
+    "index_type": "flat",
+    "model": "intfloat/multilingual-e5-base",
+    "model_bytes": 1134534380,
+    "n_docs": 100000,
+    "pooling": "mean",
+    "pooling_source": "repo"
+  },
+  "config_id": "e5-base+ministral-3-3b",
+  "dataset": "hotpotqa-rag",
+  "device": "cpu",
+  "e2e_latency_s": {
+    "mean": 9.457096204144182,
+    "n": 500.0,
+    "p50": 8.97622487496119,
+    "p95": 14.257575457973871
+  },
+  "generator": {
+    "completion_tokens": 1787,
+    "key": "ministral-3-3b",
+    "model_bytes": 2146497824,
+    "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+    "status": "ok",
+    "tokens_per_s": 0.3779273327588892
+  },
+  "language": "en",
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "measurement": {
+    "e2e_s_p50": 8.97622487496119,
+    "e2e_s_p95": 14.257575457973871,
+    "gen_tokens_per_s": 0.3779273327588892,
+    "index_bytes": 307200045,
+    "model_bytes": 3281032204,
+    "peak_rss_gb": 7.5103,
+    "retrieval_ms_p50": 27.655582991428673,
+    "retrieval_ms_p95": 31.455749995075166
+  },
+  "metrics": {
+    "gold_in_context@5": 0.992,
+    "n_queries": 500.0,
+    "ndcg@10": 0.8826099059111748,
+    "ndcg@100": 0.9005347707259064,
+    "recall@10": 0.891,
+    "recall@100": 0.96
+  },
+  "n_docs": 100000,
+  "n_queries": 500,
+  "rag_status": "ok",
+  "retrieval_latency_ms": {
+    "mean": 27.9451959367143,
+    "n": 500.0,
+    "p50": 27.655582991428673,
+    "p95": 31.455749995075166
+  },
+  "retriever_id": "e5-base",
+  "retriever_kind": "dense",
+  "retriever_name": "e5-base+faiss-flat",
+  "retriever_params": {
+    "device": "cpu",
+    "model": "e5-base"
+  },
+  "status": "ok",
+  "threads": {
+    "build": 10,
+    "query": 1
+  },
+  "total_seconds": 6568.54032208299,
+  "verdicts": [
+    {
+      "budget": "ram4g_ret200ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "peak RSS 7.51 GB > 4 GB",
+        "end-to-end p95 14.26 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram4g_ret200ms_e2e8s",
+      "fits": false,
+      "reasons": [
+        "peak RSS 7.51 GB > 4 GB",
+        "end-to-end p95 14.26 s > 8 s"
+      ]
+    },
+    {
+      "budget": "ram4g_ret500ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "peak RSS 7.51 GB > 4 GB",
+        "end-to-end p95 14.26 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram4g_ret500ms_e2e8s",
+      "fits": false,
+      "reasons": [
+        "peak RSS 7.51 GB > 4 GB",
+        "end-to-end p95 14.26 s > 8 s"
+      ]
+    },
+    {
+      "budget": "ram8g_ret200ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram8g_ret200ms_e2e8s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 8 s"
+      ]
+    },
+    {
+      "budget": "ram8g_ret500ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram8g_ret500ms_e2e8s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 8 s"
+      ]
+    },
+    {
+      "budget": "ram16g_ret200ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram16g_ret200ms_e2e8s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 8 s"
+      ]
+    },
+    {
+      "budget": "ram16g_ret500ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram16g_ret500ms_e2e8s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 14.26 s > 8 s"
+      ]
+    }
+  ]
+}

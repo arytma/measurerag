@@ -1,0 +1,38 @@
+# The offline sanity run. 200 bundled synthetic documents, 20 queries.
+# It exists to prove the machinery works, not to say anything about retrieval.
+name: smoke
+device: cpu
+seed: 20260101
+query_threads: 1      # deployed path: one query at a time, fixed threads
+timeout_s: 300
+
+dataset:
+  name: toy
+  max_docs: 100000
+  max_queries: 2000
+  options:
+    language: all
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+# Both of these are network-free, which is what makes the smoke test offline.
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: bm25-nodiacritics
+    kind: bm25
+    strip_diacritics: true
+  - id: tfidf-svd
+    kind: tfidf-svd
+    n_components: 128
+
+rag:
+  enabled: false

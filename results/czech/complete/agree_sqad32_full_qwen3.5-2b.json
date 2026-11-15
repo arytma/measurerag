@@ -1,0 +1,9 @@
+{
+ "cut_by_the_cap": 1,
+ "different": 0,
+ "generations": 0,
+ "identical": 1994,
+ "missing_from_the_dial": 0,
+ "questions": 1995,
+ "retriever": "e5-small"
+}

@@ -1,0 +1,262 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [
+        "csfever"
+      ],
+      "max_docs": 20000,
+      "max_queries": 500,
+      "name": "cwrczech",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "cz_small",
+    "out_dir": "results/cz_small",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "bm25-nodiacritics",
+        "kind": "bm25",
+        "strip_diacritics": true
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "retromae-cs",
+        "kind": "dense",
+        "model": "retromae-cs"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 7200
+  },
+  "config_path": "configs/cz_small.yaml",
+  "config_sha256": "b696845d867d34165308675026b846fca6155f416ad9c2fee432d9029d723c78",
+  "created_utc": "2026-09-11T16:21:26+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "cwrczech",
+          "error": "CWRCzech is not publicly downloadable. Read the disclaimer at https://github.com/seznam/CWRCzech/blob/main/disclaimer.md and request access by email at the address given there; Seznam replies with a private link to the parquet files. Then set dataset.options.data_dir in the config to the directory holding them. This kit will not attempt to bypass the request gate.",
+          "role": "primary",
+          "status": "blocked"
+        },
+        {
+          "dataset": "csfever",
+          "role": "fallback",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "83c7b04ff19498a80935d117c06af1174d8b1fbac164fc85c7b6f53e3a32686c",
+      "language": "cs",
+      "license": "CC BY-SA 3.0 (Czech Wikipedia, via ctu-aic/csfever_v2)",
+      "n_answers": 0,
+      "n_docs": 20000,
+      "n_qrels": 554,
+      "n_queries": 500,
+      "name": "csfever-v2",
+      "notes": [
+        "FALLBACK for the Czech retrieval stage: CWRCzech is gated behind an email request to Seznam and was not worked around.",
+        "Retrieval unit is a Wikipedia page truncated to 2000 characters, not a passage.",
+        "Entity-heavy task: claims usually name their evidence page, which flatters lexical matching. Read BM25's score here with that in mind.",
+        "0 claims dropped: their evidence pages are absent from the dump.",
+        "FALLBACK: the primary dataset 'cwrczech' was not obtainable (CWRCzech is not publicly downloadable. Read the disclaimer at https://github.com/seznam/CWRCzech/blob/main/disclaimer.md and request access by email at the address given there; Seznam replies with a private link to the parquet files. Then set dataset.options.data_dir in the config to the directory holding them. This kit will not attempt to bypass the request gate.). Numbers are on csfever."
+      ],
+      "qrels_sha256": "b20c9b4c4453f664f05e4b761c39ffa6d88ed86d3ff61f466ae931e6faae8cba",
+      "queries_sha256": "a4ae4af63909f35958fadc4a14147ebeb939c92d07dfd2573b76ac0f97bcd15e",
+      "source": "https://huggingface.co/datasets/ctu-aic/csfever_v2 (original/test)"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 57316,
+      "sha256": "d35c05b71e004a815d8087153b5412cd40ef82c4b1b8cfd65490b874c4bf8a2d"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 60513,
+      "sha256": "2d3e49f60b52aef109f6658ebce91474e20d4e9929727588d2dc3b0104f5be9a"
+    },
+    "results.csv": {
+      "bytes": 1438,
+      "sha256": "3e3e7324d46d25f4146174a123086972be486a6ce53bfbebe4be8beac267e702"
+    },
+    "results.json": {
+      "bytes": 16895,
+      "sha256": "9ebbd0a6cf588fa30b7c6b54934fffdf6cf3416c17c38d80b9725245b69e3190"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.1.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": null,
+      "config_id": "bm25",
+      "dataset": "csfever-v2",
+      "metrics": {
+        "gold_in_context@5": 0.89,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8284071313436664,
+        "ndcg@100": 0.838572520516726,
+        "recall@10": 0.8912857142857143,
+        "recall@100": 0.9388571428571428
+      },
+      "n_docs": 20000,
+      "n_queries": 500,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "bm25-nodiacritics",
+      "dataset": "csfever-v2",
+      "metrics": {
+        "gold_in_context@5": 0.904,
+        "n_queries": 500.0,
+        "ndcg@10": 0.839915091296104,
+        "ndcg@100": 0.8480509759500174,
+        "recall@10": 0.9012857142857144,
+        "recall@100": 0.9388571428571428
+      },
+      "n_docs": 20000,
+      "n_queries": 500,
+      "retriever_id": "bm25-nodiacritics",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-small",
+      "dataset": "csfever-v2",
+      "metrics": {
+        "gold_in_context@5": 0.834,
+        "n_queries": 500.0,
+        "ndcg@10": 0.7754656644931381,
+        "ndcg@100": 0.789209344301834,
+        "recall@10": 0.8336190476190476,
+        "recall@100": 0.898952380952381
+      },
+      "n_docs": 20000,
+      "n_queries": 500,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "retromae-cs",
+      "dataset": "csfever-v2",
+      "metrics": {
+        "gold_in_context@5": 0.502,
+        "n_queries": 500.0,
+        "ndcg@10": 0.41494574337131784,
+        "ndcg@100": 0.45608492137694306,
+        "recall@10": 0.5555714285714286,
+        "recall@100": 0.7511428571428571
+      },
+      "n_docs": 20000,
+      "n_queries": 500,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "simcse-cs-en",
+      "dataset": "csfever-v2",
+      "metrics": {
+        "gold_in_context@5": 0.74,
+        "n_queries": 500.0,
+        "ndcg@10": 0.6530781608793411,
+        "ndcg@100": 0.6839737145921482,
+        "recall@10": 0.7756190476190475,
+        "recall@100": 0.9107142857142857
+      },
+      "n_docs": 20000,
+      "n_queries": 500,
+      "retriever_id": "simcse-cs-en",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "403f6d50ed99840ee7918a32ad0adc6d3a878c339b9796ed167f9c0fcefe9dd8",
+  "schema": "measurerag/manifest/1",
+  "scrubbed_emails": "email addresses replaced by scripts/scrub_paths.py (no result changed)",
+  "seed": 20260101,
+  "wall_seconds": 6.87
+}

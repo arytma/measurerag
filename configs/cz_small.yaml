@@ -1,0 +1,57 @@
+# Czech retrieval, small tier.
+#
+# PRIMARY is CWRCzech, which Seznam releases only after an emailed request. With
+# no data_dir configured the loader raises BLOCKED and the run falls through to
+# CsFEVER v2 - claim-to-evidence retrieval over Czech Wikipedia - which is
+# recorded as a fallback in the manifest and in the dataset's own notes.
+#
+# To use CWRCzech once you have it:
+#   dataset:
+#     name: cwrczech
+#     options: {data_dir: /path/to/cwrczech}
+name: cz_small
+device: cpu
+seed: 20260101
+query_threads: 1      # deployed path: one query at a time, fixed threads
+timeout_s: 7200
+
+dataset:
+  name: cwrczech
+  fallbacks: [csfever]
+  max_docs: 20000       # the caps results/cz_small was measured with (its manifest.json);
+  max_queries: 500      # configs/cz_full.yaml holds the 100,000-page run
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: bm25-nodiacritics       # a real Czech trade-off, so it is measured
+    kind: bm25
+    strip_diacritics: true
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: retromae-cs
+    kind: dense
+    model: retromae-cs
+  - id: simcse-cs-en
+    kind: dense
+    model: simcse-cs-en
+  - id: e5-base
+    kind: dense
+    model: e5-base
+  - id: bge-m3
+    kind: dense
+    model: bge-m3
+
+rag:
+  enabled: false

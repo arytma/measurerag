@@ -1,0 +1,542 @@
+{
+  "budgets": [
+    {
+      "e2e_s": null,
+      "name": "ram4g_ret200ms",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram4g_ret500ms",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram8g_ret200ms",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram8g_ret500ms",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram16g_ret200ms",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram16g_ret500ms",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [
+        "csfever"
+      ],
+      "max_docs": 100000,
+      "max_queries": 500,
+      "name": "cwrczech",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "cz_full",
+    "out_dir": "results/cz_full",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "bm25-nodiacritics",
+        "kind": "bm25",
+        "strip_diacritics": true
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 21600
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "cwrczech",
+          "error": "CWRCzech is not publicly downloadable. Read the disclaimer at https://github.com/seznam/CWRCzech/blob/main/disclaimer.md and request access by email at the address given there; Seznam replies with a private link to the parquet files. Then set dataset.options.data_dir in the config to the directory holding them. This kit will not attempt to bypass the request gate.",
+          "role": "primary",
+          "status": "blocked"
+        },
+        {
+          "dataset": "csfever",
+          "role": "fallback",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "10ac31dece91762842597a515fc9807bb4b7e0bfeb51ee4ed61983b0ff69dc90",
+      "language": "cs",
+      "license": "CC BY-SA 3.0 (Czech Wikipedia, via ctu-aic/csfever_v2)",
+      "n_answers": 0,
+      "n_docs": 100000,
+      "n_qrels": 554,
+      "n_queries": 500,
+      "name": "csfever-v2",
+      "notes": [
+        "FALLBACK for the Czech retrieval stage: CWRCzech is gated behind an email request to Seznam and was not worked around.",
+        "Retrieval unit is a Wikipedia page truncated to 2000 characters, not a passage.",
+        "Entity-heavy task: claims usually name their evidence page, which flatters lexical matching. Read BM25's score here with that in mind.",
+        "0 claims dropped: their evidence pages are absent from the dump.",
+        "FALLBACK: the primary dataset 'cwrczech' was not obtainable (CWRCzech is not publicly downloadable. Read the disclaimer at https://github.com/seznam/CWRCzech/blob/main/disclaimer.md and request access by email at the address given there; Seznam replies with a private link to the parquet files. Then set dataset.options.data_dir in the config to the directory holding them. This kit will not attempt to bypass the request gate.). Numbers are on csfever."
+      ],
+      "qrels_sha256": "b20c9b4c4453f664f05e4b761c39ffa6d88ed86d3ff61f466ae931e6faae8cba",
+      "queries_sha256": "a4ae4af63909f35958fadc4a14147ebeb939c92d07dfd2573b76ac0f97bcd15e",
+      "source": "https://huggingface.co/datasets/ctu-aic/csfever_v2 (original/test)"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 5.045379666000372,
+        "index_bytes": 73848216,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 100000
+      },
+      "config_id": "bm25",
+      "dataset": "csfever-v2",
+      "device": "cpu",
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 73848216,
+        "model_bytes": 0,
+        "peak_rss_gb": 1.5605,
+        "retrieval_ms_p50": 0.6060419982532039,
+        "retrieval_ms_p95": 1.0159579978790134
+      },
+      "metrics": {
+        "gold_in_context@5": 0.84,
+        "n_queries": 500.0,
+        "ndcg@10": 0.7393132694586292,
+        "ndcg@100": 0.7544539232108157,
+        "recall@10": 0.847,
+        "recall@100": 0.9162857142857144
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retrieval_latency_ms": {
+        "mean": 0.6354015219403664,
+        "n": 500.0,
+        "p50": 0.6060419982532039,
+        "p95": 1.0159579978790134
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 5.5883867500015185,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 7.25
+    },
+    {
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 7.149220166997111,
+        "index_bytes": 72374181,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 100000
+      },
+      "config_id": "bm25-nodiacritics",
+      "dataset": "csfever-v2",
+      "device": "cpu",
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 72374181,
+        "model_bytes": 0,
+        "peak_rss_gb": 1.4643,
+        "retrieval_ms_p50": 0.6079999948269688,
+        "retrieval_ms_p95": 1.030457999149803
+      },
+      "metrics": {
+        "gold_in_context@5": 0.858,
+        "n_queries": 500.0,
+        "ndcg@10": 0.7540199736453996,
+        "ndcg@100": 0.7679495382493622,
+        "recall@10": 0.859,
+        "recall@100": 0.9212857142857144
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retrieval_latency_ms": {
+        "mean": 0.6406109880772419,
+        "n": 500.0,
+        "p50": 0.6079999948269688,
+        "p95": 1.030457999149803
+      },
+      "retriever_id": "bm25-nodiacritics",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu",
+        "strip_diacritics": true
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 7.651435624997248,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 9.15
+    },
+    {
+      "build": {
+        "build_seconds": 1401.6843528329991,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 153600045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small",
+      "dataset": "csfever-v2",
+      "device": "cpu",
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 153600045,
+        "model_bytes": 493292828,
+        "peak_rss_gb": 2.2507,
+        "retrieval_ms_p50": 7.325166996452026,
+        "retrieval_ms_p95": 7.795208002789877
+      },
+      "metrics": {
+        "gold_in_context@5": 0.778,
+        "n_queries": 500.0,
+        "ndcg@10": 0.7011778518690959,
+        "ndcg@100": 0.7171101265393874,
+        "recall@10": 0.7766190476190475,
+        "recall@100": 0.8502857142857143
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retrieval_latency_ms": {
+        "mean": 7.393049931837595,
+        "n": 500.0,
+        "p50": 7.325166996452026,
+        "p95": 7.795208002789877
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1405.479712417,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 1407.2
+    },
+    {
+      "build": {
+        "build_seconds": 726.0368230839958,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 102400045,
+        "index_type": "flat",
+        "model": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+        "model_bytes": 99164889,
+        "n_docs": 100000,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "simcse-cs-en",
+      "dataset": "csfever-v2",
+      "device": "cpu",
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 102400045,
+        "model_bytes": 99164889,
+        "peak_rss_gb": 1.6061,
+        "retrieval_ms_p50": 4.658167003071867,
+        "retrieval_ms_p95": 4.995957999199163
+      },
+      "metrics": {
+        "gold_in_context@5": 0.626,
+        "n_queries": 500.0,
+        "ndcg@10": 0.5073644587026783,
+        "ndcg@100": 0.5465897777309384,
+        "recall@10": 0.6576190476190475,
+        "recall@100": 0.8484761904761905
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retrieval_latency_ms": {
+        "mean": 4.704852165887132,
+        "n": 500.0,
+        "p50": 4.658167003071867,
+        "p95": 4.995957999199163
+      },
+      "retriever_id": "simcse-cs-en",
+      "retriever_kind": "dense",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "simcse-cs-en"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 728.4682492920037,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 730.13
+    }
+  ]
+}

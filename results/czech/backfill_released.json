@@ -1,0 +1,10 @@
+{
+ "already_present": 15,
+ "copied": 385,
+ "copied_per_retriever": {
+  "bm25": 192,
+  "retromae-cs": 193
+ },
+ "generations": 0,
+ "too_long_to_copy": 0
+}

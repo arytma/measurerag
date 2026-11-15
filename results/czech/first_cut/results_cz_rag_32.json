@@ -1,0 +1,694 @@
+{
+  "budgets": [
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret200ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret200ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret500ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret500ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret200ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret200ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret500ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret500ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret200ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret200ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret500ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret500ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 200,
+      "name": "sqad32",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "cz_rag_32",
+    "out_dir": "results/cz_rag_32",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b"
+      ],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 3,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "retromae-cs",
+        "kind": "dense",
+        "model": "retromae-cs"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "sqad32",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+      "language": "cs",
+      "license": "CC BY-SA 3.0 (SQAD 3.2 on LINDAT, http://hdl.handle.net/11234/1-5019)",
+      "n_answers": 200,
+      "n_docs": 14669,
+      "n_qrels": 200,
+      "n_queries": 200,
+      "name": "sqad-3.2-test",
+      "notes": [
+        "Czech QA. Corpus is every distinct context across all three splits; gold is the context cut around the question's answer sentence.",
+        "Contexts are reconstructed windows of whole sentences (cut_window), since 3.2 ships whole articles. Yes/no golds are mapped to ano and ne.",
+        "Answers are short spans, so EM is a meaningful metric; a generator that writes a sentence around the span will lose EM and keep F1."
+      ],
+      "qrels_sha256": "d72916b766e4379a40d7140513584e4871c0a5f3d01ea88289fb7969fd75c204",
+      "queries_sha256": "60181923ef9f1767dd9b8006203cceb18d69207dc87685817f994750ada58f1f",
+      "source": "http://hdl.handle.net/11234/1-5019"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "answers": {
+        "em": 0.445,
+        "f1": 0.5089820261437908,
+        "n_answered": 200.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 1.0727230840129778,
+        "index_bytes": 13472468,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 14669
+      },
+      "config_id": "bm25+qwen2.5-1.5b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 6.479945176639012,
+        "n": 200.0,
+        "p50": 6.473501625005156,
+        "p95": 9.231639582983917
+      },
+      "generator": {
+        "completion_tokens": 903,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.6967904786915629
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 6.473501625005156,
+        "e2e_s_p95": 9.231639582983917,
+        "gen_tokens_per_s": 0.6967904786915629,
+        "index_bytes": 13472468,
+        "model_bytes": 1117320736,
+        "peak_rss_gb": 2.6156,
+        "retrieval_ms_p50": 0.2808749850373715,
+        "retrieval_ms_p95": 0.36379200173541903
+      },
+      "metrics": {
+        "gold_in_context@3": 0.835,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7941209696918092,
+        "ndcg@100": 0.8012056842217606,
+        "recall@10": 0.915,
+        "recall@100": 0.95
+      },
+      "n_docs": 14669,
+      "n_queries": 200,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 0.2699177399335895,
+        "n": 200.0,
+        "p50": 0.2808749850373715,
+        "p95": 0.36379200173541903
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1298.5069124160218,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.23 s > 8 s"
+          ]
+        }
+      ],
+      "wall_seconds": 1300.58
+    },
+    {
+      "answers": {
+        "em": 0.46,
+        "f1": 0.5400241702741703,
+        "n_answered": 200.0
+      },
+      "build": {
+        "build_seconds": 302.5230757499812,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 22531629,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 14669,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+qwen2.5-1.5b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 6.2468560325243745,
+        "n": 200.0,
+        "p50": 6.513512958015781,
+        "p95": 8.564490874996409
+      },
+      "generator": {
+        "completion_tokens": 896,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.7171849536149856
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 6.513512958015781,
+        "e2e_s_p95": 8.564490874996409,
+        "gen_tokens_per_s": 0.7171849536149856,
+        "index_bytes": 22531629,
+        "model_bytes": 1610613564,
+        "peak_rss_gb": 3.6485,
+        "retrieval_ms_p50": 7.118834007997066,
+        "retrieval_ms_p95": 9.028500004205853
+      },
+      "metrics": {
+        "gold_in_context@3": 0.845,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7957601231768495,
+        "ndcg@100": 0.803294852281759,
+        "recall@10": 0.955,
+        "recall@100": 0.99
+      },
+      "n_docs": 14669,
+      "n_queries": 200,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 7.412083145172801,
+        "n": 200.0,
+        "p50": 7.118834007997066,
+        "p95": 9.028500004205853
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1554.1604007079732,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 8.56 s > 8 s"
+          ]
+        }
+      ],
+      "wall_seconds": 1555.99
+    },
+    {
+      "answers": {
+        "em": 0.29,
+        "f1": 0.3154722222222222,
+        "n_answered": 200.0
+      },
+      "build": {
+        "build_seconds": 126.95805495898821,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 15021101,
+        "index_type": "flat",
+        "model": "Seznam/retromae-small-cs",
+        "model_bytes": 99167447,
+        "n_docs": 14669,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "retromae-cs+qwen2.5-1.5b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 5.785064961254393,
+        "n": 200.0,
+        "p50": 5.641355041007046,
+        "p95": 10.409323917003348
+      },
+      "generator": {
+        "completion_tokens": 761,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.657753786494274
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 5.641355041007046,
+        "e2e_s_p95": 10.409323917003348,
+        "gen_tokens_per_s": 0.657753786494274,
+        "index_bytes": 15021101,
+        "model_bytes": 1216488183,
+        "peak_rss_gb": 2.8971,
+        "retrieval_ms_p50": 4.234958003507927,
+        "retrieval_ms_p95": 4.968000022927299
+      },
+      "metrics": {
+        "gold_in_context@3": 0.48,
+        "n_queries": 200.0,
+        "ndcg@10": 0.48886963751965823,
+        "ndcg@100": 0.5320367884170308,
+        "recall@10": 0.645,
+        "recall@100": 0.85
+      },
+      "n_docs": 14669,
+      "n_queries": 200,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 4.326435404800577,
+        "n": 200.0,
+        "p50": 4.234958003507927,
+        "p95": 4.968000022927299
+      },
+      "retriever_id": "retromae-cs",
+      "retriever_kind": "dense",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "retromae-cs"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1285.4971856669872,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 10.41 s > 8 s"
+          ]
+        }
+      ],
+      "wall_seconds": 1287.37
+    }
+  ]
+}

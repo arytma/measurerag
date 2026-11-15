@@ -1,0 +1,46 @@
+# Czech retrieval at five times the corpus, to find where the budget starts to
+# bite. At the 20k cap used for cz_small every configuration fits every budget,
+# so the kit's central argument - that the constraint changes the ranking - is
+# not under test there. Memory for a dense retriever grows with the corpus (one
+# vector per document) while BM25's grows far more slowly, so if the grid ever
+# discriminates it should begin to here.
+#
+# Written as its own config rather than a --max-docs override so that
+# results/cz_small (20k) survives alongside it and the two can be compared.
+name: cz_full
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 21600
+
+dataset:
+  name: cwrczech            # still BLOCKED; falls through to csfever as before
+  fallbacks: [csfever]
+  max_docs: 100000          # the specification's ceiling, five times cz_small
+  max_queries: 500          # held at cz_small's value so quality is comparable
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: bm25-nodiacritics
+    kind: bm25
+    strip_diacritics: true
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: simcse-cs-en
+    kind: dense
+    model: simcse-cs-en
+
+rag:
+  enabled: false

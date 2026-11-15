@@ -1,0 +1,27 @@
+measureRAG
+Copyright 2026 Arytma Inc.
+
+The source code in this repository is licensed under the Apache License,
+Version 2.0 (see LICENSE). The documentation and the results (the Markdown
+documents and everything under results/, including the figures and the
+tables) are licensed under the Creative Commons Attribution 4.0 International
+licence (CC BY 4.0, see LICENSE-docs). The generated Czech answers in answers/:
+files under answers/sqad32/ are licensed as a whole under CC BY-SA 3.0, the
+licence of SQAD 3.2; files under answers/sqad30_copy/ are licensed under CC BY
+4.0, except the spans of SQAD 3.0 that an answer quotes, which keep LGPL-3.0
+(see THIRD_PARTY.md).
+
+This repository redistributes no model weights and no dataset. The scripts
+download them when a run starts, except SQAD 3.2 and the SQAD 3.0 archive, which
+you download from LINDAT yourself. Every third-party model and dataset measured,
+with its licence and the citation it asks for, is listed in THIRD_PARTY.md.
+
+Gemma 3n and EmbeddingGemma, two of the models measured, are under Google's Gemma Terms of
+Use (https://ai.google.dev/gemma/terms), with its Prohibited Use Policy. Gemma
+3n's answers ship in answers/, and EmbeddingGemma's top 10 passage ids in
+results/czech/records/.
+
+Qwen2.5-3B-Instruct, also measured, is licensed under the Qwen
+RESEARCH LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved.
+Use is limited to non-commercial purposes, defined there as research or
+evaluation purposes only.

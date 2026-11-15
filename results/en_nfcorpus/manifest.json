@@ -1,0 +1,262 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 2000,
+      "name": "nfcorpus",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "en_nfcorpus",
+    "out_dir": "results/en_nfcorpus",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 10800
+  },
+  "config_path": "configs/en_nfcorpus.yaml",
+  "config_sha256": "343b15e780ac5d3d054ccdaefb7d3e801837b0a7b4eb2eae4702be33a557e980",
+  "created_utc": "2026-09-11T16:46:37+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "nfcorpus",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "b5147cf309c8c8e09a18fa874d8aa2c1036f2c4779b6df64e71b79c6370a16d0",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (NFCorpus, Boteva et al. 2016)",
+      "n_answers": 0,
+      "n_docs": 3633,
+      "n_qrels": 12334,
+      "n_queries": 323,
+      "name": "beir-nfcorpus",
+      "notes": [
+        "BEIR mirror on Hugging Face; the canonical zips are outside this kit's network allowlist."
+      ],
+      "qrels_sha256": "ee70717099a77ded57a5fe9a6b0672d167cf4440049be16363c3732e2b77be12",
+      "queries_sha256": "9fe14ca8e7bee77867e726227a33df6eb50261026f0ae1851958b050ea12fd48",
+      "source": "https://huggingface.co/datasets/BeIR/nfcorpus (split test)"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 61297,
+      "sha256": "aa533dccde31d6bfe586b68d7f4274b26be0ffc419e6889ef1dcc7013d5823b7"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 65326,
+      "sha256": "5ae4488883098929ca7cf0f23d224d4c9797b0025e2424836511263b175a40dc"
+    },
+    "results.csv": {
+      "bytes": 1693,
+      "sha256": "2cefa2814187d8752fe6a227c9f90fdd82923b9c546701afcd69f9ddcd455527"
+    },
+    "results.json": {
+      "bytes": 18105,
+      "sha256": "eb3447c3f24918fe5cefe91c70ccccad660cf0e9628f62735bef7bc58ee1347a"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.1.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": null,
+      "config_id": "bm25",
+      "dataset": "beir-nfcorpus",
+      "metrics": {
+        "gold_in_context@5": 0.6160990712074303,
+        "n_queries": 323.0,
+        "ndcg@10": 0.30449021980467694,
+        "ndcg@100": 0.26239301929013076,
+        "recall@10": 0.14641067054843881,
+        "recall@100": 0.23924928947975369
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "tfidf-svd",
+      "dataset": "beir-nfcorpus",
+      "metrics": {
+        "gold_in_context@5": 0.541795665634675,
+        "n_queries": 323.0,
+        "ndcg@10": 0.27097049769435316,
+        "ndcg@100": 0.27076186040453093,
+        "recall@10": 0.13994599407558256,
+        "recall@100": 0.30451895290919534
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retriever_id": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-small",
+      "dataset": "beir-nfcorpus",
+      "metrics": {
+        "gold_in_context@5": 0.6130030959752322,
+        "n_queries": 323.0,
+        "ndcg@10": 0.31004843396402354,
+        "ndcg@100": 0.28039508230973736,
+        "recall@10": 0.15039340620504202,
+        "recall@100": 0.2736556303951838
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-base",
+      "dataset": "beir-nfcorpus",
+      "metrics": {
+        "gold_in_context@5": 0.6099071207430341,
+        "n_queries": 323.0,
+        "ndcg@10": 0.3248717126438839,
+        "ndcg@100": 0.2895486359163233,
+        "recall@10": 0.1557325707660669,
+        "recall@100": 0.2851055678351197
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "simcse-cs-en",
+      "dataset": "beir-nfcorpus",
+      "metrics": {
+        "gold_in_context@5": 0.5634674922600619,
+        "n_queries": 323.0,
+        "ndcg@10": 0.259612516862738,
+        "ndcg@100": 0.24819170810939964,
+        "recall@10": 0.12058332185021674,
+        "recall@100": 0.27845721499464643
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retriever_id": "simcse-cs-en",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "bge-m3",
+      "dataset": "beir-nfcorpus",
+      "metrics": {
+        "gold_in_context@5": 0.631578947368421,
+        "n_queries": 323.0,
+        "ndcg@10": 0.31460336731789684,
+        "ndcg@100": 0.2848836306057884,
+        "recall@10": 0.14745007894097883,
+        "recall@100": 0.28258650352141446
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retriever_id": "bge-m3",
+      "retriever_name": "bge-m3+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "f0493315c4d946a44e8f2dcf9ceb391c818830acade5924b4967755fad09cddf",
+  "schema": "measurerag/manifest/1",
+  "seed": 20260101,
+  "wall_seconds": 1498.82
+}

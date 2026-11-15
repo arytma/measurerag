@@ -1,0 +1,44 @@
+# The documentation set and the rules scripts/check_docs.py enforces on it.
+#
+# Every document whose prose carries results is generated: its source is the file
+# of the same path under templates/, with {{token}} placeholders that
+# scripts/fill.py fills from results/stats.json. Edit the template, never the
+# generated file; check_docs.py fails when they differ.
+#
+# A configs/docs_*.yaml beside this file adds its documents and exemptions to these.
+stats: results/stats.json
+templates: templates
+
+documents:
+  - README.md
+  - README.cs.md
+  - docs/CROSSOVER.md
+  - docs/METHOD.md
+  - docs/REPRODUCE.md
+  - docs/BUDGETS.md
+  - docs/DATASETS_AND_LICENCES.md
+  - docs/LIMITATIONS.md
+  - docs/METRICS.md
+  - CHANGELOG.md
+  - THIRD_PARTY.md
+  - answers/README.md
+  - NOTICE
+  - LICENSE
+  - LICENSE-docs
+
+# Documents written in Czech: their numbers carry Czech marks ({{token|cs}}: 0,8399, 4 771 with a no-break space), and
+# scripts/check_docs.py and scripts/number_audit.py read them back before tracing them to results/stats.json.
+czech_number_marks:
+  - README.cs.md
+
+# Where the "every number traces to results/stats.json" rule does not apply, and why.
+number_rule_exempt:
+  LICENSE: the Apache License 2.0 text
+  LICENSE-docs: the CC BY 4.0 legal code
+  THIRD_PARTY.md: attribution text (licence names and versions, revisions, citations)
+  NOTICE: attribution text (licence names and versions)
+
+# Numbers that are not results and need no token: integers 0-10 used as counting
+# words and list or step numbers, years, dates, version strings. Everything else
+# in prose must appear among the numbers rendered in results/stats.json.
+small_integer_max: 10

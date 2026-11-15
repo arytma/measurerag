@@ -1,0 +1,16 @@
+configuration      ndcg@10  peak RSS  index     ret p95  ram4g_ret200ms  ram4g_ret500ms  ram8g_ret200ms  ram8g_ret500ms  ram16g_ret200ms  ram16g_ret500ms
+-----------------  -------  --------  --------  -------  --------------  --------------  --------------  --------------  ---------------  ---------------
+bm25-nodiacritics  0.7540   1.46 GB   69.0 MB   1.0 ms   FITS            FITS            FITS            FITS            FITS             FITS
+bm25               0.7393   1.56 GB   70.4 MB   1.0 ms   FITS            FITS            FITS            FITS            FITS             FITS
+e5-small           0.7012   2.25 GB   146.5 MB  7.8 ms   FITS            FITS            FITS            FITS            FITS             FITS
+simcse-cs-en       0.5074   1.61 GB   97.7 MB   5.0 ms   FITS            FITS            FITS            FITS            FITS             FITS
+
+Budgets:
+  ram4g_ret200ms: RAM <= 4 GB, retrieval p95 <= 200 ms
+  ram4g_ret500ms: RAM <= 4 GB, retrieval p95 <= 500 ms
+  ram8g_ret200ms: RAM <= 8 GB, retrieval p95 <= 200 ms
+  ram8g_ret500ms: RAM <= 8 GB, retrieval p95 <= 500 ms
+  ram16g_ret200ms: RAM <= 16 GB, retrieval p95 <= 200 ms
+  ram16g_ret500ms: RAM <= 16 GB, retrieval p95 <= 500 ms
+
+[value] = measured, but the configuration fits no budget in this grid.

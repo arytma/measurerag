@@ -1,0 +1,344 @@
+{
+ "failures": [
+  "ministral-3-3b cpu",
+  "ministral-3-3b cuda",
+  "ministral-3-8b cpu",
+  "ministral-3-8b cuda"
+ ],
+ "families": {
+  "gemma-4": {
+   "eligible": true,
+   "minus_qwen": {
+    "established": true,
+    "hi": 0.2925,
+    "lo": 0.19,
+    "point": 0.24
+   },
+   "minus_qwen3_5": {
+    "established": false,
+    "hi": 0.065,
+    "lo": -0.015,
+    "point": 0.025
+   },
+   "score": {
+    "established": true,
+    "hi": 0.79,
+    "lo": 0.6825,
+    "point": 0.7375
+   }
+  },
+  "granite-4.0": {
+   "eligible": true,
+   "minus_qwen": {
+    "established": false,
+    "hi": 0.085,
+    "lo": 0.0,
+    "point": 0.0425
+   },
+   "minus_qwen3_5": {
+    "established": true,
+    "hi": -0.1225,
+    "lo": -0.2225,
+    "point": -0.1725
+   },
+   "score": {
+    "established": true,
+    "hi": 0.5975,
+    "lo": 0.48,
+    "point": 0.54
+   }
+  },
+  "ministral-3": {
+   "eligible": false
+  },
+  "qwen2.5": {
+   "eligible": true,
+   "minus_qwen3_5": {
+    "established": true,
+    "hi": -0.16,
+    "lo": -0.2725,
+    "point": -0.215
+   },
+   "score": {
+    "established": true,
+    "hi": 0.555,
+    "lo": 0.44,
+    "point": 0.4975
+   }
+  },
+  "qwen3.5": {
+   "eligible": true,
+   "minus_qwen": {
+    "established": true,
+    "hi": 0.2725,
+    "lo": 0.16,
+    "point": 0.215
+   },
+   "score": {
+    "established": true,
+    "hi": 0.765,
+    "lo": 0.6575,
+    "point": 0.7125
+   }
+  }
+ },
+ "gguf_gb": {
+  "gemma-4-e2b": 3.11,
+  "gemma-4-e4b": 4.98,
+  "granite-4.0-1b": 1.02,
+  "granite-4.0-micro": 2.1,
+  "qwen2.5-1.5b": 1.12,
+  "qwen2.5-3b": 2.1,
+  "qwen3.5-2b": 1.28,
+  "qwen3.5-4b": 2.74
+ },
+ "models": {
+  "gemma-4-e2b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 0,
+   "compliance": 0.9662921348314607,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.38477,
+   "em": 0.67,
+   "em_on_span": 0.57,
+   "em_on_yes_no": 0.77,
+   "em_yes_no_mapped": 0.68,
+   "em_yes_no_mapped_on_yes_no": 0.79,
+   "f1": 0.7134761904762001,
+   "f1_on_span": 0.6569523809524,
+   "gguf_gb": 3.11,
+   "gpu_seconds_per_answer": 0.14676999999999998,
+   "span_declined": 4,
+   "strict_share": 0.86,
+   "yes_no_classes": {
+    "ano or ne": 86,
+    "something else": 1,
+    "unanswerable": 11,
+    "yes or no in English": 2
+   }
+  },
+  "gemma-4-e4b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 1,
+   "compliance": 0.9896907216494846,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.59726,
+   "em": 0.795,
+   "em_on_span": 0.66,
+   "em_on_yes_no": 0.93,
+   "em_yes_no_mapped": 0.795,
+   "em_yes_no_mapped_on_yes_no": 0.93,
+   "f1": 0.8394444444444551,
+   "f1_on_span": 0.74888888888891,
+   "gguf_gb": 4.98,
+   "gpu_seconds_per_answer": 0.2529155,
+   "span_declined": 7,
+   "strict_share": 0.96,
+   "yes_no_classes": {
+    "ano or ne": 96,
+    "something else": 1,
+    "unanswerable": 3,
+    "yes or no in English": 0
+   }
+  },
+  "granite-4.0-1b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 0,
+   "compliance": 0.011494252873563218,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.33795499999999995,
+   "em": 0.175,
+   "em_on_span": 0.34,
+   "em_on_yes_no": 0.01,
+   "em_yes_no_mapped": 0.505,
+   "em_yes_no_mapped_on_yes_no": 0.67,
+   "f1": 0.215333333333345,
+   "f1_on_span": 0.42066666666669,
+   "gguf_gb": 1.02,
+   "gpu_seconds_per_answer": 0.17208600000000002,
+   "span_declined": 7,
+   "strict_share": 0.01,
+   "yes_no_classes": {
+    "ano or ne": 1,
+    "something else": 12,
+    "unanswerable": 13,
+    "yes or no in English": 74
+   }
+  },
+  "granite-4.0-micro": {
+   "answered": true,
+   "answers_cut_at_the_cap": 0,
+   "compliance": 0.4878048780487805,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.6088150000000001,
+   "em": 0.435,
+   "em_on_span": 0.49,
+   "em_on_yes_no": 0.38,
+   "em_yes_no_mapped": 0.575,
+   "em_yes_no_mapped_on_yes_no": 0.66,
+   "f1": 0.47362301587301503,
+   "f1_on_span": 0.56724603174603,
+   "gguf_gb": 2.1,
+   "gpu_seconds_per_answer": 0.36172200000000004,
+   "span_declined": 6,
+   "strict_share": 0.4,
+   "yes_no_classes": {
+    "ano or ne": 40,
+    "something else": 11,
+    "unanswerable": 18,
+    "yes or no in English": 31
+   }
+  },
+  "ministral-3-3b": {
+   "answered": false
+  },
+  "ministral-3-8b": {
+   "answered": false
+  },
+  "qwen2.5-1.5b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 0,
+   "compliance": 0.24705882352941178,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.271135,
+   "em": 0.28,
+   "em_on_span": 0.4,
+   "em_on_yes_no": 0.16,
+   "em_yes_no_mapped": 0.51,
+   "em_yes_no_mapped_on_yes_no": 0.62,
+   "f1": 0.3242500000000101,
+   "f1_on_span": 0.48850000000002,
+   "gguf_gb": 1.12,
+   "gpu_seconds_per_answer": 0.13057449999999998,
+   "span_declined": 14,
+   "strict_share": 0.21,
+   "yes_no_classes": {
+    "ano or ne": 21,
+    "something else": 6,
+    "unanswerable": 15,
+    "yes or no in English": 58
+   }
+  },
+  "qwen2.5-3b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 1,
+   "compliance": 0.6125,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.47287999999999997,
+   "em": 0.435,
+   "em_on_span": 0.52,
+   "em_on_yes_no": 0.35,
+   "em_yes_no_mapped": 0.485,
+   "em_yes_no_mapped_on_yes_no": 0.45,
+   "f1": 0.490949855699865,
+   "f1_on_span": 0.63189971139973,
+   "gguf_gb": 2.1,
+   "gpu_seconds_per_answer": 0.25008199999999997,
+   "span_declined": 8,
+   "strict_share": 0.49,
+   "yes_no_classes": {
+    "ano or ne": 49,
+    "something else": 18,
+    "unanswerable": 20,
+    "yes or no in English": 13
+   }
+  },
+  "qwen3.5-2b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 0,
+   "compliance": 0.9,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.39759,
+   "em": 0.655,
+   "em_on_span": 0.49,
+   "em_on_yes_no": 0.82,
+   "em_yes_no_mapped": 0.655,
+   "em_yes_no_mapped_on_yes_no": 0.82,
+   "f1": 0.7054938672438751,
+   "f1_on_span": 0.59098773448775,
+   "gguf_gb": 1.28,
+   "gpu_seconds_per_answer": 0.12732749999999998,
+   "span_declined": 3,
+   "strict_share": 0.9,
+   "yes_no_classes": {
+    "ano or ne": 90,
+    "something else": 10,
+    "unanswerable": 0,
+    "yes or no in English": 0
+   }
+  },
+  "qwen3.5-4b": {
+   "answered": true,
+   "answers_cut_at_the_cap": 0,
+   "compliance": 1.0,
+   "cpu_questions": 20,
+   "cpu_seconds_per_answer": 0.6904199999999999,
+   "em": 0.77,
+   "em_on_span": 0.62,
+   "em_on_yes_no": 0.92,
+   "em_yes_no_mapped": 0.77,
+   "em_yes_no_mapped_on_yes_no": 0.92,
+   "f1": 0.82119047619049,
+   "f1_on_span": 0.72238095238098,
+   "gguf_gb": 2.74,
+   "gpu_seconds_per_answer": 0.26976750000000005,
+   "span_declined": 6,
+   "strict_share": 0.97,
+   "yes_no_classes": {
+    "ano or ne": 97,
+    "something else": 0,
+    "unanswerable": 3,
+    "yes or no in English": 0
+   }
+  }
+ },
+ "pinned": {
+  "gemma-4-e2b": {
+   "file": "gemma-4-E2B-it-Q4_K_M.gguf",
+   "repo": "unsloth/gemma-4-E2B-it-GGUF",
+   "revision": "0314792d7f1f7e229411f620751375812bb9faf2"
+  },
+  "gemma-4-e4b": {
+   "file": "gemma-4-E4B-it-Q4_K_M.gguf",
+   "repo": "unsloth/gemma-4-E4B-it-GGUF",
+   "revision": "bfc15c382204943c3a8fff0c750b94ae2364d7a3"
+  },
+  "granite-4.0-1b": {
+   "file": "granite-4.0-1b-Q4_K_M.gguf",
+   "repo": "ibm-granite/granite-4.0-1b-GGUF",
+   "revision": "b27c2fe3f211b7f44e80fa620177aea371099aaa"
+  },
+  "granite-4.0-micro": {
+   "file": "granite-4.0-micro-Q4_K_M.gguf",
+   "repo": "ibm-granite/granite-4.0-micro-GGUF",
+   "revision": "ec48475f0c811d812fbfb61975717a9c36eeb652"
+  },
+  "ministral-3-3b": {
+   "file": "Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+   "repo": "mistralai/Ministral-3-3B-Instruct-2512-GGUF",
+   "revision": "eb599d408350ea2bb60452cb86be7c7b2fc28227"
+  },
+  "ministral-3-8b": {
+   "file": "Ministral-3-8B-Instruct-2512-Q4_K_M.gguf",
+   "repo": "mistralai/Ministral-3-8B-Instruct-2512-GGUF",
+   "revision": "0102285ad796bd99af90f58de616092e5630e970"
+  },
+  "qwen3.5-2b": {
+   "file": "Qwen3.5-2B-Q4_K_M.gguf",
+   "repo": "unsloth/Qwen3.5-2B-GGUF",
+   "revision": "f6d5376be1edb4d416d56da11e5397a961aca8ae"
+  },
+  "qwen3.5-4b": {
+   "file": "Qwen3.5-4B-Q4_K_M.gguf",
+   "repo": "unsloth/Qwen3.5-4B-GGUF",
+   "revision": "e87f176479d0855a907a41277aca2f8ee7a09523"
+  }
+ },
+ "questions": 200,
+ "rule": {
+  "best_western_family": "gemma-4",
+  "joins_beside_qwen": "gemma-4",
+  "outcome": "gemma-4 joins every Czech run beside Qwen"
+ },
+ "yes_no_questions": 100
+}

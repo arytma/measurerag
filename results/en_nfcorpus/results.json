@@ -1,0 +1,741 @@
+{
+  "budgets": [
+    {
+      "e2e_s": null,
+      "name": "ram4g_ret200ms",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram4g_ret500ms",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram8g_ret200ms",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram8g_ret500ms",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram16g_ret200ms",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram16g_ret500ms",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 2000,
+      "name": "nfcorpus",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "en_nfcorpus",
+    "out_dir": "results/en_nfcorpus",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 10800
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "nfcorpus",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "b5147cf309c8c8e09a18fa874d8aa2c1036f2c4779b6df64e71b79c6370a16d0",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (NFCorpus, Boteva et al. 2016)",
+      "n_answers": 0,
+      "n_docs": 3633,
+      "n_qrels": 12334,
+      "n_queries": 323,
+      "name": "beir-nfcorpus",
+      "notes": [
+        "BEIR mirror on Hugging Face; the canonical zips are outside this kit's network allowlist."
+      ],
+      "qrels_sha256": "ee70717099a77ded57a5fe9a6b0672d167cf4440049be16363c3732e2b77be12",
+      "queries_sha256": "9fe14ca8e7bee77867e726227a33df6eb50261026f0ae1851958b050ea12fd48",
+      "source": "https://huggingface.co/datasets/BeIR/nfcorpus (split test)"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.3397829589994217,
+        "index_bytes": 4527109,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 3633
+      },
+      "config_id": "bm25",
+      "dataset": "beir-nfcorpus",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 4527109,
+        "model_bytes": 0,
+        "peak_rss_gb": 0.3636,
+        "retrieval_ms_p50": 0.0944580006034812,
+        "retrieval_ms_p95": 0.12937499923282303
+      },
+      "metrics": {
+        "gold_in_context@5": 0.6160990712074303,
+        "n_queries": 323.0,
+        "ndcg@10": 0.30449021980467694,
+        "ndcg@100": 0.26239301929013076,
+        "recall@10": 0.14641067054843881,
+        "recall@100": 0.23924928947975369
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retrieval_latency_ms": {
+        "mean": 0.10076248307385116,
+        "n": 323.0,
+        "p50": 0.0944580006034812,
+        "p95": 0.12937499923282303
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 0.39163495800130477,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 1.45
+    },
+    {
+      "build": {
+        "build_seconds": 1.0025612079989514,
+        "index_bytes": 3720320,
+        "model_bytes": 0,
+        "n_components": 256,
+        "n_docs": 3633,
+        "vocab": 26475
+      },
+      "config_id": "tfidf-svd",
+      "dataset": "beir-nfcorpus",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 3720320,
+        "model_bytes": 0,
+        "peak_rss_gb": 0.6839,
+        "retrieval_ms_p50": 1.4603750005335314,
+        "retrieval_ms_p95": 1.6661249992466765
+      },
+      "metrics": {
+        "gold_in_context@5": 0.541795665634675,
+        "n_queries": 323.0,
+        "ndcg@10": 0.27097049769435316,
+        "ndcg@100": 0.27076186040453093,
+        "recall@10": 0.13994599407558256,
+        "recall@100": 0.30451895290919534
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retrieval_latency_ms": {
+        "mean": 1.494420891613793,
+        "n": 323.0,
+        "p50": 1.4603750005335314,
+        "p95": 1.6661249992466765
+      },
+      "retriever_id": "tfidf-svd",
+      "retriever_kind": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "retriever_params": {
+        "device": "cpu",
+        "n_components": 256
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 2.3107762909985468,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 3.43
+    },
+    {
+      "build": {
+        "build_seconds": 118.39664958400135,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 5580333,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 3633,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small",
+      "dataset": "beir-nfcorpus",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 5580333,
+        "model_bytes": 493292828,
+        "peak_rss_gb": 1.9563,
+        "retrieval_ms_p50": 9.780333000890096,
+        "retrieval_ms_p95": 21.01783299985982
+      },
+      "metrics": {
+        "gold_in_context@5": 0.6130030959752322,
+        "n_queries": 323.0,
+        "ndcg@10": 0.31004843396402354,
+        "ndcg@100": 0.28039508230973736,
+        "recall@10": 0.15039340620504202,
+        "recall@100": 0.2736556303951838
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retrieval_latency_ms": {
+        "mean": 10.970108195018748,
+        "n": 323.0,
+        "p50": 9.780333000890096,
+        "p95": 21.01783299985982
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 121.97480191700015,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 123.74
+    },
+    {
+      "build": {
+        "build_seconds": 273.07042629199896,
+        "device": "cpu",
+        "dim": 768,
+        "index_bytes": 11160621,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-base",
+        "model_bytes": 1134534380,
+        "n_docs": 3633,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-base",
+      "dataset": "beir-nfcorpus",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 11160621,
+        "model_bytes": 1134534380,
+        "peak_rss_gb": 2.6311,
+        "retrieval_ms_p50": 14.448708001509658,
+        "retrieval_ms_p95": 17.949917000805726
+      },
+      "metrics": {
+        "gold_in_context@5": 0.6099071207430341,
+        "n_queries": 323.0,
+        "ndcg@10": 0.3248717126438839,
+        "ndcg@100": 0.2895486359163233,
+        "recall@10": 0.1557325707660669,
+        "recall@100": 0.2851055678351197
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retrieval_latency_ms": {
+        "mean": 14.46362836843836,
+        "n": 323.0,
+        "p50": 14.448708001509658,
+        "p95": 17.949917000805726
+      },
+      "retriever_id": "e5-base",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-base+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-base"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 277.7782257500003,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 279.98
+    },
+    {
+      "build": {
+        "build_seconds": 57.895224957999744,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 3720237,
+        "index_type": "flat",
+        "model": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+        "model_bytes": 99164889,
+        "n_docs": 3633,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "simcse-cs-en",
+      "dataset": "beir-nfcorpus",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 3720237,
+        "model_bytes": 99164889,
+        "peak_rss_gb": 1.2556,
+        "retrieval_ms_p50": 2.9946249997010455,
+        "retrieval_ms_p95": 3.4282500000699656
+      },
+      "metrics": {
+        "gold_in_context@5": 0.5634674922600619,
+        "n_queries": 323.0,
+        "ndcg@10": 0.259612516862738,
+        "ndcg@100": 0.24819170810939964,
+        "recall@10": 0.12058332185021674,
+        "recall@100": 0.27845721499464643
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retrieval_latency_ms": {
+        "mean": 3.031055699669114,
+        "n": 323.0,
+        "p50": 2.9946249997010455,
+        "p95": 3.4282500000699656
+      },
+      "retriever_id": "simcse-cs-en",
+      "retriever_kind": "dense",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "simcse-cs-en"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 58.89880991700011,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 60.15
+    },
+    {
+      "build": {
+        "build_seconds": 1010.1454582089991,
+        "device": "cpu",
+        "dim": 1024,
+        "index_bytes": 14880813,
+        "index_type": "flat",
+        "model": "BAAI/bge-m3",
+        "model_bytes": 2293331623,
+        "n_docs": 3633,
+        "pooling": "cls",
+        "pooling_source": "repo"
+      },
+      "config_id": "bge-m3",
+      "dataset": "beir-nfcorpus",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 14880813,
+        "model_bytes": 2293331623,
+        "peak_rss_gb": 4.7762,
+        "retrieval_ms_p50": 41.56120799962082,
+        "retrieval_ms_p95": 44.93395899953612
+      },
+      "metrics": {
+        "gold_in_context@5": 0.631578947368421,
+        "n_queries": 323.0,
+        "ndcg@10": 0.31460336731789684,
+        "ndcg@100": 0.2848836306057884,
+        "recall@10": 0.14745007894097883,
+        "recall@100": 0.28258650352141446
+      },
+      "n_docs": 3633,
+      "n_queries": 323,
+      "retrieval_latency_ms": {
+        "mean": 42.410016139308446,
+        "n": 323.0,
+        "p50": 41.56120799962082,
+        "p95": 44.93395899953612
+      },
+      "retriever_id": "bge-m3",
+      "retriever_kind": "dense",
+      "retriever_name": "bge-m3+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "bge-m3"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1023.8715680410005,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.78 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.78 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 1025.21
+    }
+  ]
+}

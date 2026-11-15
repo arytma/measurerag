@@ -1,0 +1,9 @@
+{
+ "config": "e5-small+qwen2.5-1.5b",
+ "generations": 54,
+ "generations_before": 3138,
+ "max_tokens": 64,
+ "questions": 55,
+ "seconds": 441.4,
+ "seed": 20260101
+}

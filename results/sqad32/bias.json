@@ -1,0 +1,803 @@
+{
+ "bias": {
+  "sqad30_archive_all": {
+   "answer_first_50_chars_share_of_all_pairs": 0.2556,
+   "answer_first_50_chars_share_of_span_answers": 0.3172,
+   "answer_position_bins": {
+    "0-50": 3445,
+    "100-200": 1730,
+    "200-400": 2085,
+    "400-700": 1578,
+    "50-100": 1679,
+    "700-end": 344
+   },
+   "answer_position_deciles": [
+    0.0,
+    19.0,
+    45.0,
+    73.0,
+    113.0,
+    176.0,
+    260.0,
+    371.0,
+    521.8
+   ],
+   "context_chars_deciles": [
+    290.0,
+    403.0,
+    495.0,
+    578.0,
+    665.0,
+    752.0,
+    820.0,
+    878.0,
+    927.0
+   ],
+   "flag_any": 4905,
+   "flag_any_share": 0.364,
+   "flag_both": 1027,
+   "flag_early": 3445,
+   "flag_heavy": 2487,
+   "label": "SQAD 3.0 archive, all records, reconstructed windows",
+   "n_pairs": 13476,
+   "overlap_jaccard_diacritics_kept_deciles": [
+    0.0242,
+    0.0331,
+    0.0404,
+    0.0481,
+    0.0562,
+    0.0656,
+    0.0779,
+    0.0959,
+    0.1364
+   ],
+   "overlap_jaccard_diacritics_stripped_deciles": [
+    0.0246,
+    0.0333,
+    0.0408,
+    0.0485,
+    0.0566,
+    0.066,
+    0.0787,
+    0.0968,
+    0.1379
+   ],
+   "overlap_question_answer_sentence_deciles": [
+    0.0526,
+    0.087,
+    0.12,
+    0.1538,
+    0.1935,
+    0.25,
+    0.3077,
+    0.4,
+    0.5529
+   ],
+   "yes_no_or_no_position": 2615
+  },
+  "sqad30_as_released_200": {
+   "answer_first_50_chars_share_of_all_pairs": 0.045,
+   "answer_first_50_chars_share_of_span_answers": 0.0566,
+   "answer_position_bins": {
+    "0-50": 9,
+    "100-200": 27,
+    "200-400": 57,
+    "400-700": 28,
+    "50-100": 19,
+    "700-end": 19
+   },
+   "answer_position_deciles": [
+    76.0,
+    120.0,
+    166.0,
+    220.0,
+    257.0,
+    327.0,
+    395.0,
+    509.0,
+    745.0
+   ],
+   "context_chars_deciles": [
+    472.2,
+    605.2,
+    689.8,
+    749.8,
+    814.5,
+    851.6,
+    893.7,
+    935.0,
+    999.5
+   ],
+   "flag_any": 24,
+   "flag_any_share": 0.12,
+   "flag_both": 1,
+   "flag_early": 9,
+   "flag_heavy": 16,
+   "label": "SQAD 3.0 copy, the 200 questions of the released results",
+   "n_pairs": 200,
+   "overlap_jaccard_diacritics_kept_deciles": [
+    0.0209,
+    0.0295,
+    0.0353,
+    0.0428,
+    0.0494,
+    0.0558,
+    0.0625,
+    0.0745,
+    0.0891
+   ],
+   "overlap_jaccard_diacritics_stripped_deciles": [
+    0.0209,
+    0.0295,
+    0.0357,
+    0.0435,
+    0.0498,
+    0.0562,
+    0.0629,
+    0.0765,
+    0.0931
+   ],
+   "overlap_question_answer_sentence_deciles": [
+    0.0459,
+    0.08,
+    0.1275,
+    0.1548,
+    0.2029,
+    0.2703,
+    0.3333,
+    0.4444,
+    0.6
+   ],
+   "yes_no_or_no_position": 41
+  },
+  "sqad30_copy_all": {
+   "answer_first_50_chars_share_of_all_pairs": 0.0518,
+   "answer_first_50_chars_share_of_span_answers": 0.0636,
+   "answer_position_bins": {
+    "0-50": 397,
+    "100-200": 1273,
+    "200-400": 1758,
+    "400-700": 1547,
+    "50-100": 499,
+    "700-end": 771
+   },
+   "answer_position_deciles": [
+    76.0,
+    129.0,
+    175.0,
+    226.0,
+    291.0,
+    373.0,
+    470.0,
+    592.0,
+    735.0
+   ],
+   "context_chars_deciles": [
+    467.0,
+    595.0,
+    689.0,
+    759.0,
+    818.0,
+    865.0,
+    904.0,
+    938.0,
+    984.6
+   ],
+   "flag_any": 1089,
+   "flag_any_share": 0.1421,
+   "flag_both": 63,
+   "flag_early": 397,
+   "flag_heavy": 755,
+   "label": "SQAD 3.0 copy, all rows, its own contexts",
+   "n_pairs": 7663,
+   "overlap_jaccard_diacritics_kept_deciles": [
+    0.0213,
+    0.0297,
+    0.0367,
+    0.043,
+    0.0496,
+    0.0574,
+    0.0659,
+    0.0784,
+    0.1
+   ],
+   "overlap_jaccard_diacritics_stripped_deciles": [
+    0.0217,
+    0.03,
+    0.037,
+    0.0435,
+    0.05,
+    0.0579,
+    0.0667,
+    0.0792,
+    0.1
+   ],
+   "overlap_question_answer_sentence_deciles": [
+    0.0476,
+    0.0909,
+    0.1304,
+    0.1667,
+    0.2143,
+    0.2667,
+    0.3333,
+    0.4286,
+    0.5833
+   ],
+   "yes_no_or_no_position": 1418
+  },
+  "sqad30_copy_test": {
+   "answer_first_50_chars_share_of_all_pairs": 0.0546,
+   "answer_first_50_chars_share_of_span_answers": 0.0693,
+   "answer_position_bins": {
+    "0-50": 46,
+    "100-200": 134,
+    "200-400": 199,
+    "400-700": 153,
+    "50-100": 55,
+    "700-end": 77
+   },
+   "answer_position_deciles": [
+    65.0,
+    129.0,
+    171.0,
+    219.0,
+    272.0,
+    353.0,
+    442.0,
+    552.0,
+    725.5
+   ],
+   "context_chars_deciles": [
+    457.8,
+    585.8,
+    680.6,
+    749.6,
+    817.0,
+    864.0,
+    905.0,
+    935.0,
+    985.6
+   ],
+   "flag_any": 125,
+   "flag_any_share": 0.1483,
+   "flag_both": 11,
+   "flag_early": 46,
+   "flag_heavy": 90,
+   "label": "SQAD 3.0 copy, test split",
+   "n_pairs": 843,
+   "overlap_jaccard_diacritics_kept_deciles": [
+    0.0213,
+    0.0294,
+    0.036,
+    0.043,
+    0.0496,
+    0.0583,
+    0.068,
+    0.0808,
+    0.1034
+   ],
+   "overlap_jaccard_diacritics_stripped_deciles": [
+    0.0215,
+    0.0296,
+    0.036,
+    0.0435,
+    0.0505,
+    0.0585,
+    0.069,
+    0.0817,
+    0.1046
+   ],
+   "overlap_question_answer_sentence_deciles": [
+    0.05,
+    0.087,
+    0.1333,
+    0.1667,
+    0.2222,
+    0.2857,
+    0.3559,
+    0.4444,
+    0.5993
+   ],
+   "yes_no_or_no_position": 179
+  },
+  "sqad32_all": {
+   "answer_first_50_chars_share_of_all_pairs": 0.2391,
+   "answer_first_50_chars_share_of_span_answers": 0.2807,
+   "answer_position_bins": {
+    "0-50": 3831,
+    "100-200": 2172,
+    "200-400": 2878,
+    "400-700": 2393,
+    "50-100": 1935,
+    "700-end": 437
+   },
+   "answer_position_deciles": [
+    0.0,
+    27.0,
+    56.0,
+    89.0,
+    143.0,
+    214.0,
+    303.0,
+    408.0,
+    544.0
+   ],
+   "context_chars_deciles": [
+    303.0,
+    421.0,
+    517.0,
+    610.0,
+    703.0,
+    784.0,
+    845.0,
+    894.0,
+    940.0
+   ],
+   "flag_any": 5485,
+   "flag_any_share": 0.3423,
+   "flag_both": 1128,
+   "flag_early": 3831,
+   "flag_heavy": 2782,
+   "label": "SQAD 3.2, all records, reconstructed windows",
+   "n_pairs": 16025,
+   "overlap_jaccard_diacritics_kept_deciles": [
+    0.0227,
+    0.0317,
+    0.039,
+    0.0464,
+    0.0543,
+    0.0632,
+    0.075,
+    0.093,
+    0.1304
+   ],
+   "overlap_jaccard_diacritics_stripped_deciles": [
+    0.0233,
+    0.0323,
+    0.0396,
+    0.0469,
+    0.0548,
+    0.0638,
+    0.0758,
+    0.0941,
+    0.1316
+   ],
+   "overlap_question_answer_sentence_deciles": [
+    0.0455,
+    0.0811,
+    0.1111,
+    0.1481,
+    0.1842,
+    0.2308,
+    0.2857,
+    0.375,
+    0.5238
+   ],
+   "yes_no_or_no_position": 2379
+  },
+  "sqad32_test": {
+   "answer_first_50_chars_share_of_all_pairs": 0.2419,
+   "answer_first_50_chars_share_of_span_answers": 0.2844,
+   "answer_position_bins": {
+    "0-50": 1154,
+    "100-200": 660,
+    "200-400": 841,
+    "400-700": 715,
+    "50-100": 549,
+    "700-end": 139
+   },
+   "answer_position_deciles": [
+    0.0,
+    26.0,
+    55.0,
+    89.0,
+    148.0,
+    212.0,
+    301.0,
+    412.0,
+    554.1
+   ],
+   "context_chars_deciles": [
+    293.0,
+    412.0,
+    513.0,
+    606.0,
+    699.0,
+    783.2,
+    844.0,
+    892.0,
+    941.0
+   ],
+   "flag_any": 1630,
+   "flag_any_share": 0.3416,
+   "flag_both": 369,
+   "flag_early": 1154,
+   "flag_heavy": 845,
+   "label": "SQAD 3.2, test split",
+   "n_pairs": 4771,
+   "overlap_jaccard_diacritics_kept_deciles": [
+    0.0225,
+    0.0316,
+    0.0388,
+    0.0465,
+    0.0541,
+    0.0633,
+    0.0755,
+    0.0938,
+    0.1333
+   ],
+   "overlap_jaccard_diacritics_stripped_deciles": [
+    0.023,
+    0.0323,
+    0.0392,
+    0.0469,
+    0.0545,
+    0.0639,
+    0.0769,
+    0.0945,
+    0.1351
+   ],
+   "overlap_question_answer_sentence_deciles": [
+    0.0455,
+    0.0833,
+    0.1111,
+    0.1481,
+    0.1818,
+    0.2308,
+    0.2857,
+    0.381,
+    0.5258
+   ],
+   "yes_no_or_no_position": 713
+  }
+ },
+ "copy_is_filtered": {
+  "answer_in_first_50_chars_of_article": {
+   "dropped": 3362,
+   "kept": 410
+  },
+  "answer_later_or_yes_no": {
+   "dropped": 2436,
+   "kept": 7253
+  },
+  "answer_sentence_later_in_article": {
+   "dropped": 0,
+   "kept": 7019
+  },
+  "answer_sentence_not_located": {
+   "dropped": 15,
+   "kept": 0
+  },
+  "answer_sentence_opens_article": {
+   "dropped": 5798,
+   "kept": 644
+  },
+  "copy_rows_with_same_id_and_question_in_30": 7663,
+  "later_sentences_by_question_sentence_jaccard": {
+   "0.0": {
+    "dropped": 0,
+    "kept": 1507
+   },
+   "0.1": {
+    "dropped": 0,
+    "kept": 1637
+   },
+   "0.2": {
+    "dropped": 0,
+    "kept": 1344
+   },
+   "0.3": {
+    "dropped": 0,
+    "kept": 841
+   },
+   "0.4": {
+    "dropped": 0,
+    "kept": 517
+   },
+   "0.5": {
+    "dropped": 0,
+    "kept": 471
+   },
+   "0.6": {
+    "dropped": 0,
+    "kept": 273
+   },
+   "0.7": {
+    "dropped": 0,
+    "kept": 237
+   },
+   "0.8": {
+    "dropped": 0,
+    "kept": 91
+   },
+   "0.9": {
+    "dropped": 0,
+    "kept": 101
+   }
+  }
+ },
+ "inventory": {
+  "copy_alternatives_per_question": {
+   "1": 7458,
+   "2": 146,
+   "3": 40,
+   "4": 12,
+   "5": 3,
+   "6": 4
+  },
+  "copy_answer_start_is_answer_text": 495,
+  "copy_gold_differs_from_32": 285,
+  "copy_gold_same_as_32_after_normalising": 7360,
+  "copy_questions_found_in_32": 7645,
+  "copy_questions_not_found_in_32": 18,
+  "copy_questions_same_id_in_32": 988,
+  "copy_records_matched_distinct_32_ids": 7640,
+  "sqad30_copy_distinct_contexts": 7535,
+  "sqad30_copy_rows": 7663,
+  "sqad30_copy_splits": {
+   "test": 843,
+   "train": 6250,
+   "validation": 570
+  },
+  "sqad30_lindat_records_stated": 13477,
+  "sqad32_answer_types": [
+   [
+    "YES_NO",
+    2373
+   ],
+   [
+    "OTHER",
+    2180
+   ],
+   [
+    "DATETIME",
+    2006
+   ],
+   [
+    "ENTITY",
+    1998
+   ],
+   [
+    "PERSON",
+    1968
+   ],
+   [
+    "LOCATION",
+    1708
+   ],
+   [
+    "NUMERIC",
+    1616
+   ],
+   [
+    "ABBREVIATION",
+    919
+   ],
+   [
+    "CLAUSE",
+    438
+   ],
+   [
+    "ORGANIZATION",
+    303
+   ],
+   [
+    "ADJ_PHRASE",
+    236
+   ],
+   [
+    "DENOTATION",
+    196
+   ],
+   [
+    "NOUN_PHRASE",
+    70
+   ],
+   [
+    "ADV_PHRASE",
+    14
+   ]
+  ],
+  "sqad32_articles": 8943,
+  "sqad32_distinct_windows": 14669,
+  "sqad32_records": 16025,
+  "sqad32_span_answers": 13652,
+  "sqad32_splits": {
+   "eval": 1672,
+   "test": 4771,
+   "train": 9582
+  },
+  "sqad32_yes_no": 2373
+ },
+ "jaccard_rule_drivers_sqad30_copy": {
+  "corr_with_context_chars": -0.4455,
+  "corr_with_question_answer_sentence_overlap": 0.5517
+ },
+ "jaccard_rule_drivers_sqad32": {
+  "corr_with_context_chars": -0.5012,
+  "corr_with_question_answer_sentence_overlap": 0.4581
+ },
+ "opens_article_sqad30_archive": {
+  "answer_sentence_opens_article": 6442,
+  "caught_by_either_rule": 4179,
+  "caught_by_rule_1": 3416,
+  "pairs": 13476,
+  "share": 0.478,
+  "share_caught_by_either_rule": 0.6487
+ },
+ "opens_article_sqad30_copy": {
+  "answer_sentence_opens_article": 644,
+  "pairs": 7663,
+  "share": 0.084
+ },
+ "opens_article_sqad32_test": {
+  "answer_sentence_opens_article": 2002,
+  "caught_by_either_rule": 1348,
+  "caught_by_rule_1": 1126,
+  "pairs": 4771,
+  "share": 0.4196,
+  "share_caught_by_either_rule": 0.6733
+ },
+ "rule1_against_article_position_32_test": {
+  "both": 1144,
+  "first_50_of_article": 1251,
+  "first_50_of_window": 1154,
+  "span_answers": 4058
+ },
+ "sqad30_vs_32": {
+  "files_30": [
+   "01question",
+   "02answer",
+   "03text",
+   "04url",
+   "05metadata",
+   "06answer.selection",
+   "07answer.prediction",
+   "08question_context",
+   "09answer_extraction"
+  ],
+  "files_32": [
+   "01question",
+   "02yes_no_answer",
+   "03text",
+   "04url",
+   "05metadata",
+   "06answer.selection",
+   "08question_context",
+   "09answer_extraction",
+   "10title",
+   "11source.html"
+  ],
+  "ids_in_common": 13476,
+  "ids_in_common_with_same_question": 2102,
+  "in_both_same_answer": 12837,
+  "in_both_same_answer_sentence": 13321,
+  "in_both_same_article_text": 13266,
+  "questions_in_both": 13385,
+  "questions_only_30": 70,
+  "questions_only_32": 2614,
+  "sqad30_answer_types": [
+   [
+    "YES_NO",
+    2262
+   ],
+   [
+    "OTHER",
+    2248
+   ],
+   [
+    "DATETIME",
+    1969
+   ],
+   [
+    "PERSON",
+    1780
+   ],
+   [
+    "ENTITY",
+    1773
+   ],
+   [
+    "LOCATION",
+    1657
+   ],
+   [
+    "NUMERIC",
+    999
+   ],
+   [
+    "ABBREVIATION",
+    322
+   ],
+   [
+    "ORGANIZATION",
+    283
+   ],
+   [
+    "DENOTATION",
+    183
+   ]
+  ],
+  "sqad30_articles": 6904,
+  "sqad30_distinct_questions": 13455,
+  "sqad30_has_official_split": false,
+  "sqad30_lindat_records_stated": 13477,
+  "sqad30_records_in_archive": 13476,
+  "sqad32_distinct_questions": 15999
+ },
+ "threshold_full": 0.1,
+ "threshold_overlap_p90_of_sqad30_copy": 0.1,
+ "window_fit": {
+  "ours_chars_after_answer_sentence_deciles": [
+   57.0,
+   138.0,
+   196.8,
+   250.0,
+   298.0,
+   349.0,
+   402.0,
+   460.0,
+   539.0
+  ],
+  "ours_chars_before_answer_sentence_deciles": [
+   34.0,
+   82.0,
+   118.0,
+   156.0,
+   202.0,
+   256.0,
+   316.0,
+   383.0,
+   482.0
+  ],
+  "ours_ends_with_dots": 0.9291,
+  "ours_length_deciles": [
+   419.0,
+   561.0,
+   677.0,
+   756.0,
+   805.0,
+   846.0,
+   878.0,
+   909.0,
+   942.4
+  ],
+  "ours_starts_with_dots": 0.5823,
+  "questions": 7645,
+  "real_chars_after_answer_sentence_deciles": [
+   53.0,
+   94.0,
+   147.0,
+   204.0,
+   269.0,
+   340.0,
+   414.0,
+   491.0,
+   579.0
+  ],
+  "real_chars_before_answer_sentence_deciles": [
+   29.0,
+   79.0,
+   116.0,
+   159.0,
+   211.0,
+   281.0,
+   365.0,
+   465.0,
+   585.0
+  ],
+  "real_ends_with_dots": 0.9279,
+  "real_length_deciles": [
+   464.0,
+   591.2,
+   685.0,
+   755.0,
+   814.0,
+   860.0,
+   899.0,
+   933.0,
+   980.0
+  ],
+  "real_starts_with_dots": 0.5725
+ }
+}

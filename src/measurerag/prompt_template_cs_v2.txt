@@ -1,0 +1,7 @@
+Odpovídej pouze podle očíslovaného kontextu níže. Odpověz co nejkratším úsekem textu, který na otázku odpovídá: jménem, číslem, datem nebo slovním spojením. Na otázky typu ano/ne odpověz pouze slovem ano, nebo ne. Nic nevysvětluj, neopakuj otázku a nepřidávej k odpovědi žádnou větu. Pokud kontext odpověď neobsahuje, odpověz přesně: nelze odpovědět
+
+Kontext:
+{context}
+
+Otázka: {question}
+Odpověď:

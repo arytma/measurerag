@@ -1,0 +1,5 @@
+config_id,retriever_id,retriever_name,dataset,language,device,status,n_docs,n_queries,ndcg@10,recall@10,recall@100,peak_rss_gb,index_mb,model_mb,retrieval_ms_p50,retrieval_ms_p95,build_seconds,gold_in_context@5,fits:ram4g_ret200ms,fits:ram4g_ret500ms,fits:ram8g_ret200ms,fits:ram8g_ret500ms,fits:ram16g_ret200ms,fits:ram16g_ret500ms,pooling,pooling_source
+bm25,bm25,bm25,csfever-v2,cs,cpu,ok,100000,500,0.7393132694586292,0.847,0.9162857142857144,1.5605,70.43,0.0,0.61,1.02,5.05,0.84,FITS,FITS,FITS,FITS,FITS,FITS,,
+bm25-nodiacritics,bm25-nodiacritics,bm25,csfever-v2,cs,cpu,ok,100000,500,0.7540199736453996,0.859,0.9212857142857144,1.4643,69.02,0.0,0.61,1.03,7.15,0.858,FITS,FITS,FITS,FITS,FITS,FITS,,
+e5-small,e5-small,e5-small+faiss-flat,csfever-v2,cs,cpu,ok,100000,500,0.7011778518690959,0.7766190476190475,0.8502857142857143,2.2507,146.48,470.44,7.33,7.8,1401.68,0.778,FITS,FITS,FITS,FITS,FITS,FITS,mean,repo
+simcse-cs-en,simcse-cs-en,simcse-cs-en+faiss-flat,csfever-v2,cs,cpu,ok,100000,500,0.5073644587026783,0.6576190476190475,0.8484761904761905,1.6061,97.66,94.57,4.66,5.0,726.04,0.626,FITS,FITS,FITS,FITS,FITS,FITS,cls,declared ('mean' would have been used)

@@ -1,0 +1,157 @@
+{
+  "answers": {
+    "em": 0.242,
+    "f1": 0.31439992931045563,
+    "n_answered": 500.0
+  },
+  "build": {
+    "b": 0.4,
+    "backend": "bm25s",
+    "build_seconds": 2.3360467919846997,
+    "index_bytes": 33137170,
+    "k1": 0.9,
+    "model_bytes": 0,
+    "n_docs": 100000
+  },
+  "config_id": "bm25+qwen2.5-1.5b",
+  "dataset": "hotpotqa-rag",
+  "device": "cpu",
+  "e2e_latency_s": {
+    "mean": 3.7990839144238855,
+    "n": 500.0,
+    "p50": 3.6851229580061045,
+    "p95": 5.7247163749998435
+  },
+  "generator": {
+    "completion_tokens": 1699,
+    "key": "qwen2.5-1.5b",
+    "model_bytes": 1117320736,
+    "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "status": "ok",
+    "tokens_per_s": 0.8944779307356474
+  },
+  "language": "en",
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.0.1",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "measurement": {
+    "e2e_s_p50": 3.6851229580061045,
+    "e2e_s_p95": 5.7247163749998435,
+    "gen_tokens_per_s": 0.8944779307356474,
+    "index_bytes": 33137170,
+    "model_bytes": 1117320736,
+    "peak_rss_gb": 2.8823,
+    "retrieval_ms_p50": 1.126791990827769,
+    "retrieval_ms_p95": 1.5102500037755817
+  },
+  "metrics": {
+    "gold_in_context@5": 0.984,
+    "n_queries": 500.0,
+    "ndcg@10": 0.8436853473698505,
+    "ndcg@100": 0.8652709809149706,
+    "recall@10": 0.851,
+    "recall@100": 0.935
+  },
+  "n_docs": 100000,
+  "n_queries": 500,
+  "note": "predictions removed: per-question outputs are never committed; the measurement is kept as the record of the rejected attempt",
+  "rag_status": "ok",
+  "retrieval_latency_ms": {
+    "mean": 1.1308202291256748,
+    "n": 500.0,
+    "p50": 1.126791990827769,
+    "p95": 1.5102500037755817
+  },
+  "retriever_id": "bm25",
+  "retriever_kind": "bm25",
+  "retriever_name": "bm25",
+  "retriever_params": {
+    "device": "cpu"
+  },
+  "status": "ok",
+  "threads": {
+    "build": 10,
+    "query": 1
+  },
+  "total_seconds": 1903.1310644580226,
+  "verdicts": [
+    {
+      "budget": "ram4g_ret200ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 5.72 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram4g_ret200ms_e2e8s",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram4g_ret500ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 5.72 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram4g_ret500ms_e2e8s",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram8g_ret200ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 5.72 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram8g_ret200ms_e2e8s",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram8g_ret500ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 5.72 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram8g_ret500ms_e2e8s",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram16g_ret200ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 5.72 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram16g_ret200ms_e2e8s",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram16g_ret500ms_e2e3s",
+      "fits": false,
+      "reasons": [
+        "end-to-end p95 5.72 s > 3 s"
+      ]
+    },
+    {
+      "budget": "ram16g_ret500ms_e2e8s",
+      "fits": true,
+      "reasons": []
+    }
+  ]
+}

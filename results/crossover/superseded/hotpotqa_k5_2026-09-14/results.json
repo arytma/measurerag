@@ -1,0 +1,505 @@
+{
+  "budgets": [
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret200ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret200ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret500ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret500ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret200ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret200ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret500ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret500ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret200ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret200ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret500ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret500ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 500,
+      "name": "hotpotqa-rag",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "crossover_hotpotqa_k5",
+    "out_dir": "results/crossover/natural/hotpotqa_k5",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b",
+        "qwen2.5-3b"
+      ],
+      "max_tokens": 64,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "hotpotqa-rag",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "d958b91ac99554395e6fbc3a572e199a119babeb2ac81e15bc71e0e271cb7130",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (HotpotQA, Yang et al. 2018; BEIR mirror)",
+      "n_answers": 500,
+      "n_docs": 100000,
+      "n_qrels": 1000,
+      "n_queries": 500,
+      "name": "hotpotqa-rag",
+      "notes": [
+        "Answers come from the distractor split; retrieval gold comes from BEIR qrels. They join on the HotpotQA question id.",
+        "Corpus capped by a seeded reservoir sample with every gold paragraph forced in, so recall is bounded by the retriever, not by the sampling.",
+        "Multi-hop: a question needs two paragraphs, so gold-in-context@k here means 'at least one', which is a floor, not the full evidence."
+      ],
+      "qrels_sha256": "f24b72dd80e299dcb70157434778b012c89d518c175e3073033f8fa556592ee0",
+      "queries_sha256": "091bb0a89f24f001dc3fd72ce3025991b07884dd22b986a9e5bad55e63921fa2",
+      "source": "BeIR/hotpotqa corpus + hotpotqa/hotpot_qa distractor/validation answers"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "answers": {
+        "em": 0.27,
+        "f1": 0.3588836718836719,
+        "n_answered": 500.0
+      },
+      "build": {
+        "build_seconds": 1597.539266458989,
+        "device": "cpu",
+        "dim": 768,
+        "index_bytes": 307200045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-base",
+        "model_bytes": 1134534380,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-base+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 2.887968230273924,
+        "n": 500.0,
+        "p50": 2.7708214159938507,
+        "p95": 4.426353125003516
+      },
+      "generator": {
+        "completion_tokens": 1843,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 1.276418465881788
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 2.7708214159938507,
+        "e2e_s_p95": 4.426353125003516,
+        "gen_tokens_per_s": 1.276418465881788,
+        "index_bytes": 307200045,
+        "model_bytes": 2251855116,
+        "peak_rss_gb": 4.7268,
+        "retrieval_ms_p50": 22.82158299931325,
+        "retrieval_ms_p95": 29.816207999829203
+      },
+      "metrics": {
+        "gold_in_context@5": 0.992,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8826099059111748,
+        "ndcg@100": 0.9005347707259064,
+        "recall@10": 0.891,
+        "recall@100": 0.96
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 23.387021741946228,
+        "n": 500.0,
+        "p50": 22.82158299931325,
+        "p95": 29.816207999829203
+      },
+      "retriever_id": "e5-base",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-base+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-base"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 3054.740027417007,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.73 GB > 4 GB",
+            "end-to-end p95 4.43 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.73 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.73 GB > 4 GB",
+            "end-to-end p95 4.43 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.73 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 4.43 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 4.43 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 4.43 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 4.43 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 3056.94
+    },
+    {
+      "answers": {
+        "em": 0.324,
+        "f1": 0.4145763125763126,
+        "n_answered": 500.0
+      },
+      "build": {
+        "build_seconds": 1592.5871693749941,
+        "device": "cpu",
+        "dim": 768,
+        "index_bytes": 307200045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-base",
+        "model_bytes": 1134534380,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-base+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 4.876027842259791,
+        "n": 500.0,
+        "p50": 4.704496582999127,
+        "p95": 7.195355707997805
+      },
+      "generator": {
+        "completion_tokens": 1791,
+        "key": "qwen2.5-3b",
+        "model_bytes": 2104932768,
+        "model_path": "hf://Qwen/Qwen2.5-3B-Instruct-GGUF@7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.7346461721382548
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 4.704496582999127,
+        "e2e_s_p95": 7.195355707997805,
+        "gen_tokens_per_s": 0.7346461721382548,
+        "index_bytes": 307200045,
+        "model_bytes": 3239467148,
+        "peak_rss_gb": 6.5173,
+        "retrieval_ms_p50": 19.71241700812243,
+        "retrieval_ms_p95": 25.44412499992177
+      },
+      "metrics": {
+        "gold_in_context@5": 0.992,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8826099059111748,
+        "ndcg@100": 0.9005347707259064,
+        "recall@10": 0.891,
+        "recall@100": 0.96
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 20.836555901623797,
+        "n": 500.0,
+        "p50": 19.71241700812243,
+        "p95": 25.44412499992177
+      },
+      "retriever_id": "e5-base",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-base+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-base"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 4043.385465041996,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.52 GB > 4 GB",
+            "end-to-end p95 7.20 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.52 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.52 GB > 4 GB",
+            "end-to-end p95 7.20 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.52 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.20 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.20 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.20 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.20 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 4045.42
+    }
+  ]
+}

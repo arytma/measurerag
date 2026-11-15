@@ -1,0 +1,52 @@
+# English retrieval, FiQA. Financial question answering: real questions from
+# StackExchange against financial prose, a different register again from
+# scientific claims (SciFact) and medical abstracts (NFCorpus).
+#
+# The specification allows a seeded 20k-document sample when the full 57k corpus would
+# take over 30 minutes to embed with e5-small on CPU. It would - measured on
+# SciFact, e5-small embeds roughly 32 documents a second, so 57k is about 30
+# minutes for e5-small alone and some five hours for bge-m3. The cap is taken
+# and recorded here rather than on the command line, because it is a property of
+# this configuration and belongs in the manifest.
+name: en_fiqa
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 14400
+
+dataset:
+  name: fiqa
+  max_docs: 20000        # seeded sample; the specification's escape hatch, not a shortcut
+  max_queries: 2000
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: tfidf-svd
+    kind: tfidf-svd
+    n_components: 256
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: e5-base
+    kind: dense
+    model: e5-base
+  - id: simcse-cs-en
+    kind: dense
+    model: simcse-cs-en
+  - id: bge-m3
+    kind: dense
+    model: bge-m3
+
+rag:
+  enabled: false

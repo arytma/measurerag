@@ -1,0 +1,28 @@
+configuration           ndcg@10  peak RSS  index     ret p95  EM     F1     e2e p95  ram4g_ret200ms_e2e3s  ram4g_ret200ms_e2e8s  ram4g_ret500ms_e2e3s  ram4g_ret500ms_e2e8s  ram8g_ret200ms_e2e3s  ram8g_ret200ms_e2e8s  ram8g_ret500ms_e2e3s  ram8g_ret500ms_e2e8s  ram16g_ret200ms_e2e3s  ram16g_ret200ms_e2e8s  ram16g_ret500ms_e2e3s  ram16g_ret500ms_e2e8s
+----------------------  -------  --------  --------  -------  -----  -----  -------  --------------------  --------------------  --------------------  --------------------  --------------------  --------------------  --------------------  --------------------  ---------------------  ---------------------  ---------------------  ---------------------
+e5-base+qwen2.5-1.5b    0.8826   4.75 GB   293.0 MB  26.6 ms  0.264  0.352  2.38 s   no                    no                    no                    no                    FITS                  FITS                  FITS                  FITS                  FITS                   FITS                   FITS                   FITS
+e5-base+qwen2.5-3b      0.8826   6.55 GB   293.0 MB  26.5 ms  0.310  0.405  4.69 s   no                    no                    no                    no                    no                    FITS                  no                    FITS                  no                     FITS                   no                     FITS
+bge-m3+qwen2.5-1.5b     0.8721   5.80 GB   390.6 MB  72.9 ms  0.246  0.329  2.81 s   no                    no                    no                    no                    FITS                  FITS                  FITS                  FITS                  FITS                   FITS                   FITS                   FITS
+bge-m3+qwen2.5-3b       0.8721   6.79 GB   390.6 MB  74.4 ms  0.290  0.382  5.16 s   no                    no                    no                    no                    no                    FITS                  no                    FITS                  no                     FITS                   no                     FITS
+e5-small+qwen2.5-1.5b   0.8674   3.89 GB   146.5 MB  9.2 ms   0.264  0.346  2.37 s   FITS                  FITS                  FITS                  FITS                  FITS                  FITS                  FITS                  FITS                  FITS                   FITS                   FITS                   FITS
+e5-small+qwen2.5-3b     0.8674   5.68 GB   146.5 MB  9.2 ms   0.322  0.406  4.68 s   no                    no                    no                    no                    no                    FITS                  no                    FITS                  no                     FITS                   no                     FITS
+bm25+qwen2.5-1.5b       0.8437   2.85 GB   31.6 MB   1.5 ms   0.242  0.325  2.93 s   FITS                  FITS                  FITS                  FITS                  FITS                  FITS                  FITS                  FITS                  FITS                   FITS                   FITS                   FITS
+bm25+qwen2.5-3b         0.8437   4.65 GB   31.6 MB   1.5 ms   0.300  0.393  5.57 s   no                    no                    no                    no                    no                    FITS                  no                    FITS                  no                     FITS                   no                     FITS
+tfidf-svd+qwen2.5-1.5b  0.0953   5.24 GB   97.7 MB   13.3 ms  0.020  0.031  1.97 s   no                    no                    no                    no                    FITS                  FITS                  FITS                  FITS                  FITS                   FITS                   FITS                   FITS
+tfidf-svd+qwen2.5-3b    0.0953   6.99 GB   97.7 MB   14.1 ms  0.038  0.049  4.86 s   no                    no                    no                    no                    no                    FITS                  no                    FITS                  no                     FITS                   no                     FITS
+
+Budgets:
+  ram4g_ret200ms_e2e3s: RAM <= 4 GB, retrieval p95 <= 200 ms, e2e p95 <= 3 s
+  ram4g_ret200ms_e2e8s: RAM <= 4 GB, retrieval p95 <= 200 ms, e2e p95 <= 8 s
+  ram4g_ret500ms_e2e3s: RAM <= 4 GB, retrieval p95 <= 500 ms, e2e p95 <= 3 s
+  ram4g_ret500ms_e2e8s: RAM <= 4 GB, retrieval p95 <= 500 ms, e2e p95 <= 8 s
+  ram8g_ret200ms_e2e3s: RAM <= 8 GB, retrieval p95 <= 200 ms, e2e p95 <= 3 s
+  ram8g_ret200ms_e2e8s: RAM <= 8 GB, retrieval p95 <= 200 ms, e2e p95 <= 8 s
+  ram8g_ret500ms_e2e3s: RAM <= 8 GB, retrieval p95 <= 500 ms, e2e p95 <= 3 s
+  ram8g_ret500ms_e2e8s: RAM <= 8 GB, retrieval p95 <= 500 ms, e2e p95 <= 8 s
+  ram16g_ret200ms_e2e3s: RAM <= 16 GB, retrieval p95 <= 200 ms, e2e p95 <= 3 s
+  ram16g_ret200ms_e2e8s: RAM <= 16 GB, retrieval p95 <= 200 ms, e2e p95 <= 8 s
+  ram16g_ret500ms_e2e3s: RAM <= 16 GB, retrieval p95 <= 500 ms, e2e p95 <= 3 s
+  ram16g_ret500ms_e2e8s: RAM <= 16 GB, retrieval p95 <= 500 ms, e2e p95 <= 8 s
+
+[value] = measured, but the configuration fits no budget in this grid.

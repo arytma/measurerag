@@ -1,0 +1,9 @@
+{
+ "cut_by_the_cap": 0,
+ "different": 0,
+ "generations": 0,
+ "identical": 200,
+ "missing_from_the_dial": 0,
+ "questions": 200,
+ "retriever": "e5-small"
+}

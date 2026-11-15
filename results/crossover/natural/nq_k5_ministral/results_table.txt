@@ -1,0 +1,28 @@
+configuration             ndcg@10   peak RSS  index     ret p95  EM     F1     e2e p95  ram4g_ret200ms_e2e3s  ram4g_ret200ms_e2e8s  ram4g_ret500ms_e2e3s  ram4g_ret500ms_e2e8s  ram8g_ret200ms_e2e3s  ram8g_ret200ms_e2e8s  ram8g_ret500ms_e2e3s  ram8g_ret500ms_e2e8s  ram16g_ret200ms_e2e3s  ram16g_ret200ms_e2e8s  ram16g_ret500ms_e2e3s  ram16g_ret500ms_e2e8s
+------------------------  --------  --------  --------  -------  -----  -----  -------  --------------------  --------------------  --------------------  --------------------  --------------------  --------------------  --------------------  --------------------  ---------------------  ---------------------  ---------------------  ---------------------
+e5-base+ministral-3-3b    [0.8942]  7.53 GB   293.0 MB  29.9 ms  0.407  0.525  20.25 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+e5-base+ministral-3-8b    [0.8942]  12.64 GB  293.0 MB  29.4 ms  0.507  0.650  45.44 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+bge-m3+ministral-3-3b     [0.8908]  8.73 GB   390.6 MB  73.9 ms  0.390  0.531  19.68 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+bge-m3+ministral-3-8b     [0.8908]  11.79 GB  390.6 MB  76.8 ms  0.497  0.641  40.06 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+e5-small+ministral-3-3b   [0.8842]  6.69 GB   146.5 MB  11.6 ms  0.377  0.517  21.33 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+e5-small+ministral-3-8b   [0.8842]  11.80 GB  146.5 MB  11.1 ms  0.487  0.645  45.89 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+bm25+ministral-3-3b       [0.6213]  5.85 GB   47.7 MB   1.3 ms   0.343  0.453  19.24 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+bm25+ministral-3-8b       [0.6213]  10.96 GB  47.7 MB   1.2 ms   0.417  0.539  44.78 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+tfidf-svd+ministral-3-3b  [0.0463]  7.91 GB   97.7 MB   20.3 ms  0.040  0.045  9.79 s   no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+tfidf-svd+ministral-3-8b  [0.0463]  12.95 GB  97.7 MB   22.6 ms  0.047  0.052  24.83 s  no                    no                    no                    no                    no                    no                    no                    no                    no                     no                     no                     no
+
+Budgets:
+  ram4g_ret200ms_e2e3s: RAM <= 4 GB, retrieval p95 <= 200 ms, e2e p95 <= 3 s
+  ram4g_ret200ms_e2e8s: RAM <= 4 GB, retrieval p95 <= 200 ms, e2e p95 <= 8 s
+  ram4g_ret500ms_e2e3s: RAM <= 4 GB, retrieval p95 <= 500 ms, e2e p95 <= 3 s
+  ram4g_ret500ms_e2e8s: RAM <= 4 GB, retrieval p95 <= 500 ms, e2e p95 <= 8 s
+  ram8g_ret200ms_e2e3s: RAM <= 8 GB, retrieval p95 <= 200 ms, e2e p95 <= 3 s
+  ram8g_ret200ms_e2e8s: RAM <= 8 GB, retrieval p95 <= 200 ms, e2e p95 <= 8 s
+  ram8g_ret500ms_e2e3s: RAM <= 8 GB, retrieval p95 <= 500 ms, e2e p95 <= 3 s
+  ram8g_ret500ms_e2e8s: RAM <= 8 GB, retrieval p95 <= 500 ms, e2e p95 <= 8 s
+  ram16g_ret200ms_e2e3s: RAM <= 16 GB, retrieval p95 <= 200 ms, e2e p95 <= 3 s
+  ram16g_ret200ms_e2e8s: RAM <= 16 GB, retrieval p95 <= 200 ms, e2e p95 <= 8 s
+  ram16g_ret500ms_e2e3s: RAM <= 16 GB, retrieval p95 <= 500 ms, e2e p95 <= 3 s
+  ram16g_ret500ms_e2e8s: RAM <= 16 GB, retrieval p95 <= 500 ms, e2e p95 <= 8 s
+
+[value] = measured, but the configuration fits no budget in this grid.

@@ -1,0 +1,61 @@
+# v0.4.0's timed rows: every BM25 and every dense retriever on
+# SQAD 3.2's corpus, retrieval only, one configuration per process, on the Mac. The questions are SQAD 3.2 full's
+# 1,995, as in cz_rag_32, so the latency rows sit beside that set's answers. Quality is read from the rankings of
+# the two whole test splits (scripts/czech_retrievers.py), not from this run.
+name: cz_v040_timed
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 86400
+
+dataset:
+  name: sqad32
+  max_docs: 100000
+  max_queries: 1995
+  options:
+    questions_file: results/czech/plan/questions.json
+    questions_key: sqad32_full
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 3
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: bm25-nodiacritics
+    kind: bm25
+    strip_diacritics: true
+  - id: bm25-lemma
+    kind: bm25
+    lemmatize: cs
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: e5-base
+    kind: dense
+    model: e5-base
+  - id: granite-107m
+    kind: dense
+    model: granite-107m
+  - id: granite-278m
+    kind: dense
+    model: granite-278m
+  - id: embeddinggemma
+    kind: dense
+    model: embeddinggemma
+  - id: simcse-cs-en
+    kind: dense
+    model: simcse-cs-en
+  - id: retromae-cs
+    kind: dense
+    model: retromae-cs
+
+rag:
+  enabled: false

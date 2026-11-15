@@ -1,0 +1,26 @@
+.venv/
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Results: the small artefacts are committed (they are the deliverable), the
+# bulky reproducible ones are not.
+results/**/slice/
+results/**/work/
+results/**/specs/
+results/**/predictions_*.json
+results/smoke/
+results/_pytest_smoke/
+results/*_repro/run_*/
+
+# Run logs: kept on the machine that did the run, not in the repo.
+logs/
+
+# Run 2: generation and retrieval caches are reproducible, not committed.
+results/crossover/cache/
+results/crossover/slices/
+
+# Release bundles
+dist/

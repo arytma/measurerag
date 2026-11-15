@@ -1,0 +1,378 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 500,
+      "name": "hotpotqa-rag",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "crossover_hotpotqa_k10",
+    "out_dir": "results/crossover/natural/hotpotqa_k10",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b",
+        "qwen2.5-3b"
+      ],
+      "max_tokens": 64,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 10,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "config_path": "configs/crossover/hotpotqa_k10.yaml",
+  "config_sha256": "f58bc95f135cb8e43eb3f7cb7967e92e65fc8f62fdaba49a70af920d6683d6ff",
+  "created_utc": "2026-10-04T17:18:35+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "hotpotqa-rag",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "d958b91ac99554395e6fbc3a572e199a119babeb2ac81e15bc71e0e271cb7130",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (HotpotQA, Yang et al. 2018; BEIR mirror)",
+      "n_answers": 500,
+      "n_docs": 100000,
+      "n_qrels": 1000,
+      "n_queries": 500,
+      "name": "hotpotqa-rag",
+      "notes": [
+        "Answers come from the distractor split; retrieval gold comes from BEIR qrels. They join on the HotpotQA question id.",
+        "Corpus capped by a seeded reservoir sample with every gold paragraph forced in, so recall is bounded by the retriever, not by the sampling.",
+        "Multi-hop: a question needs two paragraphs, so gold-in-context@k here means 'at least one', which is a floor, not the full evidence."
+      ],
+      "qrels_sha256": "f24b72dd80e299dcb70157434778b012c89d518c175e3073033f8fa556592ee0",
+      "queries_sha256": "091bb0a89f24f001dc3fd72ce3025991b07884dd22b986a9e5bad55e63921fa2",
+      "source": "BeIR/hotpotqa corpus + hotpotqa/hotpot_qa distractor/validation answers"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 69834,
+      "sha256": "2ab8b3b62efaef35f8890713e5ed940b99a9484a8661b705431cb2a2de586e12"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 74401,
+      "sha256": "8ef9033fe5fb664b4d4af9ab8e2b46ae81b08d9876ae6a47af7a5eaaa4aa9610"
+    },
+    "results.csv": {
+      "bytes": 3293,
+      "sha256": "998227691b203beaad96dda7da9c1042c137d12380513c5740d4ba851fea70de"
+    },
+    "results.json": {
+      "bytes": 48889,
+      "sha256": "8fc566e5f156635a7d2f6cc1beb7a4116a10dbecebb3bcb3cffae0e4052c63be"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.0.1",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.1.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": {
+        "em": 0.038,
+        "f1": 0.051938095238095235,
+        "n_answered": 500.0
+      },
+      "config_id": "tfidf-svd+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.22,
+        "n_queries": 500.0,
+        "ndcg@10": 0.09528572391249754,
+        "ndcg@100": 0.12881065005965714,
+        "recall@10": 0.118,
+        "recall@100": 0.259
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.048,
+        "f1": 0.05678730158730159,
+        "n_answered": 500.0
+      },
+      "config_id": "tfidf-svd+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.22,
+        "n_queries": 500.0,
+        "ndcg@10": 0.09528572391249754,
+        "ndcg@100": 0.12881065005965714,
+        "recall@10": 0.118,
+        "recall@100": 0.259
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.24,
+        "f1": 0.30720903540903544,
+        "n_answered": 500.0
+      },
+      "config_id": "bm25+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.994,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8436853473698505,
+        "ndcg@100": 0.8652709809149706,
+        "recall@10": 0.851,
+        "recall@100": 0.935
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.308,
+        "f1": 0.3974558608058608,
+        "n_answered": 500.0
+      },
+      "config_id": "bm25+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.994,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8436853473698505,
+        "ndcg@100": 0.8652709809149706,
+        "recall@10": 0.851,
+        "recall@100": 0.935
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.222,
+        "f1": 0.3049100824296477,
+        "n_answered": 500.0
+      },
+      "config_id": "e5-small+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.99,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8674010778783643,
+        "ndcg@100": 0.8829809653124853,
+        "recall@10": 0.879,
+        "recall@100": 0.939
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.316,
+        "f1": 0.4103209401709402,
+        "n_answered": 500.0
+      },
+      "config_id": "e5-small+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.99,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8674010778783643,
+        "ndcg@100": 0.8829809653124853,
+        "recall@10": 0.879,
+        "recall@100": 0.939
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.232,
+        "f1": 0.3302131071826724,
+        "n_answered": 500.0
+      },
+      "config_id": "e5-base+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.994,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8826099059111748,
+        "ndcg@100": 0.9005347707259064,
+        "recall@10": 0.891,
+        "recall@100": 0.96
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.322,
+        "f1": 0.4180742368742369,
+        "n_answered": 500.0
+      },
+      "config_id": "e5-base+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.994,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8826099059111748,
+        "ndcg@100": 0.9005347707259064,
+        "recall@10": 0.891,
+        "recall@100": 0.96
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.24,
+        "f1": 0.3245096606292258,
+        "n_answered": 500.0
+      },
+      "config_id": "bge-m3+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.998,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8721203819272368,
+        "ndcg@100": 0.890619720346529,
+        "recall@10": 0.884,
+        "recall@100": 0.957
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "bge-m3",
+      "retriever_name": "bge-m3+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.292,
+        "f1": 0.3884351648351648,
+        "n_answered": 500.0
+      },
+      "config_id": "bge-m3+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@10": 0.998,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8721203819272368,
+        "ndcg@100": 0.890619720346529,
+        "recall@10": 0.884,
+        "recall@100": 0.957
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "bge-m3",
+      "retriever_name": "bge-m3+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "8f544e9ae19237014f6fa4526112840cb525b0b1bb518d711180c99c4f7db59d",
+  "schema": "measurerag/manifest/1",
+  "scrubbed": "absolute paths replaced by scripts/scrub_paths.py: hf://ORG/NAME@REV/FILE for Hugging Face cache files, repository-relative paths, ~/ for anything else under a home directory",
+  "seed": 20260101,
+  "wall_seconds": 9.5
+}

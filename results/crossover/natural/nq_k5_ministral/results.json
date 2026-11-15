@@ -1,0 +1,1968 @@
+{
+  "budgets": [
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret200ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret200ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret500ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret500ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret200ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret200ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret500ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret500ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret200ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret200ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret500ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret500ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 300,
+      "name": "nq-rag",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "crossover_nq_k5_ministral",
+    "out_dir": "results/crossover/natural/nq_k5_ministral",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "ministral-3-3b",
+        "ministral-3-8b"
+      ],
+      "max_tokens": 64,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "nq-rag",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "a885583f91893f316e0190f465a9a6d514f6ac33b96f2a0bcf0946cc6a38c0f6",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (BEIR nq); CC BY-SA 3.0 (NQ-open answers)",
+      "n_answers": 300,
+      "n_docs": 100000,
+      "n_qrels": 348,
+      "n_queries": 300,
+      "name": "nq-rag",
+      "notes": [
+        "Gold passages are MAPPED, not annotated: gold(q) = { d : BEIR nq qrels mark d relevant to q, and normalize(d.text) contains normalize(a) as a whole-token span for some nq-open answer a }; normalize = SQuAD answer normalisation (lowercase, strip punctuation and English articles, collapse whitespace); passage title not searched; questions joined BEIR<->nq-open on normalize_question(text) and kept only if gold(q) is non-empty",
+        "Mapping coverage: beir_test_queries_with_qrels=3452, joined_to_nq_open=2255, with_mapped_gold=2083, coverage_of_joined=0.9237, judged_passages_of_joined=2816, gold_passages_of_mapped=2425",
+        "Corpus capped by a seeded reservoir sample with every judged passage of a kept question forced in."
+      ],
+      "qrels_sha256": "58aeace199bcfd44463580af39ef8900f8d14d745cd33c0161df918fb0da58ad",
+      "queries_sha256": "c2546cb51e56638be28f315b4319ad46d7a3169e53bc268f8f8b39345605bef4",
+      "source": "BeIR/nq corpus + BeIR/nq-qrels test qrels + google-research-datasets/nq_open validation answers"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2.1",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "answers": {
+        "em": 0.04,
+        "f1": 0.04488888888888889,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 15.907081457989989,
+        "index_bytes": 102400128,
+        "model_bytes": 0,
+        "n_components": 256,
+        "n_docs": 100000,
+        "vocab": 181735
+      },
+      "config_id": "tfidf-svd+ministral-3-3b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 5.148694590996505,
+        "n": 300.0,
+        "p50": 4.645215416006977,
+        "p95": 9.787547665997408
+      },
+      "generator": {
+        "completion_tokens": 954,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.6176567790797108
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 4.645215416006977,
+        "e2e_s_p95": 9.787547665997408,
+        "gen_tokens_per_s": 0.6176567790797108,
+        "index_bytes": 102400128,
+        "model_bytes": 2146497824,
+        "peak_rss_gb": 7.9142,
+        "retrieval_ms_p50": 18.187415989814326,
+        "retrieval_ms_p95": 20.288750005420297
+      },
+      "metrics": {
+        "gold_in_context@5": 0.06,
+        "n_queries": 300.0,
+        "ndcg@10": 0.046330044989886764,
+        "ndcg@100": 0.07692660875249321,
+        "recall@10": 0.08833333333333333,
+        "recall@100": 0.2361111111111111
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 18.179871262982488,
+        "n": 300.0,
+        "p50": 18.187415989814326,
+        "p95": 20.288750005420297
+      },
+      "retriever_id": "tfidf-svd",
+      "retriever_kind": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "retriever_params": {
+        "device": "cpu",
+        "n_components": 256
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1569.0723206250113,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.91 GB > 4 GB",
+            "end-to-end p95 9.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.91 GB > 4 GB",
+            "end-to-end p95 9.79 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.91 GB > 4 GB",
+            "end-to-end p95 9.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.91 GB > 4 GB",
+            "end-to-end p95 9.79 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 9.79 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.04666666666666667,
+        "f1": 0.05153846153846154,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 14.831273584015435,
+        "index_bytes": 102400128,
+        "model_bytes": 0,
+        "n_components": 256,
+        "n_docs": 100000,
+        "vocab": 181735
+      },
+      "config_id": "tfidf-svd+ministral-3-8b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 13.12555947138598,
+        "n": 300.0,
+        "p50": 11.639523082994856,
+        "p95": 24.833194042003015
+      },
+      "generator": {
+        "completion_tokens": 946,
+        "key": "ministral-3-8b",
+        "model_bytes": 5198386720,
+        "model_path": "hf://unsloth/Ministral-3-8B-Instruct-2512-GGUF@3731507ec3e867db16d620f73e14d689125758f4/Ministral-3-8B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.2402486236576868
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 11.639523082994856,
+        "e2e_s_p95": 24.833194042003015,
+        "gen_tokens_per_s": 0.2402486236576868,
+        "index_bytes": 102400128,
+        "model_bytes": 5198386720,
+        "peak_rss_gb": 12.9474,
+        "retrieval_ms_p50": 11.242083011893556,
+        "retrieval_ms_p95": 22.64345801086165
+      },
+      "metrics": {
+        "gold_in_context@5": 0.06,
+        "n_queries": 300.0,
+        "ndcg@10": 0.046330044989886764,
+        "ndcg@100": 0.07692660875249321,
+        "recall@10": 0.08833333333333333,
+        "recall@100": 0.2361111111111111
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 12.565736226485265,
+        "n": 300.0,
+        "p50": 11.242083011893556,
+        "p95": 22.64345801086165
+      },
+      "retriever_id": "tfidf-svd",
+      "retriever_kind": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "retriever_params": {
+        "device": "cpu",
+        "n_components": 256
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 3959.65436729099,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 4 GB",
+            "end-to-end p95 24.83 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 4 GB",
+            "end-to-end p95 24.83 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 4 GB",
+            "end-to-end p95 24.83 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 4 GB",
+            "end-to-end p95 24.83 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 8 GB",
+            "end-to-end p95 24.83 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 8 GB",
+            "end-to-end p95 24.83 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 8 GB",
+            "end-to-end p95 24.83 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.95 GB > 8 GB",
+            "end-to-end p95 24.83 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 24.83 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 24.83 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 24.83 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 24.83 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.3433333333333333,
+        "f1": 0.4531127946127946,
+        "n_answered": 300.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 3.51029145900975,
+        "index_bytes": 50022655,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 100000
+      },
+      "config_id": "bm25+ministral-3-3b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 13.438284688076966,
+        "n": 300.0,
+        "p50": 13.384668167011114,
+        "p95": 19.244267166999634
+      },
+      "generator": {
+        "completion_tokens": 1456,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.3611636831194842
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 13.384668167011114,
+        "e2e_s_p95": 19.244267166999634,
+        "gen_tokens_per_s": 0.3611636831194842,
+        "index_bytes": 50022655,
+        "model_bytes": 2146497824,
+        "peak_rss_gb": 5.8549,
+        "retrieval_ms_p50": 0.9714579937281087,
+        "retrieval_ms_p95": 1.2629999982891604
+      },
+      "metrics": {
+        "gold_in_context@5": 0.7333333333333333,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6212916739765688,
+        "ndcg@100": 0.6534747162209893,
+        "recall@10": 0.7577777777777778,
+        "recall@100": 0.8916666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.9591725271214576,
+        "n": 300.0,
+        "p50": 0.9714579937281087,
+        "p95": 1.2629999982891604
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 4037.412033542001,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.85 GB > 4 GB",
+            "end-to-end p95 19.24 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.85 GB > 4 GB",
+            "end-to-end p95 19.24 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.85 GB > 4 GB",
+            "end-to-end p95 19.24 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.85 GB > 4 GB",
+            "end-to-end p95 19.24 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.24 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.4166666666666667,
+        "f1": 0.5391508175919941,
+        "n_answered": 300.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 3.4413633329968434,
+        "index_bytes": 50022655,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 100000
+      },
+      "config_id": "bm25+ministral-3-8b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 30.854334981376645,
+        "n": 300.0,
+        "p50": 30.459720291997655,
+        "p95": 44.783298082998954
+      },
+      "generator": {
+        "completion_tokens": 1550,
+        "key": "ministral-3-8b",
+        "model_bytes": 5198386720,
+        "model_path": "hf://unsloth/Ministral-3-8B-Instruct-2512-GGUF@3731507ec3e867db16d620f73e14d689125758f4/Ministral-3-8B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.1674550248084595
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 30.459720291997655,
+        "e2e_s_p95": 44.783298082998954,
+        "gen_tokens_per_s": 0.1674550248084595,
+        "index_bytes": 50022655,
+        "model_bytes": 5198386720,
+        "peak_rss_gb": 10.9646,
+        "retrieval_ms_p50": 0.9601249912520871,
+        "retrieval_ms_p95": 1.2369579926598817
+      },
+      "metrics": {
+        "gold_in_context@5": 0.7333333333333333,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6212916739765688,
+        "ndcg@100": 0.6534747162209893,
+        "recall@10": 0.7577777777777778,
+        "recall@100": 0.8916666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.945673730263176,
+        "n": 300.0,
+        "p50": 0.9601249912520871,
+        "p95": 1.2369579926598817
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 9262.81256091599,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 4 GB",
+            "end-to-end p95 44.78 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 4 GB",
+            "end-to-end p95 44.78 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 4 GB",
+            "end-to-end p95 44.78 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 4 GB",
+            "end-to-end p95 44.78 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 8 GB",
+            "end-to-end p95 44.78 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 8 GB",
+            "end-to-end p95 44.78 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 8 GB",
+            "end-to-end p95 44.78 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 10.96 GB > 8 GB",
+            "end-to-end p95 44.78 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 44.78 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 44.78 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 44.78 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 44.78 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.37666666666666665,
+        "f1": 0.5168213083213082,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 1201.0248540000175,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 153600045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+ministral-3-3b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 13.799319262334222,
+        "n": 300.0,
+        "p50": 13.499981166009093,
+        "p95": 21.334032249986194
+      },
+      "generator": {
+        "completion_tokens": 1564,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.3778033028881
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 13.499981166009093,
+        "e2e_s_p95": 21.334032249986194,
+        "gen_tokens_per_s": 0.3778033028881,
+        "index_bytes": 153600045,
+        "model_bytes": 2639790652,
+        "peak_rss_gb": 6.6891,
+        "retrieval_ms_p50": 10.785541991936043,
+        "retrieval_ms_p95": 11.577915982343256
+      },
+      "metrics": {
+        "gold_in_context@5": 0.9433333333333334,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8842303341948856,
+        "ndcg@100": 0.8922275451566342,
+        "recall@10": 0.9594444444444444,
+        "recall@100": 0.99
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 10.91537737326386,
+        "n": 300.0,
+        "p50": 10.785541991936043,
+        "p95": 11.577915982343256
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 5346.156592790998,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.69 GB > 4 GB",
+            "end-to-end p95 21.33 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.69 GB > 4 GB",
+            "end-to-end p95 21.33 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.69 GB > 4 GB",
+            "end-to-end p95 21.33 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 6.69 GB > 4 GB",
+            "end-to-end p95 21.33 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 21.33 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.4866666666666667,
+        "f1": 0.6454278742699795,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 1264.0558882080077,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 153600045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+ministral-3-8b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 29.167220270454127,
+        "n": 300.0,
+        "p50": 28.490303625003435,
+        "p95": 45.88609945902135
+      },
+      "generator": {
+        "completion_tokens": 1684,
+        "key": "ministral-3-8b",
+        "model_bytes": 5198386720,
+        "model_path": "hf://unsloth/Ministral-3-8B-Instruct-2512-GGUF@3731507ec3e867db16d620f73e14d689125758f4/Ministral-3-8B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.19245543145634605
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 28.490303625003435,
+        "e2e_s_p95": 45.88609945902135,
+        "gen_tokens_per_s": 0.19245543145634605,
+        "index_bytes": 153600045,
+        "model_bytes": 5691679548,
+        "peak_rss_gb": 11.8022,
+        "retrieval_ms_p50": 10.55274999816902,
+        "retrieval_ms_p95": 11.132999992696568
+      },
+      "metrics": {
+        "gold_in_context@5": 0.9433333333333334,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8842303341948856,
+        "ndcg@100": 0.8922275451566342,
+        "recall@10": 0.9594444444444444,
+        "recall@100": 0.99
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 10.614945982718686,
+        "n": 300.0,
+        "p50": 10.55274999816902,
+        "p95": 11.132999992696568
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 10022.06637091699,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 4 GB",
+            "end-to-end p95 45.89 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 4 GB",
+            "end-to-end p95 45.89 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 4 GB",
+            "end-to-end p95 45.89 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 4 GB",
+            "end-to-end p95 45.89 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 8 GB",
+            "end-to-end p95 45.89 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 8 GB",
+            "end-to-end p95 45.89 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 8 GB",
+            "end-to-end p95 45.89 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.80 GB > 8 GB",
+            "end-to-end p95 45.89 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.89 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.89 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.89 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.89 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.4066666666666667,
+        "f1": 0.5249989328410382,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 3512.5608330419927,
+        "device": "cpu",
+        "dim": 768,
+        "index_bytes": 307200045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-base",
+        "model_bytes": 1134534380,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-base+ministral-3-3b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 12.767589100727054,
+        "n": 300.0,
+        "p50": 12.402893666003365,
+        "p95": 20.254704708990175
+      },
+      "generator": {
+        "completion_tokens": 1511,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.39449611419826436
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 12.402893666003365,
+        "e2e_s_p95": 20.254704708990175,
+        "gen_tokens_per_s": 0.39449611419826436,
+        "index_bytes": 307200045,
+        "model_bytes": 3281032204,
+        "peak_rss_gb": 7.527,
+        "retrieval_ms_p50": 27.228875012951903,
+        "retrieval_ms_p95": 29.88795800774824
+      },
+      "metrics": {
+        "gold_in_context@5": 0.96,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8941736968556374,
+        "ndcg@100": 0.9006333089275143,
+        "recall@10": 0.9688888888888889,
+        "recall@100": 0.9966666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 27.411702056463884,
+        "n": 300.0,
+        "p50": 27.228875012951903,
+        "p95": 29.88795800774824
+      },
+      "retriever_id": "e5-base",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-base+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-base"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 7353.224750958005,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.53 GB > 4 GB",
+            "end-to-end p95 20.25 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.53 GB > 4 GB",
+            "end-to-end p95 20.25 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.53 GB > 4 GB",
+            "end-to-end p95 20.25 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.53 GB > 4 GB",
+            "end-to-end p95 20.25 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 20.25 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.5066666666666667,
+        "f1": 0.6496449534870588,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 3442.6254112909955,
+        "device": "cpu",
+        "dim": 768,
+        "index_bytes": 307200045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-base",
+        "model_bytes": 1134534380,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-base+ministral-3-8b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 28.86219899334964,
+        "n": 300.0,
+        "p50": 27.67754233299638,
+        "p95": 45.44325791699521
+      },
+      "generator": {
+        "completion_tokens": 1712,
+        "key": "ministral-3-8b",
+        "model_bytes": 5198386720,
+        "model_path": "hf://unsloth/Ministral-3-8B-Instruct-2512-GGUF@3731507ec3e867db16d620f73e14d689125758f4/Ministral-3-8B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.19772320131422041
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 27.67754233299638,
+        "e2e_s_p95": 45.44325791699521,
+        "gen_tokens_per_s": 0.19772320131422041,
+        "index_bytes": 307200045,
+        "model_bytes": 6332921100,
+        "peak_rss_gb": 12.6363,
+        "retrieval_ms_p50": 27.048957999795675,
+        "retrieval_ms_p95": 29.39837500161957
+      },
+      "metrics": {
+        "gold_in_context@5": 0.96,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8941736968556374,
+        "ndcg@100": 0.9006333089275143,
+        "recall@10": 0.9688888888888889,
+        "recall@100": 0.9966666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 27.257481387108175,
+        "n": 300.0,
+        "p50": 27.048957999795675,
+        "p95": 29.39837500161957
+      },
+      "retriever_id": "e5-base",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-base+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-base"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 12113.230304792,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 4 GB",
+            "end-to-end p95 45.44 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 4 GB",
+            "end-to-end p95 45.44 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 4 GB",
+            "end-to-end p95 45.44 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 4 GB",
+            "end-to-end p95 45.44 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 8 GB",
+            "end-to-end p95 45.44 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 8 GB",
+            "end-to-end p95 45.44 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 8 GB",
+            "end-to-end p95 45.44 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 12.64 GB > 8 GB",
+            "end-to-end p95 45.44 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.44 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.44 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.44 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 45.44 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.39,
+        "f1": 0.531270960813066,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 10602.272272374976,
+        "device": "cpu",
+        "dim": 1024,
+        "index_bytes": 409600045,
+        "index_type": "flat",
+        "model": "BAAI/bge-m3",
+        "model_bytes": 2293331623,
+        "n_docs": 100000,
+        "pooling": "cls",
+        "pooling_source": "repo"
+      },
+      "config_id": "bge-m3+ministral-3-3b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 12.703411278177324,
+        "n": 300.0,
+        "p50": 12.20978245799779,
+        "p95": 19.68175729099312
+      },
+      "generator": {
+        "completion_tokens": 1646,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.4319136134523207
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 12.20978245799779,
+        "e2e_s_p95": 19.68175729099312,
+        "gen_tokens_per_s": 0.4319136134523207,
+        "index_bytes": 409600045,
+        "model_bytes": 4439829447,
+        "peak_rss_gb": 8.734,
+        "retrieval_ms_p50": 70.58170798700303,
+        "retrieval_ms_p95": 73.86025000596419
+      },
+      "metrics": {
+        "gold_in_context@5": 0.95,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8908068655739461,
+        "ndcg@100": 0.8974855257695685,
+        "recall@10": 0.9655555555555556,
+        "recall@100": 0.9933333333333333
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 70.62072726267313,
+        "n": 300.0,
+        "p50": 70.58170798700303,
+        "p95": 73.86025000596419
+      },
+      "retriever_id": "bge-m3",
+      "retriever_kind": "dense",
+      "retriever_name": "bge-m3+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "bge-m3"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 14436.554777332989,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 4 GB",
+            "end-to-end p95 19.68 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 4 GB",
+            "end-to-end p95 19.68 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 4 GB",
+            "end-to-end p95 19.68 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 4 GB",
+            "end-to-end p95 19.68 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 8 GB",
+            "end-to-end p95 19.68 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 8 GB",
+            "end-to-end p95 19.68 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 8 GB",
+            "end-to-end p95 19.68 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 8.73 GB > 8 GB",
+            "end-to-end p95 19.68 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.68 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.68 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.68 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 19.68 s > 8 s"
+          ]
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.49666666666666665,
+        "f1": 0.6406280756280757,
+        "n_answered": 300.0
+      },
+      "build": {
+        "build_seconds": 11388.618302082992,
+        "device": "cpu",
+        "dim": 1024,
+        "index_bytes": 409600045,
+        "index_type": "flat",
+        "model": "BAAI/bge-m3",
+        "model_bytes": 2293331623,
+        "n_docs": 100000,
+        "pooling": "cls",
+        "pooling_source": "repo"
+      },
+      "config_id": "bge-m3+ministral-3-8b",
+      "dataset": "nq-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 26.911042101231093,
+        "n": 300.0,
+        "p50": 26.312579249992268,
+        "p95": 40.06320754098124
+      },
+      "generator": {
+        "completion_tokens": 1687,
+        "key": "ministral-3-8b",
+        "model_bytes": 5198386720,
+        "model_path": "hf://unsloth/Ministral-3-8B-Instruct-2512-GGUF@3731507ec3e867db16d620f73e14d689125758f4/Ministral-3-8B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.20896303705496522
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "27.2.1",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 26.312579249992268,
+        "e2e_s_p95": 40.06320754098124,
+        "gen_tokens_per_s": 0.20896303705496522,
+        "index_bytes": 409600045,
+        "model_bytes": 7491718343,
+        "peak_rss_gb": 11.7935,
+        "retrieval_ms_p50": 70.96704200375825,
+        "retrieval_ms_p95": 76.78637499338947
+      },
+      "metrics": {
+        "gold_in_context@5": 0.95,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8908068655739461,
+        "ndcg@100": 0.8974855257695685,
+        "recall@10": 0.9655555555555556,
+        "recall@100": 0.9933333333333333
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 71.55424500951388,
+        "n": 300.0,
+        "p50": 70.96704200375825,
+        "p95": 76.78637499338947
+      },
+      "retriever_id": "bge-m3",
+      "retriever_kind": "dense",
+      "retriever_name": "bge-m3+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "bge-m3"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 19488.698228791007,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 4 GB",
+            "end-to-end p95 40.06 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 4 GB",
+            "end-to-end p95 40.06 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 4 GB",
+            "end-to-end p95 40.06 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 4 GB",
+            "end-to-end p95 40.06 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 8 GB",
+            "end-to-end p95 40.06 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 8 GB",
+            "end-to-end p95 40.06 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 8 GB",
+            "end-to-end p95 40.06 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 11.79 GB > 8 GB",
+            "end-to-end p95 40.06 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 40.06 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 40.06 s > 8 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 40.06 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 40.06 s > 8 s"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+ "machine": "the Mac (Apple M4), CPU",
+ "rankings": {
+  "copy_test": {
+   "bm25-lemma": {
+    "build": {
+     "b": 0.4,
+     "backend": "bm25s",
+     "build_seconds": 2.418080333969556,
+     "index_bytes": 7068236,
+     "k1": 0.9,
+     "lemmatize": "simplemma:cs"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {},
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "0e255ee1735ab53c1c2e1dd07790a735fe9ba684adb875554e7df2cb9b45130a",
+    "wall_seconds": 2.9
+   },
+   "e5-base": {
+    "build": {
+     "build_seconds": 595.2804476670572,
+     "device": "cpu",
+     "dim": 768,
+     "index_bytes": 23147565,
+     "index_type": "flat",
+     "model": "intfloat/multilingual-e5-base",
+     "pooling": "mean",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "intfloat/multilingual-e5-base",
+      "key": "e5-base",
+      "max_seq_length": 512,
+      "note": "278M params, 768 dim.",
+      "passage_prefix": "passage: ",
+      "pooling": "mean",
+      "query_prefix": "query: "
+     }
+    },
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "ab1b1721caa538b8ed18582f145e6106f58c52b2755f4a17785ee7b96c06fe36",
+    "wall_seconds": 611.6
+   },
+   "e5-small": {
+    "build": {
+     "build_seconds": 413.12321095797233,
+     "device": "cpu",
+     "dim": 384,
+     "index_bytes": 11573805,
+     "index_type": "flat",
+     "model": "intfloat/multilingual-e5-small",
+     "pooling": "mean",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "intfloat/multilingual-e5-small",
+      "key": "e5-small",
+      "max_seq_length": 512,
+      "note": "118M params, 384 dim. The working horse of the small-budget tier.",
+      "passage_prefix": "passage: ",
+      "pooling": "mean",
+      "query_prefix": "query: "
+     }
+    },
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "f278ab58611b39ad5795137814727b781a05885472c6808ab9db6d9f754fd25e",
+    "wall_seconds": 427.9
+   },
+   "embeddinggemma": {
+    "build": {
+     "build_seconds": 1756.3757856250159,
+     "device": "cpu",
+     "dim": 768,
+     "index_bytes": 23147565,
+     "index_type": "flat",
+     "model": "google/embeddinggemma-300m",
+     "pooling": "mean",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "google/embeddinggemma-300m",
+      "key": "embeddinggemma",
+      "max_seq_length": 512,
+      "note": "Google, 308M params, 768 dim, Gemma Terms of Use (gated). float32: the card says no float16.",
+      "passage_prefix": "title: none | text: ",
+      "pooling": "mean",
+      "query_prefix": "task: search result | query: "
+     }
+    },
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "d6e526bce841ff9a03587b4c9c818e9fc84f7bb880e0a9d14a06a7d56be6e465",
+    "wall_seconds": 1798.3
+   },
+   "granite-107m": {
+    "build": {
+     "build_seconds": 72.45629316603299,
+     "device": "cpu",
+     "dim": 384,
+     "index_bytes": 11573805,
+     "index_type": "flat",
+     "model": "ibm-granite/granite-embedding-107m-multilingual",
+     "pooling": "cls",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "ibm-granite/granite-embedding-107m-multilingual",
+      "key": "granite-107m",
+      "max_seq_length": 512,
+      "note": "IBM, 107M params, 384 dim, Apache-2.0. No prefix. Czech is one of its 12 languages.",
+      "passage_prefix": "",
+      "pooling": "cls",
+      "query_prefix": ""
+     }
+    },
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "70ad0779c0bd1045fb436cacf4e13b79bd237c5d430b81f4a602e57f613c57ca",
+    "wall_seconds": 75.7
+   },
+   "granite-278m": {
+    "build": {
+     "build_seconds": 776.094174458005,
+     "device": "cpu",
+     "dim": 768,
+     "index_bytes": 23147565,
+     "index_type": "flat",
+     "model": "ibm-granite/granite-embedding-278m-multilingual",
+     "pooling": "cls",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "ibm-granite/granite-embedding-278m-multilingual",
+      "key": "granite-278m",
+      "max_seq_length": 512,
+      "note": "IBM, 278M params, 768 dim, Apache-2.0. No prefix. Czech is one of its 12 languages.",
+      "passage_prefix": "",
+      "pooling": "cls",
+      "query_prefix": ""
+     }
+    },
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "77ce221e09c5c34267c03d8f4afb5536b25a7b71d910a38fd4cd5f7b7502c4d8",
+    "wall_seconds": 868.7
+   },
+   "simcse-cs-en": {
+    "build": {
+     "build_seconds": 116.82524016697425,
+     "device": "cpu",
+     "dim": 256,
+     "index_bytes": 7715885,
+     "index_type": "flat",
+     "model": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+     "pooling": "cls",
+     "pooling_source": "declared ('mean' would have been used)"
+    },
+    "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+      "key": "simcse-cs-en",
+      "max_seq_length": 512,
+      "note": "Czech-English bilingual SimCSE distillation. CLS pooling.",
+      "passage_prefix": "",
+      "pooling": "cls",
+      "query_prefix": ""
+     }
+    },
+    "queries_sha256": "33469598314846e5300789c565fe1292c027e10359d3ef1fa8e928f72993c261",
+    "run_sha256": "c60ae29182a91f9cc545ced3c243f24b87f34e5a21f5c142dd936fb96bd17f80",
+    "wall_seconds": 122.5
+   }
+  },
+  "sqad32_test": {
+   "bm25-lemma": {
+    "build": {
+     "b": 0.4,
+     "backend": "bm25s",
+     "build_seconds": 3.869064500031527,
+     "index_bytes": 11664122,
+     "k1": 0.9,
+     "lemmatize": "simplemma:cs"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {},
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "5f10e7fd508c2a4a43de44ef9ddf0c5729a4748d920e6dd7e1b70fb4995b265a",
+    "wall_seconds": 7.1
+   },
+   "e5-base": {
+    "build": {
+     "build_seconds": 757.7770581669756,
+     "device": "cpu",
+     "dim": 768,
+     "index_bytes": 45063213,
+     "index_type": "flat",
+     "model": "intfloat/multilingual-e5-base",
+     "pooling": "mean",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "intfloat/multilingual-e5-base",
+      "key": "e5-base",
+      "max_seq_length": 512,
+      "note": "278M params, 768 dim.",
+      "passage_prefix": "passage: ",
+      "pooling": "mean",
+      "query_prefix": "query: "
+     }
+    },
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "1982fe6d081027a8d4fd05a995eaa0989ebf0b0b156ac3422d12bde3df656bef",
+    "wall_seconds": 854.8
+   },
+   "e5-small": {
+    "build": {
+     "build_seconds": 750.6569561249926,
+     "device": "cpu",
+     "dim": 384,
+     "index_bytes": 22531629,
+     "index_type": "flat",
+     "model": "intfloat/multilingual-e5-small",
+     "pooling": "mean",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "intfloat/multilingual-e5-small",
+      "key": "e5-small",
+      "max_seq_length": 512,
+      "note": "118M params, 384 dim. The working horse of the small-budget tier.",
+      "passage_prefix": "passage: ",
+      "pooling": "mean",
+      "query_prefix": "query: "
+     }
+    },
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "de3d708092e04fc23952b87f0105f584062b9b5e42f6bb9ee595cd9a491cb9fe",
+    "wall_seconds": 860.2
+   },
+   "embeddinggemma": {
+    "build": {
+     "build_seconds": 1814.2565339580178,
+     "device": "cpu",
+     "dim": 768,
+     "index_bytes": 45063213,
+     "index_type": "flat",
+     "model": "google/embeddinggemma-300m",
+     "pooling": "mean",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "google/embeddinggemma-300m",
+      "key": "embeddinggemma",
+      "max_seq_length": 512,
+      "note": "Google, 308M params, 768 dim, Gemma Terms of Use (gated). float32: the card says no float16.",
+      "passage_prefix": "title: none | text: ",
+      "pooling": "mean",
+      "query_prefix": "task: search result | query: "
+     }
+    },
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "b0f62c31e3880048b29f0e573b8295d99c7a1cdd5e1a42993a276ae1040c13f1",
+    "wall_seconds": 2023.3
+   },
+   "granite-107m": {
+    "build": {
+     "build_seconds": 192.07097499998054,
+     "device": "cpu",
+     "dim": 384,
+     "index_bytes": 22531629,
+     "index_type": "flat",
+     "model": "ibm-granite/granite-embedding-107m-multilingual",
+     "pooling": "cls",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "ibm-granite/granite-embedding-107m-multilingual",
+      "key": "granite-107m",
+      "max_seq_length": 512,
+      "note": "IBM, 107M params, 384 dim, Apache-2.0. No prefix. Czech is one of its 12 languages.",
+      "passage_prefix": "",
+      "pooling": "cls",
+      "query_prefix": ""
+     }
+    },
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "c9c4b4cf5d2b4164706f9f86bf90e689c5b868045561e60b9db4e91344ff0aed",
+    "wall_seconds": 219.3
+   },
+   "granite-278m": {
+    "build": {
+     "build_seconds": 1607.563459625002,
+     "device": "cpu",
+     "dim": 768,
+     "index_bytes": 45063213,
+     "index_type": "flat",
+     "model": "ibm-granite/granite-embedding-278m-multilingual",
+     "pooling": "cls",
+     "pooling_source": "repo"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "ibm-granite/granite-embedding-278m-multilingual",
+      "key": "granite-278m",
+      "max_seq_length": 512,
+      "note": "IBM, 278M params, 768 dim, Apache-2.0. No prefix. Czech is one of its 12 languages.",
+      "passage_prefix": "",
+      "pooling": "cls",
+      "query_prefix": ""
+     }
+    },
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "ba187a322797de35cfd9eeb58ff1bb7251ab5fcae8e3e1fa521040bb47cdf7e5",
+    "wall_seconds": 1755.7
+   },
+   "simcse-cs-en": {
+    "build": {
+     "build_seconds": 199.82193612499395,
+     "device": "cpu",
+     "dim": 256,
+     "index_bytes": 15021101,
+     "index_type": "flat",
+     "model": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+     "pooling": "cls",
+     "pooling_source": "declared ('mean' would have been used)"
+    },
+    "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+    "declaration": {
+     "model_spec": {
+      "hf_id": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+      "key": "simcse-cs-en",
+      "max_seq_length": 512,
+      "note": "Czech-English bilingual SimCSE distillation. CLS pooling.",
+      "passage_prefix": "",
+      "pooling": "cls",
+      "query_prefix": ""
+     }
+    },
+    "queries_sha256": "ac7926757148dc7e11910557f3760295877657e40399574a5df8fc42b6a7a585",
+    "run_sha256": "af3d2586a9f4f634a932d0508d02ac921a19aec636e449e9f85ba7194354cfed",
+    "wall_seconds": 252.2
+   }
+  }
+ }
+}

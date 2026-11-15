@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "measureRAG: a budget-aware retrieval and RAG benchmark in Czech and English, for a single machine with no network access"
+abstract: >-
+  measureRAG is a budget-aware benchmark for retrieval and retrieval-augmented
+  generation on a single CPU-only machine with no network access, in Czech and
+  English. It imposes a deployment budget of memory and latency first and
+  reports answer quality inside it, and it asks whether the next gigabyte buys
+  more as a stronger retriever or as a bigger generator. On HotpotQA and Natural
+  Questions the answer is a break-even gold-gain table rather than a located
+  crossover, and Czech retrieval and Czech RAG are measured alongside.
+authors:
+  - family-names: Laznicek
+    given-names: Phil
+    email: research@arytma.ca
+    affiliation: "Arytma Inc., Calgary, Canada"
+version: 0.4.5
+date-released: "2026-11-15"
+license: Apache-2.0
+repository-code: "https://github.com/arytma/measurerag"
+keywords:
+  - retrieval-augmented generation
+  - information retrieval
+  - benchmark
+  - air-gapped
+  - offline
+  - efficiency
+  - Czech

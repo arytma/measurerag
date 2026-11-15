@@ -1,0 +1,70 @@
+# Run 2: where does the next gigabyte go? Inputs to scripts/crossover.py.
+# Definitions: docs/CROSSOVER.md.
+seed: 20260101
+n_boot: 10000
+max_tokens: 64
+generation_cap: 30000            # the specification's hard cap on generations for run 2
+# The specification's cross-dataset question; Czech is reported separately
+agreement_datasets: [hotpotqa, nq]
+base_generator: qwen2.5-1.5b     # the generator you have
+big_generator: qwen2.5-3b        # the generator upgrade
+
+# Ministral 3, timed on the laptop like Qwen2.5 (v0.4.2): its own k = 5 sweeps on HotpotQA and NQ and its dial, read by the
+# same analysis and kept beside Qwen2.5's; its tokens carry the prefix
+headline_families:
+  ministral-3:
+    generators: [ministral-3-3b, ministral-3-8b]
+    harness: {hotpotqa: [results/crossover/natural/hotpotqa_k5_ministral], nq: [results/crossover/natural/nq_k5_ministral]}
+    calibration: results/crossover/calibration_ministral
+    dial_same_machine: false   # its dial answered on the GX10's GPU, its sweeps on the Mac's CPU
+    prefix: en_m3.
+
+# Peak RSS without the double-counted mapped pages: the probe's surplus per model (scripts/mmap_probe.py) subtracted
+# from every row of the family's timed sweeps, an estimate written beside the measured values
+# (results/crossover/mmap_estimate.json, docs/LIMITATIONS.md). The bound of the guard: each retriever's row with the
+# smallest English generator on the same slice, whose peak bounds the index build, which runs before the generator
+# loads, from above. Kept out of crossover.json, whose analysis does not read it.
+mmap_estimate:
+  family: ministral-3
+  probe: results/crossover/mmap_probe.jsonl
+  bound_generator: qwen2.5-1.5b
+  bound: {hotpotqa: results/crossover/natural/hotpotqa_k5, nq: results/crossover/natural/nq_k5}
+
+# Which natural retriever step prices the dial's synthetic retriever step in GB
+# and ms. Every other step is reported as a sensitivity.
+priced_step: [bm25, e5-small]
+
+datasets:
+  hotpotqa:
+    slice: results/en_rag/slice
+    cache: results/crossover/cache/hotpotqa
+    dial: {retriever: e5-base, k: 5, levels: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]}
+    dial_families: {gemma-4: [gemma-4-e2b, gemma-4-e4b], gemma-3n: [gemma-3n-e2b, gemma-3n-e4b], ministral-3: [ministral-3-3b, ministral-3-8b], qwen2.5: [qwen2.5-1.5b, qwen2.5-3b]}   # v0.4.2
+    # natural ladder, weakest first; tfidf-svd is run 1's instrument rung;
+    # bge-m3 is step 5
+    ladder: [tfidf-svd, bm25, e5-small, e5-base, bge-m3]
+    # harness result dirs; the first dir holding a configuration wins. k = 5 is
+    # the re-measured ladder only: no silent fallback to run 1's rows.
+    harness: [results/crossover/natural/hotpotqa_k5,
+              results/crossover/natural/hotpotqa_k3, results/crossover/natural/hotpotqa_k10]
+  nq:
+    slice: results/crossover/slices/nq
+    cache: results/crossover/cache/nq
+    dial: {retriever: e5-base, k: 5, levels: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]}
+    dial_families: {gemma-4: [gemma-4-e2b, gemma-4-e4b], gemma-3n: [gemma-3n-e2b, gemma-3n-e4b], ministral-3: [ministral-3-3b, ministral-3-8b], qwen2.5: [qwen2.5-1.5b, qwen2.5-3b]}   # v0.4.2
+    ladder: [tfidf-svd, bm25, e5-small, e5-base, bge-m3]
+    harness: [results/crossover/natural/nq_k5]
+
+  # Czech (the SQAD 3.0 copy, the released 200 questions), with the ano-or-ne prompt. Outside the
+  # headline and agreement. e5-small is the strongest SQAD retriever measured; k = 3, the
+  # Czech bench's context size. The analysis reads the records that ship, so a reader can recompute
+  # it. `cache` names an earlier round's answer cache on the laptop: gens.* counts what it holds.
+  czech:
+    slice: results/cz_rag/slice
+    cache: results/crossover/cache/czech
+    records: results/czech/records
+    set: released
+    dataset_name: sqad-3.0-test
+    dial: {retriever: e5-small, k: 3, levels: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]}
+    ladder: [bm25, e5-small]
+    harness: []

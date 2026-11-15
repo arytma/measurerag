@@ -1,0 +1,2434 @@
+{
+  "budgets": [
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret200ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret200ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret500ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret500ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret200ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret200ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret500ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret500ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret200ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret200ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret500ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret500ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 1995,
+      "name": "sqad32",
+      "options": {
+        "questions_file": "results/czech/plan/questions.json",
+        "questions_key": "sqad32_full"
+      }
+    },
+    "device": "cpu",
+    "name": "cz_rag_32",
+    "out_dir": "results/cz_rag_32",
+    "query_threads": 1,
+    "rag": {
+      "device": "cuda",
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b",
+        "gemma-4-e2b",
+        "ministral-3-3b",
+        "qwen3.5-2b",
+        "gemma-3n-e2b"
+      ],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 3,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "retromae-cs",
+        "kind": "dense",
+        "model": "retromae-cs"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 604800
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "sqad32",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+      "language": "cs",
+      "license": "CC BY-SA 3.0 (SQAD 3.2 on LINDAT, http://hdl.handle.net/11234/1-5019)",
+      "n_answers": 1995,
+      "n_docs": 14669,
+      "n_qrels": 1995,
+      "n_queries": 1995,
+      "name": "sqad-3.2-test",
+      "notes": [
+        "Czech QA. Corpus is every distinct context across all three splits; gold is the context cut around the question's answer sentence.",
+        "Contexts are reconstructed windows of whole sentences (cut_window), since 3.2 ships whole articles. Yes/no golds are mapped to ano and ne.",
+        "Answers are short spans, so EM is a meaningful metric; a generator that writes a sentence around the span will lose EM and keep F1."
+      ],
+      "qrels_sha256": "6169bc8308753ddbad00bb0acf84a3d1690d0a34c964fe40cf88a084532d3ae6",
+      "queries_sha256": "5173520ff455193e33f59c3b188fb43d663f0831b4c027507279695c0ae383ef",
+      "source": "http://hdl.handle.net/11234/1-5019"
+    }
+  ],
+  "machine": {
+    "arch": "aarch64",
+    "chip": "aarch64",
+    "cpu_count": 20,
+    "os_name": "Linux",
+    "os_version": "7.0.0-1025-nvidia",
+    "python_version": "3.12.3",
+    "ram_gb": 121.63
+  },
+  "results": [
+    {
+      "answers": {
+        "em": 0.37894736842105264,
+        "f1": 0.45242826853524415,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.9056722130044363,
+        "index_bytes": 13472468,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 14669
+      },
+      "config_id": "bm25+qwen2.5-1.5b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.1392815686755914,
+        "n": 1995.0,
+        "p50": 0.13801378599600866,
+        "p95": 0.19976229398162104
+      },
+      "generator": {
+        "completion_tokens": 9383,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 33.77970470673566
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.13801378599600866,
+        "e2e_s_p95": 0.19976229398162104,
+        "gen_tokens_per_s": 33.77970470673566,
+        "index_bytes": 13472468,
+        "model_bytes": 1117320736,
+        "peak_rss_gb": 1.9984,
+        "retrieval_ms_p50": 0.24665798991918564,
+        "retrieval_ms_p95": 0.5140680004842579
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8220551378446115,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7646873234019907,
+        "ndcg@100": 0.7748245555243354,
+        "recall@10": 0.9117794486215539,
+        "recall@100": 0.9578947368421052
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.28097413602532506,
+        "n": 1995.0,
+        "p50": 0.24665798991918564,
+        "p95": 0.5140680004842579
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 280.6221718949964,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.580952380952381,
+        "f1": 0.6919382362107126,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.8960665769991465,
+        "index_bytes": 13472468,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 14669
+      },
+      "config_id": "bm25+gemma-4-e2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.16102036062170247,
+        "n": 1995.0,
+        "p50": 0.15524106498924084,
+        "p95": 0.24090788399917074
+      },
+      "generator": {
+        "completion_tokens": 9293,
+        "key": "gemma-4-e2b",
+        "model_bytes": 3106738272,
+        "model_path": "hf://unsloth/gemma-4-E2B-it-GGUF@0314792d7f1f7e229411f620751375812bb9faf2/gemma-4-E2B-it-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 28.938132913837155
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.15524106498924084,
+        "e2e_s_p95": 0.24090788399917074,
+        "gen_tokens_per_s": 28.938132913837155,
+        "index_bytes": 13472468,
+        "model_bytes": 3106738272,
+        "peak_rss_gb": 3.919,
+        "retrieval_ms_p50": 0.3234890173189342,
+        "retrieval_ms_p95": 0.6128009990788996
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8220551378446115,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7646873234019907,
+        "ndcg@100": 0.7748245555243354,
+        "recall@10": 0.9117794486215539,
+        "recall@100": 0.9578947368421052
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.3532158412047449,
+        "n": 1995.0,
+        "p50": 0.3234890173189342,
+        "p95": 0.6128009990788996
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 324.4422620010155,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.5614035087719298,
+        "f1": 0.6461750739920856,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.9040578120038845,
+        "index_bytes": 13472468,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 14669
+      },
+      "config_id": "bm25+ministral-3-3b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.2604308186373195,
+        "n": 1995.0,
+        "p50": 0.2560958510148339,
+        "p95": 0.38204868300817907
+      },
+      "generator": {
+        "completion_tokens": 9074,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 17.468229990570705
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.2560958510148339,
+        "e2e_s_p95": 0.38204868300817907,
+        "gen_tokens_per_s": 17.468229990570705,
+        "index_bytes": 13472468,
+        "model_bytes": 2146497824,
+        "peak_rss_gb": 2.9676,
+        "retrieval_ms_p50": 0.26366300880908966,
+        "retrieval_ms_p95": 0.5828630528412759
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8220551378446115,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7646873234019907,
+        "ndcg@100": 0.7748245555243354,
+        "recall@10": 0.9117794486215539,
+        "recall@100": 0.9578947368421052
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.33058788759265106,
+        "n": 1995.0,
+        "p50": 0.26366300880908966,
+        "p95": 0.5828630528412759
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 522.5166012860136,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.5328320802005012,
+        "f1": 0.6274825683367075,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.9010530880004808,
+        "index_bytes": 13472468,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 14669
+      },
+      "config_id": "bm25+qwen3.5-2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.13902100036590848,
+        "n": 1995.0,
+        "p50": 0.13085160999980872,
+        "p95": 0.20637363500009087
+      },
+      "generator": {
+        "completion_tokens": 10317,
+        "key": "qwen3.5-2b",
+        "model_bytes": 1280835840,
+        "model_path": "hf://unsloth/Qwen3.5-2B-GGUF@f6d5376be1edb4d416d56da11e5397a961aca8ae/Qwen3.5-2B-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 37.2121600420477
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.13085160999980872,
+        "e2e_s_p95": 0.20637363500009087,
+        "gen_tokens_per_s": 37.2121600420477,
+        "index_bytes": 13472468,
+        "model_bytes": 1280835840,
+        "peak_rss_gb": 2.1691,
+        "retrieval_ms_p50": 0.2479189997757203,
+        "retrieval_ms_p95": 0.5083810001451639
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8220551378446115,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7646873234019907,
+        "ndcg@100": 0.7748245555243354,
+        "recall@10": 0.9117794486215539,
+        "recall@100": 0.9578947368421052
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.2774181147818999,
+        "n": 1995.0,
+        "p50": 0.2479189997757203,
+        "p95": 0.5083810001451639
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 280.1475851919995,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.5483709273182957,
+        "f1": 0.6493561670972272,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.8843269940116443,
+        "index_bytes": 13472468,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 14669
+      },
+      "config_id": "bm25+gemma-3n-e2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.2497365817603863,
+        "n": 1995.0,
+        "p50": 0.2398264939984074,
+        "p95": 0.3624524689948885
+      },
+      "generator": {
+        "completion_tokens": 10550,
+        "key": "gemma-3n-e2b",
+        "model_bytes": 3026881888,
+        "model_path": "hf://unsloth/gemma-3n-E2B-it-GGUF@d7bd20d510eff26f3f95260c50f032fee8931a35/gemma-3n-E2B-it-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 21.179747454070682
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.2398264939984074,
+        "e2e_s_p95": 0.3624524689948885,
+        "gen_tokens_per_s": 21.179747454070682,
+        "index_bytes": 13472468,
+        "model_bytes": 3026881888,
+        "peak_rss_gb": 3.758,
+        "retrieval_ms_p50": 0.28086100064683706,
+        "retrieval_ms_p95": 0.53637899691239
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8220551378446115,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7646873234019907,
+        "ndcg@100": 0.7748245555243354,
+        "recall@10": 0.9117794486215539,
+        "recall@100": 0.9578947368421052
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.3286233277659382,
+        "n": 1995.0,
+        "p50": 0.28086100064683706,
+        "p95": 0.53637899691239
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 501.0912782559899,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.3954887218045113,
+        "f1": 0.4742997859142322,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 438.1098530070158,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 22531629,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 14669,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+qwen2.5-1.5b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.14087588762434697,
+        "n": 1995.0,
+        "p50": 0.14063994798925705,
+        "p95": 0.20399135601473972
+      },
+      "generator": {
+        "completion_tokens": 9310,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 33.1365718728735
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.14063994798925705,
+        "e2e_s_p95": 0.20399135601473972,
+        "gen_tokens_per_s": 33.1365718728735,
+        "index_bytes": 22531629,
+        "model_bytes": 1610613564,
+        "peak_rss_gb": 2.8592,
+        "retrieval_ms_p50": 54.863144003320485,
+        "retrieval_ms_p95": 64.3100090092048
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8611528822055138,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8003878661712698,
+        "ndcg@100": 0.8064641696211979,
+        "recall@10": 0.9619047619047619,
+        "recall@100": 0.9894736842105263
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 51.82159020106499,
+        "n": 1995.0,
+        "p50": 54.863144003320485,
+        "p95": 64.3100090092048
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 823.6335841900145,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.6115288220551378,
+        "f1": 0.7226867123198409,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 435.74869848700473,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 22531629,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 14669,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+gemma-4-e2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.16128760314777604,
+        "n": 1995.0,
+        "p50": 0.15467013599118218,
+        "p95": 0.2389098799903877
+      },
+      "generator": {
+        "completion_tokens": 9309,
+        "key": "gemma-4-e2b",
+        "model_bytes": 3106738272,
+        "model_path": "hf://unsloth/gemma-4-E2B-it-GGUF@0314792d7f1f7e229411f620751375812bb9faf2/gemma-4-E2B-it-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 28.93958430858258
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.15467013599118218,
+        "e2e_s_p95": 0.2389098799903877,
+        "gen_tokens_per_s": 28.93958430858258,
+        "index_bytes": 22531629,
+        "model_bytes": 3600031100,
+        "peak_rss_gb": 4.778,
+        "retrieval_ms_p50": 53.09593700803816,
+        "retrieval_ms_p95": 63.61523800296709
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8611528822055138,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8003878661712698,
+        "ndcg@100": 0.8064641696211979,
+        "recall@10": 0.9619047619047619,
+        "recall@100": 0.9894736842105263
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 50.77549605078897,
+        "n": 1995.0,
+        "p50": 53.09593700803816,
+        "p95": 63.61523800296709
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 860.4094098290079,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.78 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.78 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.78 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.78 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.5744360902255639,
+        "f1": 0.6684992222794749,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 438.4124182750238,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 22531629,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 14669,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+ministral-3-3b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.26535397970189406,
+        "n": 1995.0,
+        "p50": 0.2581458240165375,
+        "p95": 0.39015235798433423
+      },
+      "generator": {
+        "completion_tokens": 9499,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 17.94695595734756
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.2581458240165375,
+        "e2e_s_p95": 0.39015235798433423,
+        "gen_tokens_per_s": 17.94695595734756,
+        "index_bytes": 22531629,
+        "model_bytes": 2639790652,
+        "peak_rss_gb": 3.8276,
+        "retrieval_ms_p50": 53.20045101689175,
+        "retrieval_ms_p95": 64.6688740234822
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8611528822055138,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8003878661712698,
+        "ndcg@100": 0.8064641696211979,
+        "recall@10": 0.9619047619047619,
+        "recall@100": 0.9894736842105263
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 51.22854645871079,
+        "n": 1995.0,
+        "p50": 53.20045101689175,
+        "p95": 64.6688740234822
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 1071.2848420340451,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.562907268170426,
+        "f1": 0.6587567326206256,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 436.9178779629992,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 22531629,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 14669,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+qwen3.5-2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.13903488086868349,
+        "n": 1995.0,
+        "p50": 0.1315101019999929,
+        "p95": 0.20890500199948292
+      },
+      "generator": {
+        "completion_tokens": 10046,
+        "key": "qwen3.5-2b",
+        "model_bytes": 1280835840,
+        "model_path": "hf://unsloth/Qwen3.5-2B-GGUF@f6d5376be1edb4d416d56da11e5397a961aca8ae/Qwen3.5-2B-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 36.23024183009116
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.1315101019999929,
+        "e2e_s_p95": 0.20890500199948292,
+        "gen_tokens_per_s": 36.23024183009116,
+        "index_bytes": 22531629,
+        "model_bytes": 1774128668,
+        "peak_rss_gb": 2.9964,
+        "retrieval_ms_p50": 56.38264800018078,
+        "retrieval_ms_p95": 65.00559999949473
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8611528822055138,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8003878661712698,
+        "ndcg@100": 0.8064641696211979,
+        "recall@10": 0.9619047619047619,
+        "recall@100": 0.9894736842105263
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 53.20266248219745,
+        "n": 1995.0,
+        "p50": 56.38264800018078,
+        "p95": 65.00559999949473
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 821.5848108700002,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.5719298245614035,
+        "f1": 0.676221567861923,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 435.81419698899845,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 22531629,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 14669,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+gemma-3n-e2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.2573063680580085,
+        "n": 1995.0,
+        "p50": 0.24487875300110318,
+        "p95": 0.369036297997809
+      },
+      "generator": {
+        "completion_tokens": 11037,
+        "key": "gemma-3n-e2b",
+        "model_bytes": 3026881888,
+        "model_path": "hf://unsloth/gemma-3n-E2B-it-GGUF@d7bd20d510eff26f3f95260c50f032fee8931a35/gemma-3n-E2B-it-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 21.505577605429107
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.24487875300110318,
+        "e2e_s_p95": 0.369036297997809,
+        "gen_tokens_per_s": 21.505577605429107,
+        "index_bytes": 22531629,
+        "model_bytes": 3520174716,
+        "peak_rss_gb": 4.5948,
+        "retrieval_ms_p50": 33.11377699719742,
+        "retrieval_ms_p95": 60.49190500925761
+      },
+      "metrics": {
+        "gold_in_context@3": 0.8611528822055138,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8003878661712698,
+        "ndcg@100": 0.8064641696211979,
+        "recall@10": 0.9619047619047619,
+        "recall@100": 0.9894736842105263
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 37.04445851099605,
+        "n": 1995.0,
+        "p50": 33.11377699719742,
+        "p95": 60.49190500925761
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 1024.3064019980084,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.59 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.59 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.59 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.59 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.26516290726817043,
+        "f1": 0.3221739649719817,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 232.32377916501719,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 15021101,
+        "index_type": "flat",
+        "model": "Seznam/retromae-small-cs",
+        "model_bytes": 99167447,
+        "n_docs": 14669,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "retromae-cs+qwen2.5-1.5b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.11541423401646526,
+        "n": 1995.0,
+        "p50": 0.11136666699894704,
+        "p95": 0.17735109699424356
+      },
+      "generator": {
+        "completion_tokens": 8373,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 36.37892603469724
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.11136666699894704,
+        "e2e_s_p95": 0.17735109699424356,
+        "gen_tokens_per_s": 36.37892603469724,
+        "index_bytes": 15021101,
+        "model_bytes": 1216488183,
+        "peak_rss_gb": 2.261,
+        "retrieval_ms_p50": 33.60283499932848,
+        "retrieval_ms_p95": 53.71102798380889
+      },
+      "metrics": {
+        "gold_in_context@3": 0.5298245614035088,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5163316766563869,
+        "ndcg@100": 0.5569029907760653,
+        "recall@10": 0.6897243107769424,
+        "recall@100": 0.8832080200501253
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 34.60779033677436,
+        "n": 1995.0,
+        "p50": 33.60283499932848,
+        "p95": 53.71102798380889
+      },
+      "retriever_id": "retromae-cs",
+      "retriever_kind": "dense",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "retromae-cs"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 532.6627759460243,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.4305764411027569,
+        "f1": 0.5123455383703752,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 231.38865443199757,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 15021101,
+        "index_type": "flat",
+        "model": "Seznam/retromae-small-cs",
+        "model_bytes": 99167447,
+        "n_docs": 14669,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "retromae-cs+gemma-4-e2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.13597257695873302,
+        "n": 1995.0,
+        "p50": 0.1331261400191579,
+        "p95": 0.21514203801052645
+      },
+      "generator": {
+        "completion_tokens": 8570,
+        "key": "gemma-4-e2b",
+        "model_bytes": 3106738272,
+        "model_path": "hf://unsloth/gemma-4-E2B-it-GGUF@0314792d7f1f7e229411f620751375812bb9faf2/gemma-4-E2B-it-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 31.604114992503735
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.1331261400191579,
+        "e2e_s_p95": 0.21514203801052645,
+        "gen_tokens_per_s": 31.604114992503735,
+        "index_bytes": 15021101,
+        "model_bytes": 3205905719,
+        "peak_rss_gb": 4.1814,
+        "retrieval_ms_p50": 36.601558997062966,
+        "retrieval_ms_p95": 54.8722870007623
+      },
+      "metrics": {
+        "gold_in_context@3": 0.5298245614035088,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5163316766563869,
+        "ndcg@100": 0.5569029907760653,
+        "recall@10": 0.6897243107769424,
+        "recall@100": 0.8832080200501253
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 36.05015910982463,
+        "n": 1995.0,
+        "p50": 36.601558997062966,
+        "p95": 54.8722870007623
+      },
+      "retriever_id": "retromae-cs",
+      "retriever_kind": "dense",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "retromae-cs"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 576.0648733619892,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.18 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.18 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.18 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.18 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.4130325814536341,
+        "f1": 0.4752709324400427,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 231.9362994840485,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 15021101,
+        "index_type": "flat",
+        "model": "Seznam/retromae-small-cs",
+        "model_bytes": 99167447,
+        "n_docs": 14669,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "retromae-cs+ministral-3-3b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.21413366109798582,
+        "n": 1995.0,
+        "p50": 0.2123918189899996,
+        "p95": 0.3315288980375044
+      },
+      "generator": {
+        "completion_tokens": 8000,
+        "key": "ministral-3-3b",
+        "model_bytes": 2146497824,
+        "model_path": "hf://unsloth/Ministral-3-3B-Instruct-2512-GGUF@7564922f37fa5bbb62b87f09a55c12f1f91d7a6a/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 18.73065852490876
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.2123918189899996,
+        "e2e_s_p95": 0.3315288980375044,
+        "gen_tokens_per_s": 18.73065852490876,
+        "index_bytes": 15021101,
+        "model_bytes": 2245665271,
+        "peak_rss_gb": 3.2328,
+        "retrieval_ms_p50": 36.909260030370206,
+        "retrieval_ms_p95": 54.15288498625159
+      },
+      "metrics": {
+        "gold_in_context@3": 0.5298245614035088,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5163316766563869,
+        "ndcg@100": 0.5569029907760653,
+        "recall@10": 0.6897243107769424,
+        "recall@100": 0.8832080200501253
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 36.06516214640214,
+        "n": 1995.0,
+        "p50": 36.909260030370206,
+        "p95": 54.15288498625159
+      },
+      "retriever_id": "retromae-cs",
+      "retriever_kind": "dense",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "retromae-cs"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 732.1327363720047,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.3929824561403509,
+        "f1": 0.463868779486158,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 231.23775443399973,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 15021101,
+        "index_type": "flat",
+        "model": "Seznam/retromae-small-cs",
+        "model_bytes": 99167447,
+        "n_docs": 14669,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "retromae-cs+qwen3.5-2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.11940048460951048,
+        "n": 1995.0,
+        "p50": 0.11422428500009119,
+        "p95": 0.19022262599992246
+      },
+      "generator": {
+        "completion_tokens": 8942,
+        "key": "qwen3.5-2b",
+        "model_bytes": 1280835840,
+        "model_path": "hf://unsloth/Qwen3.5-2B-GGUF@f6d5376be1edb4d416d56da11e5397a961aca8ae/Qwen3.5-2B-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 37.555072198211434
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.11422428500009119,
+        "e2e_s_p95": 0.19022262599992246,
+        "gen_tokens_per_s": 37.555072198211434,
+        "index_bytes": 15021101,
+        "model_bytes": 1380003287,
+        "peak_rss_gb": 2.4333,
+        "retrieval_ms_p50": 33.131082999716455,
+        "retrieval_ms_p95": 53.440593000232184
+      },
+      "metrics": {
+        "gold_in_context@3": 0.5298245614035088,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5163316766563869,
+        "ndcg@100": 0.5569029907760653,
+        "recall@10": 0.6897243107769424,
+        "recall@100": 0.8832080200501253
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 34.101749634081855,
+        "n": 1995.0,
+        "p50": 33.131082999716455,
+        "p95": 53.440593000232184
+      },
+      "retriever_id": "retromae-cs",
+      "retriever_kind": "dense",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "retromae-cs"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 538.6483520439997,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.3899749373433584,
+        "f1": 0.46511282432133655,
+        "n_answered": 1995.0
+      },
+      "build": {
+        "build_seconds": 230.1805765320023,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 15021101,
+        "index_type": "flat",
+        "model": "Seznam/retromae-small-cs",
+        "model_bytes": 99167447,
+        "n_docs": 14669,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "retromae-cs+gemma-3n-e2b",
+      "dataset": "sqad-3.2-test",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 0.21379350197848976,
+        "n": 1995.0,
+        "p50": 0.21081129400408827,
+        "p95": 0.33324457600247115
+      },
+      "generator": {
+        "completion_tokens": 9572,
+        "key": "gemma-3n-e2b",
+        "model_bytes": 3026881888,
+        "model_path": "hf://unsloth/gemma-3n-E2B-it-GGUF@d7bd20d510eff26f3f95260c50f032fee8931a35/gemma-3n-E2B-it-Q4_K_M.gguf",
+        "status": "ok",
+        "tokens_per_s": 22.447945214544966
+      },
+      "language": "cs",
+      "machine": {
+        "arch": "aarch64",
+        "chip": "aarch64",
+        "cpu_count": 20,
+        "os_name": "Linux",
+        "os_version": "7.0.0-1025-nvidia",
+        "python_version": "3.12.3",
+        "ram_gb": 121.63
+      },
+      "measurement": {
+        "e2e_s_p50": 0.21081129400408827,
+        "e2e_s_p95": 0.33324457600247115,
+        "gen_tokens_per_s": 22.447945214544966,
+        "index_bytes": 15021101,
+        "model_bytes": 3126049335,
+        "peak_rss_gb": 4.0223,
+        "retrieval_ms_p50": 34.14140299719293,
+        "retrieval_ms_p95": 53.91210300149396
+      },
+      "metrics": {
+        "gold_in_context@3": 0.5298245614035088,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5163316766563869,
+        "ndcg@100": 0.5569029907760653,
+        "recall@10": 0.6897243107769424,
+        "recall@100": 0.8832080200501253
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 34.790422640241076,
+        "n": 1995.0,
+        "p50": 34.14140299719293,
+        "p95": 53.91210300149396
+      },
+      "retriever_id": "retromae-cs",
+      "retriever_kind": "dense",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "retromae-cs"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 20,
+        "query": 1
+      },
+      "total_seconds": 727.3700753309968,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.02 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.02 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.02 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.02 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    }
+  ]
+}

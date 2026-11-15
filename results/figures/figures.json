@@ -1,0 +1,7017 @@
+{
+ "figures": {
+  "answer_language": {
+   "files": [
+    "answer_language_light.svg",
+    "answer_language_dark.svg"
+   ],
+   "sources": [
+    "results/czech/analysis.json"
+   ],
+   "values": [
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 179
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 47
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "yes_no_answer_classes",
+      "yes or no in English"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "compliance",
+      "yes_no_questions"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 266
+    }
+   ],
+   "what": "the share of SQAD 3.2 full's yes/no questions each model answers with yes or no in English, although the prompt asks for ano or ne"
+  },
+  "dial": {
+   "files": [
+    "dial_light.svg",
+    "dial_dark.svg"
+   ],
+   "sources": [
+    "results/crossover.json"
+   ],
+   "values": [
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "n_questions"
+     ],
+     "source": "results/crossover.json",
+     "value": 500
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.0
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.992
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.354
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.312
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.396
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.474
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.43
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.518
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.2
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.904
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.262
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.224
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.302
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.38
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.338
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.422
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.4
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.774
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.182
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.15
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.216
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.294
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.254
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.334
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.6
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.568
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.122
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.094
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.152
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.194
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.16
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.23
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.8
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.334
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.068
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.048
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.09
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.118
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.09
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.148
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 1.0
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.0
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.018
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.008
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.03
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.032
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.018
+    },
+    {
+     "path": [
+      "datasets",
+      "hotpotqa",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.048
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "n_questions"
+     ],
+     "source": "results/crossover.json",
+     "value": 300
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.0
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.96
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.413333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.356667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.47
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.506667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.45
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      0,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.563333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.2
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.806667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.353333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.3
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.406667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.433333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.376667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      1,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.49
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.4
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.64
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.303333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.253333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.356667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.366667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.313333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      2,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.423333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.6
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.456667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.24
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.193333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.286667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.286667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.236667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      3,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.34
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.8
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.263333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.166667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.126667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.21
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.196667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.153333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      4,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.243333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "p"
+     ],
+     "source": "results/crossover.json",
+     "value": 1.0
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "g_any",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.0
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-3b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.073333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-3b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.046667
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-3b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.103333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-8b",
+      "point"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.093333
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-8b",
+      "lo"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.06
+    },
+    {
+     "path": [
+      "datasets",
+      "nq",
+      "dial_families",
+      "ministral-3",
+      "dial",
+      "levels",
+      5,
+      "em",
+      "ministral-3-8b",
+      "hi"
+     ],
+     "source": "results/crossover.json",
+     "value": 0.126667
+    }
+   ],
+   "what": "the English dial as levels: EM of Ministral 3 3B and 8B against gold-in-context, HotpotQA and NQ"
+  },
+  "families": {
+   "files": [
+    "families_light.svg",
+    "families_dark.svg"
+   ],
+   "sources": [
+    "results/czech/analysis.json"
+   ],
+   "values": [
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.527422
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.505382
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.549974
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.584828
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.562788
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.606356
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.564326
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.542286
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.586366
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.64326
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.622245
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.664787
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.550999
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.52896
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.573039
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.594567
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.572527
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.616607
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.438237
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.416197
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.460277
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.503332
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.481292
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525884
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.539211
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.517171
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.561251
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.654536
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.633009
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.675551
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.57193
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.549875
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.593985
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.627068
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.605514
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.64812
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.61203
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.590476
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.633083
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.683709
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.663158
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.704261
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.574436
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.552381
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.596491
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.626566
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.605514
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.64812
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.474687
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.453133
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.496742
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.55188
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.529825
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.573935
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.562907
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.541353
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.584962
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.687719
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.667168
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.708271
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.515
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.445
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.585
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.57
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.5
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.635
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.57
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.505
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.635
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.595
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.53
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.66
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.535
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.465
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.605
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.59
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.655
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.4
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.335
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.47
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.455
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.39
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.53
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.465
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.6
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.59
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.655
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.546044
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.511025
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.581064
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.622568
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.587549
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.657588
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.614786
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.581064
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.649805
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.644617
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.610895
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.67834
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.577173
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.542153
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.612192
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.634241
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.600519
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.667964
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.468223
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.433204
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.50454
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.511025
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.476005
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.547341
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.582361
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.547341
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.61738
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.651102
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.61738
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.684825
+    }
+   ],
+   "what": "Czech RAG: each model's EM with yes and no mapped, with its 95% interval, on the four sets"
+  },
+  "pipeline": {
+   "files": [
+    "pipeline_light.svg",
+    "pipeline_dark.svg"
+   ],
+   "sources": [],
+   "values": [],
+   "what": "one configuration on one machine, with the budgets and the two moves marked; no data"
+  },
+  "social_card": {
+   "files": [
+    "social_card.png"
+   ],
+   "sources": [
+    "results/czech/analysis.json"
+   ],
+   "values": [
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.527422
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.505382
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.549974
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.584828
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.562788
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.606356
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.564326
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.542286
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.586366
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.64326
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.622245
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.664787
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.550999
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.52896
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.573039
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.594567
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.572527
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.616607
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.438237
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.416197
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.460277
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.503332
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.481292
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525884
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.539211
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.517171
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.561251
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.654536
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.633009
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.675551
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.57193
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.549875
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.593985
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.627068
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.605514
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.64812
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.61203
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.590476
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.633083
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.683709
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.663158
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.704261
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.574436
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.552381
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.596491
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.626566
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.605514
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.64812
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.474687
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.453133
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.496742
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.55188
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.529825
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.573935
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.562907
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.541353
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.584962
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.687719
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.667168
+    },
+    {
+     "path": [
+      "sets",
+      "sqad32_full",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.708271
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.515
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.445
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.585
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.57
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.5
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.635
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.57
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.505
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.635
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.595
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.53
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.66
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.535
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.465
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.605
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.59
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.655
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.4
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.335
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.47
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.455
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.39
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.53
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.465
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.6
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.59
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.525
+    },
+    {
+     "path": [
+      "sets",
+      "released",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.655
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.546044
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.511025
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.581064
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.622568
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.587549
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-3n",
+      "answers",
+      "e5-small+gemma-3n-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.657588
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.614786
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.581064
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.649805
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.644617
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.610895
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "gemma-4",
+      "answers",
+      "e5-small+gemma-4-e4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.67834
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.577173
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.542153
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.612192
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.634241
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.600519
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "ministral-3",
+      "answers",
+      "e5-small+ministral-3-8b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.667964
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.468223
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.433204
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-1.5b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.50454
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.511025
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.476005
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "answers",
+      "e5-small+qwen2.5-3b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.547341
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.582361
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.547341
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-2b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.61738
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.651102
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.61738
+    },
+    {
+     "path": [
+      "sets",
+      "copy_debiased",
+      "families",
+      "qwen3.5",
+      "answers",
+      "e5-small+qwen3.5-4b",
+      "secondary_em_yes_no_mapped",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.684825
+    }
+   ],
+   "what": "the social preview card for the repository's settings, 1280 x 640, with the smaller models of families"
+  },
+  "version_gap": {
+   "files": [
+    "version_gap_light.svg",
+    "version_gap_dark.svg"
+   ],
+   "sources": [
+    "results/czech/analysis.json"
+   ],
+   "values": [
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.043371
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.029624
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.116378
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.007887
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.069292
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.084595
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.05693
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.014148
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.128484
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.014673
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.059631
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.090479
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.057068
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.013446
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.129035
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.018933
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.055566
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.094973
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-3n-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.041454
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.030038
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.11396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.005715
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.06951
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.082319
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.04203
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.029023
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.11302
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.006401
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.067801
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.081897
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.088709
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.01817
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.159173
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.06333
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.011204
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.137347
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+gemma-4-e4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.021404
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.051103
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.091429
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.003566
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.073137
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.078342
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.039436
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.032105
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.110952
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.009651
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.06536
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.085797
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.036566
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.033509
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.107118
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.006154
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.08054
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.069188
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+ministral-3-8b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.054135
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.01693
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.123684
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.011893
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.062802
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.085127
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.074687
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.001679
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.145188
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.033375
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.04238
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.107459
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-1.5b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.09688
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.025401
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.168383
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.050536
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.025791
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.125531
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen2.5-3b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.007168
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.079674
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.06386
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.027244
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.103203
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.047924
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "bm25+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.032907
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.039612
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.10396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.001818
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.07864
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.073113
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-2b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "gap",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.097719
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "gap",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.027719
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "gap",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.168697
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "point"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.064401
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "lo"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": -0.010582
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "gap",
+      "hi"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 0.138679
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "gap",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1995
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "gap",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 200
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_target"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 1396
+    },
+    {
+     "path": [
+      "planned_gap",
+      "em_yes_no_mapped",
+      "e5-small+qwen3.5-4b",
+      "G1",
+      "on_questions_the_rule_passes",
+      "n_copy"
+     ],
+     "source": "results/czech/analysis.json",
+     "value": 186
+    }
+   ],
+   "what": "the gap between the SQAD versions, on all questions and on the questions the debias rule passes"
+  }
+ },
+ "note": "Every value each figure draws, with the file and the JSON path it was read from. Written by scripts/figures.py; scripts/number_audit.py reads each value again."
+}

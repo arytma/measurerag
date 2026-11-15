@@ -1,0 +1,49 @@
+# English end-to-end RAG. HotpotQA: BEIR corpus for retrieval gold, the
+# distractor split's short answers for EM/F1. Seeded 500-question sample.
+#
+# This config is the full thing and takes hours on CPU. For a first look use
+# configs/en_rag_quick.yaml, which is the same run at a smaller sample.
+name: en_rag
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 36000
+
+dataset:
+  name: hotpotqa-rag
+  max_docs: 100000
+  max_queries: 500
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5        # passages handed to the generator; also the gold-in-context k
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+  e2e_s: [3, 8]
+
+retrievers:
+  # tfidf-svd is here on purpose and is not a candidate for deployment. Every RAG
+  # measurement in this kit so far sits in the generation-bound half of the
+  # frontier - gold-in-context never drops below 98% - so "spend the next
+  # gigabyte on the generator" was measured under conditions that guarantee it.
+  # A deliberately weak retriever drives gold-in-context down with the dataset,
+  # the answers and the generators held fixed, which is the only way this kit
+  # can test the crossover open question 3 predicts.
+  - id: tfidf-svd
+    kind: tfidf-svd
+    n_components: 256
+  - id: bm25
+    kind: bm25
+  - id: e5-small
+    kind: dense
+    model: e5-small
+
+rag:
+  enabled: true
+  generators: [qwen2.5-1.5b, qwen2.5-3b]
+  max_tokens: 256
+  n_ctx: 4096

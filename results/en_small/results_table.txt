@@ -1,0 +1,19 @@
+configuration  ndcg@10  peak RSS  index    ret p95  ram4g_ret200ms  ram4g_ret500ms  ram8g_ret200ms  ram8g_ret500ms  ram16g_ret200ms  ram16g_ret500ms
+-------------  -------  --------  -------  -------  --------------  --------------  --------------  --------------  ---------------  ---------------
+e5-base        0.6939   2.60 GB   15.2 MB  19.5 ms  FITS            FITS            FITS            FITS            FITS             FITS
+e5-small       0.6770   1.79 GB   7.6 MB   7.3 ms   FITS            FITS            FITS            FITS            FITS             FITS
+bm25           0.6618   0.39 GB   5.7 MB   0.2 ms   FITS            FITS            FITS            FITS            FITS             FITS
+bge-m3         0.6437   5.24 GB   20.2 MB  63.2 ms  no              no              FITS            FITS            FITS             FITS
+bge-m3-512     0.6415   4.67 GB   20.2 MB  60.7 ms  no              no              FITS            FITS            FITS             FITS
+simcse-cs-en   0.5155   1.09 GB   5.1 MB   4.8 ms   FITS            FITS            FITS            FITS            FITS             FITS
+tfidf-svd      0.3871   0.79 GB   5.1 MB   2.3 ms   FITS            FITS            FITS            FITS            FITS             FITS
+
+Budgets:
+  ram4g_ret200ms: RAM <= 4 GB, retrieval p95 <= 200 ms
+  ram4g_ret500ms: RAM <= 4 GB, retrieval p95 <= 500 ms
+  ram8g_ret200ms: RAM <= 8 GB, retrieval p95 <= 200 ms
+  ram8g_ret500ms: RAM <= 8 GB, retrieval p95 <= 500 ms
+  ram16g_ret200ms: RAM <= 16 GB, retrieval p95 <= 200 ms
+  ram16g_ret500ms: RAM <= 16 GB, retrieval p95 <= 500 ms
+
+[value] = measured, but the configuration fits no budget in this grid.

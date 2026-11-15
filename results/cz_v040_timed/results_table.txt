@@ -1,0 +1,22 @@
+configuration      ndcg@10  peak RSS  index    ret p95  ram4g_ret200ms  ram4g_ret500ms  ram8g_ret200ms  ram8g_ret500ms  ram16g_ret200ms  ram16g_ret500ms
+-----------------  -------  --------  -------  -------  --------------  --------------  --------------  --------------  ---------------  ---------------
+e5-base            0.8084   3.55 GB   43.0 MB  22.4 ms  FITS            FITS            FITS            FITS            FITS             FITS
+e5-small           0.8004   2.34 GB   21.5 MB  6.9 ms   FITS            FITS            FITS            FITS            FITS             FITS
+embeddinggemma     0.7848   3.71 GB   43.0 MB  30.0 ms  FITS            FITS            FITS            FITS            FITS             FITS
+bm25-lemma         0.7847   0.48 GB   11.1 MB  0.3 ms   FITS            FITS            FITS            FITS            FITS             FITS
+bm25-nodiacritics  0.7691   0.46 GB   12.5 MB  0.3 ms   FITS            FITS            FITS            FITS            FITS             FITS
+bm25               0.7647   0.47 GB   12.8 MB  0.3 ms   FITS            FITS            FITS            FITS            FITS             FITS
+granite-278m       0.7406   4.10 GB   43.0 MB  21.8 ms  no              no              FITS            FITS            FITS             FITS
+granite-107m       0.7385   2.87 GB   21.5 MB  3.3 ms   FITS            FITS            FITS            FITS            FITS             FITS
+simcse-cs-en       0.5840   1.46 GB   14.3 MB  3.9 ms   FITS            FITS            FITS            FITS            FITS             FITS
+retromae-cs        0.5163   1.46 GB   14.3 MB  3.6 ms   FITS            FITS            FITS            FITS            FITS             FITS
+
+Budgets:
+  ram4g_ret200ms: RAM <= 4 GB, retrieval p95 <= 200 ms
+  ram4g_ret500ms: RAM <= 4 GB, retrieval p95 <= 500 ms
+  ram8g_ret200ms: RAM <= 8 GB, retrieval p95 <= 200 ms
+  ram8g_ret500ms: RAM <= 8 GB, retrieval p95 <= 500 ms
+  ram16g_ret200ms: RAM <= 16 GB, retrieval p95 <= 200 ms
+  ram16g_ret500ms: RAM <= 16 GB, retrieval p95 <= 500 ms
+
+[value] = measured, but the configuration fits no budget in this grid.

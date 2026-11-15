@@ -1,0 +1,20 @@
+{
+  "generators": {
+    "qwen2.5-1.5b": {
+      "differing_strings": [],
+      "em_256_night_one": 0.29,
+      "em_64_tonight": 0.29,
+      "f1_256_night_one": 0.3735235042735043,
+      "f1_64_tonight": 0.3735235042735043,
+      "hit_cap": 0,
+      "identical_strings": 200,
+      "max_completion_tokens_at_64": 51,
+      "within_tolerance": true
+    }
+  },
+  "k": 3,
+  "n_questions": 200,
+  "retriever": "e5-small",
+  "tolerance": 0.005,
+  "verdict": "use 64"
+}

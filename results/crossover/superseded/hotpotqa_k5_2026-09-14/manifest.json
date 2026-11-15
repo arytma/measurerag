@@ -1,0 +1,183 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 500,
+      "name": "hotpotqa-rag",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "crossover_hotpotqa_k5",
+    "out_dir": "results/crossover/natural/hotpotqa_k5",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b",
+        "qwen2.5-3b"
+      ],
+      "max_tokens": 64,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "config_path": "configs/crossover/hotpotqa_k5.yaml",
+  "config_sha256": "a6de64ae2fa89251c86c2d05d4277b0423ba93e0687135435cf49c755458f64d",
+  "created_utc": "2026-09-14T16:43:49+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "hotpotqa-rag",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "d958b91ac99554395e6fbc3a572e199a119babeb2ac81e15bc71e0e271cb7130",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (HotpotQA, Yang et al. 2018; BEIR mirror)",
+      "n_answers": 500,
+      "n_docs": 100000,
+      "n_qrels": 1000,
+      "n_queries": 500,
+      "name": "hotpotqa-rag",
+      "notes": [
+        "Answers come from the distractor split; retrieval gold comes from BEIR qrels. They join on the HotpotQA question id.",
+        "Corpus capped by a seeded reservoir sample with every gold paragraph forced in, so recall is bounded by the retriever, not by the sampling.",
+        "Multi-hop: a question needs two paragraphs, so gold-in-context@k here means 'at least one', which is a floor, not the full evidence."
+      ],
+      "qrels_sha256": "f24b72dd80e299dcb70157434778b012c89d518c175e3073033f8fa556592ee0",
+      "queries_sha256": "091bb0a89f24f001dc3fd72ce3025991b07884dd22b986a9e5bad55e63921fa2",
+      "source": "BeIR/hotpotqa corpus + hotpotqa/hotpot_qa distractor/validation answers"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 49761,
+      "sha256": "3d6435f6e7173d526f156697de3403ea95bec837f8977e5e8ef08147f942d1f3"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 53542,
+      "sha256": "17ee47e412d77ac3fb37ef57eeb1500aad3bd4a6c904121abab791eb968f020b"
+    },
+    "results.csv": {
+      "bytes": 1204,
+      "sha256": "3f2c2101e6d2201cc3fe063710ab8ee0b149b806ff65d6d1752e41d20c7905f3"
+    },
+    "results.json": {
+      "bytes": 12673,
+      "sha256": "b155325dd2dca7be691a2d30e42fe28eb7fda17a23e5080746fb67f327084062"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.1.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": {
+        "em": 0.27,
+        "f1": 0.3588836718836719,
+        "n_answered": 500.0
+      },
+      "config_id": "e5-base+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@5": 0.992,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8826099059111748,
+        "ndcg@100": 0.9005347707259064,
+        "recall@10": 0.891,
+        "recall@100": 0.96
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.324,
+        "f1": 0.4145763125763126,
+        "n_answered": 500.0
+      },
+      "config_id": "e5-base+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "metrics": {
+        "gold_in_context@5": 0.992,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8826099059111748,
+        "ndcg@100": 0.9005347707259064,
+        "recall@10": 0.891,
+        "recall@100": 0.96
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "c60d62bf62be1a45b315806c9c5fb8d8cf9961f030a1946c35fc91b800baadc6",
+  "schema": "measurerag/manifest/1",
+  "scrubbed": "absolute paths replaced by scripts/scrub_paths.py: hf://ORG/NAME@REV/FILE for Hugging Face cache files, repository-relative paths, ~/ for anything else under a home directory",
+  "seed": 20260101,
+  "wall_seconds": 7114.24
+}

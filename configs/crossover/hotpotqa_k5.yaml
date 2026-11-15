@@ -1,0 +1,50 @@
+# Run 2 natural sweep: HotpotQA, the run-1 slice, context k = 5.
+# Same harness, same prompt, same seeds as configs/en_rag.yaml; max_tokens 64.
+name: crossover_hotpotqa_k5
+out_dir: results/crossover/natural/hotpotqa_k5
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 36000
+
+dataset:
+  name: hotpotqa-rag
+  max_docs: 100000
+  max_queries: 500
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+  e2e_s: [3, 8]
+
+retrievers:
+  # The whole k = 5 ladder, re-measured on one OS under the calibration probe
+  # The 2026-09-14 run of e5-base alone is kept, superseded, under
+  # results/crossover/superseded/; run 1's rows stay in results/en_rag.
+  - id: tfidf-svd
+    kind: tfidf-svd
+    n_components: 256
+  - id: bm25
+    kind: bm25
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: e5-base
+    kind: dense
+    model: e5-base
+  # step 5 of the specification: run 1 measured bge-m3 at 5.24 GB, inside 8 GB
+  - id: bge-m3
+    kind: dense
+    model: bge-m3
+
+rag:
+  enabled: true
+  generators: [qwen2.5-1.5b, qwen2.5-3b]
+  max_tokens: 64
+  n_ctx: 4096

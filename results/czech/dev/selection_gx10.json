@@ -1,0 +1,228 @@
+{
+ "first_rule": {
+  "chosen": "v3",
+  "passed": false,
+  "shortfall": 0.05227272727272725
+ },
+ "gold_of_yes_no_questions": {
+  "ano": 60,
+  "ne": 40
+ },
+ "note": "The GX10's answers. The prompt was chosen on the Mac's (results/czech/dev/selection.json); this result chooses nothing.",
+ "questions": 200,
+ "selection": {
+  "chosen": "v1",
+  "compliance_passed": true,
+  "lowest_compliance": 0.978021978021978,
+  "passed": false,
+  "primary_metric": "em_yes_no_mapped",
+  "span_em_below_v1": {
+   "qwen2.5-1.5b": 0.16,
+   "qwen2.5-3b": 0.15
+  },
+  "span_passed": false
+ },
+ "variants": {
+  "v1": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 20,
+    "answered_ne": 1,
+    "classes": {
+     "ano or ne": 21,
+     "something else": 6,
+     "unanswerable": 15,
+     "yes or no in English": 58
+    },
+    "compliance": 0.24705882352941178,
+    "em_mapped_on_span": 0.4,
+    "em_on_span": 0.4,
+    "em_on_yes_no": 0.16,
+    "em_on_yes_no_mapped": 0.62,
+    "exploratory": {
+     "span_answered_ano": 2,
+     "span_answered_ano_or_ne": 2,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.48850000000002,
+    "span_answers_declined": 14,
+    "strict_share_of_all_yes_no": 0.21
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 45,
+    "answered_ne": 4,
+    "classes": {
+     "ano or ne": 49,
+     "something else": 18,
+     "unanswerable": 20,
+     "yes or no in English": 13
+    },
+    "compliance": 0.6125,
+    "em_mapped_on_span": 0.52,
+    "em_on_span": 0.52,
+    "em_on_yes_no": 0.35,
+    "em_on_yes_no_mapped": 0.45,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 0,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.63189971139973,
+    "span_answers_declined": 8,
+    "strict_share_of_all_yes_no": 0.49
+   }
+  },
+  "v2": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 77,
+    "answered_ne": 23,
+    "classes": {
+     "ano or ne": 100,
+     "something else": 0,
+     "unanswerable": 0,
+     "yes or no in English": 0
+    },
+    "compliance": 1.0,
+    "em_mapped_on_span": 0.39,
+    "em_on_span": 0.39,
+    "em_on_yes_no": 0.79,
+    "em_on_yes_no_mapped": 0.79,
+    "exploratory": {
+     "span_answered_ano": 5,
+     "span_answered_ano_or_ne": 6,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.49080148119855005,
+    "span_answers_declined": 0,
+    "strict_share_of_all_yes_no": 1.0
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 11,
+    "answered_ne": 24,
+    "classes": {
+     "ano or ne": 35,
+     "something else": 53,
+     "unanswerable": 12,
+     "yes or no in English": 0
+    },
+    "compliance": 0.3977272727272727,
+    "em_mapped_on_span": 0.2,
+    "em_on_span": 0.2,
+    "em_on_yes_no": 0.29,
+    "em_on_yes_no_mapped": 0.29,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 0,
+     "span_answered_with_the_instructions_list": 44,
+     "yes_no_answered_with_the_instructions_list": 47
+    },
+    "f1_on_span": 0.26695238095239,
+    "span_answers_declined": 9,
+    "strict_share_of_all_yes_no": 0.35
+   }
+  },
+  "v3": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 55,
+    "answered_ne": 45,
+    "classes": {
+     "ano or ne": 100,
+     "something else": 0,
+     "unanswerable": 0,
+     "yes or no in English": 0
+    },
+    "compliance": 1.0,
+    "em_mapped_on_span": 0.09,
+    "em_on_span": 0.09,
+    "em_on_yes_no": 0.75,
+    "em_on_yes_no_mapped": 0.75,
+    "exploratory": {
+     "span_answered_ano": 35,
+     "span_answered_ano_or_ne": 39,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.11029072681704999,
+    "span_answers_declined": 0,
+    "strict_share_of_all_yes_no": 1.0
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 47,
+    "answered_ne": 32,
+    "classes": {
+     "ano or ne": 79,
+     "something else": 9,
+     "unanswerable": 12,
+     "yes or no in English": 0
+    },
+    "compliance": 0.8977272727272727,
+    "em_mapped_on_span": 0.26,
+    "em_on_span": 0.26,
+    "em_on_yes_no": 0.68,
+    "em_on_yes_no_mapped": 0.68,
+    "exploratory": {
+     "span_answered_ano": 2,
+     "span_answered_ano_or_ne": 5,
+     "span_answered_with_the_instructions_list": 11,
+     "yes_no_answered_with_the_instructions_list": 9
+    },
+    "f1_on_span": 0.31364646464647,
+    "span_answers_declined": 27,
+    "strict_share_of_all_yes_no": 0.79
+   }
+  },
+  "v4": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 44,
+    "answered_ne": 55,
+    "classes": {
+     "ano or ne": 99,
+     "something else": 1,
+     "unanswerable": 0,
+     "yes or no in English": 0
+    },
+    "compliance": 0.99,
+    "em_mapped_on_span": 0.24,
+    "em_on_span": 0.24,
+    "em_on_yes_no": 0.67,
+    "em_on_yes_no_mapped": 0.67,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 26,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.33193939393941,
+    "span_answers_declined": 0,
+    "strict_share_of_all_yes_no": 0.99
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 47,
+    "answered_ne": 42,
+    "classes": {
+     "ano or ne": 89,
+     "something else": 2,
+     "unanswerable": 9,
+     "yes or no in English": 0
+    },
+    "compliance": 0.978021978021978,
+    "em_mapped_on_span": 0.37,
+    "em_on_span": 0.37,
+    "em_on_yes_no": 0.75,
+    "em_on_yes_no_mapped": 0.75,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 5,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.45840476190477,
+    "span_answers_declined": 21,
+    "strict_share_of_all_yes_no": 0.89
+   }
+  }
+ },
+ "yes_no_questions": 100
+}

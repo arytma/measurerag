@@ -1,0 +1,155 @@
+{
+ "flags": {
+  "archive_rule": {
+   "released_200": {
+    "flag_any": 14,
+    "flag_both": 0,
+    "flag_early": 9,
+    "flag_heavy": 5,
+    "questions": 200
+   },
+   "sample_3a": {
+    "flag_any": 55,
+    "flag_both": 9,
+    "flag_early": 47,
+    "flag_heavy": 17,
+    "questions": 200
+   },
+   "sqad30_archive_all": {
+    "flag_any": 4142,
+    "flag_any_share": 0.3074,
+    "flag_both": 647,
+    "flag_early": 3445,
+    "flag_heavy": 1344,
+    "pairs": 13476
+   },
+   "sqad30_archive_sample": {
+    "flag_any": 611,
+    "flag_both": 74,
+    "flag_early": 504,
+    "flag_heavy": 181,
+    "questions": 2000
+   },
+   "sqad30_copy_all": {
+    "flag_any": 637,
+    "flag_any_share": 0.0831,
+    "flag_both": 28,
+    "flag_early": 397,
+    "flag_heavy": 268,
+    "pairs": 7663
+   },
+   "sqad30_copy_test_split": {
+    "flag_any": 72,
+    "flag_both": 5,
+    "flag_early": 46,
+    "flag_heavy": 31,
+    "questions": 843
+   },
+   "sqad32_all": {
+    "flag_any": 4569,
+    "flag_any_share": 0.2851,
+    "flag_both": 694,
+    "flag_early": 3831,
+    "flag_heavy": 1432,
+    "pairs": 16025
+   },
+   "sqad32_test_split": {
+    "flag_any": 1381,
+    "flag_both": 228,
+    "flag_early": 1154,
+    "flag_heavy": 455,
+    "questions": 4771
+   },
+   "threshold": 0.13793103448275862
+  },
+  "copy_rule": {
+   "released_200": {
+    "flag_any": 24,
+    "flag_both": 1,
+    "flag_early": 9,
+    "flag_heavy": 16,
+    "questions": 200
+   },
+   "sample_3a": {
+    "flag_any": 63,
+    "flag_both": 15,
+    "flag_early": 47,
+    "flag_heavy": 31,
+    "questions": 200
+   },
+   "sqad30_archive_all": {
+    "flag_any": 4905,
+    "flag_any_share": 0.364,
+    "flag_both": 1027,
+    "flag_early": 3445,
+    "flag_heavy": 2487,
+    "pairs": 13476
+   },
+   "sqad30_archive_sample": {
+    "flag_any": 719,
+    "flag_both": 136,
+    "flag_early": 504,
+    "flag_heavy": 351,
+    "questions": 2000
+   },
+   "sqad30_copy_all": {
+    "flag_any": 1089,
+    "flag_any_share": 0.1421,
+    "flag_both": 63,
+    "flag_early": 397,
+    "flag_heavy": 755,
+    "pairs": 7663
+   },
+   "sqad30_copy_test_split": {
+    "flag_any": 125,
+    "flag_both": 11,
+    "flag_early": 46,
+    "flag_heavy": 90,
+    "questions": 843
+   },
+   "sqad32_all": {
+    "flag_any": 5485,
+    "flag_any_share": 0.3423,
+    "flag_both": 1128,
+    "flag_early": 3831,
+    "flag_heavy": 2782,
+    "pairs": 16025
+   },
+   "sqad32_test_split": {
+    "flag_any": 1630,
+    "flag_both": 369,
+    "flag_early": 1154,
+    "flag_heavy": 845,
+    "questions": 4771
+   },
+   "threshold": 0.1
+  }
+ },
+ "full_200_question_sets": {
+  "note": "Not run. Counted with the dial's dry run against the answers already cached.",
+  "sqad30_copy": {
+   "kept_from_released": 186,
+   "new_generations_needed": {
+    "bm25_1.5b": 14,
+    "dial_1.5b": 25,
+    "dial_3b": 25,
+    "retromae_1.5b": 14
+   },
+   "topped_up": 14,
+   "total": 78
+  },
+  "sqad32": {
+   "kept_from_3a": 145,
+   "new_generations_needed": {
+    "bm25_1.5b": 52,
+    "dial_1.5b": 94,
+    "dial_3b": 94,
+    "retromae_1.5b": 52
+   },
+   "topped_up": 55,
+   "total": 292
+  }
+ },
+ "threshold_archive_p90": 0.13793103448275862,
+ "threshold_copy_p90": 0.1
+}

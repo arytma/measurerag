@@ -1,0 +1,169 @@
+{
+ "finished_phases": {
+  "dev": "2026-11-09 08:35:17"
+ },
+ "restarts": [],
+ "stages": {
+  "dev_v1_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 03:39:49",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 1530.7
+  },
+  "dev_v1_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 04:26:05",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 2776.4
+  },
+  "dev_v2_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 04:47:51",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 1305.7
+  },
+  "dev_v2_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 05:30:53",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 2581.4
+  },
+  "dev_v3_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 05:52:54",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 1320.7
+  },
+  "dev_v3_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 06:36:25",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 2611.3
+  },
+  "dev_v4_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 07:41:46",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 1470.8
+  },
+  "dev_v4_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 08:35:17",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 3211.5
+  }
+ },
+ "superseded_mac": {
+  "released_agree": {
+   "exit": 0,
+   "finished": "2026-11-09 12:31:37",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "released_bench_bm25": {
+   "exit": 0,
+   "finished": "2026-11-09 09:17:43",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 2310.9
+  },
+  "released_bench_e5-small": {
+   "exit": 0,
+   "finished": "2026-11-09 10:08:59",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 3076.3
+  },
+  "released_bench_finish": {
+   "exit": 0,
+   "finished": "2026-11-09 10:49:30",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "released_bench_retromae-cs": {
+   "exit": 0,
+   "finished": "2026-11-09 10:49:15",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 2416.0
+  },
+  "released_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 12:31:21",
+   "generations": 367,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 367,
+   "restarts": 0,
+   "seconds": 6108.3
+  },
+  "released_dial_3b": {
+   "exit": null,
+   "generations": 28,
+   "note": "cut short by the move; generations and seconds summed from its cache rows",
+   "seconds": 823.2
+  }
+ },
+ "superseded_v3": {
+  "released_bench_bm25": {
+   "exit": 0,
+   "finished": "2026-11-09 07:13:40",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 1770.7
+  }
+ },
+ "warnings": []
+}

@@ -1,0 +1,851 @@
+{
+  "budgets": [
+    {
+      "e2e_s": null,
+      "name": "ram4g_ret200ms",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram4g_ret500ms",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram8g_ret200ms",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram8g_ret500ms",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram16g_ret200ms",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": null,
+      "name": "ram16g_ret500ms",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [
+        "nfcorpus"
+      ],
+      "max_docs": 100000,
+      "max_queries": 2000,
+      "name": "scifact",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "en_small",
+    "out_dir": "results/en_small",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      },
+      {
+        "id": "bge-m3-512",
+        "kind": "dense",
+        "model": "bge-m3-512"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 5400
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "scifact",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "83824fbe6112ee2614496dbdbaead3d32ad9cf0507c3b6ca244850f2303cea7e",
+      "language": "en",
+      "license": "CC BY-NC 4.0 (SciFact, Wadden et al. 2020)",
+      "n_answers": 0,
+      "n_docs": 5183,
+      "n_qrels": 339,
+      "n_queries": 300,
+      "name": "beir-scifact",
+      "notes": [
+        "BEIR mirror on Hugging Face; the canonical zips are outside this kit's network allowlist."
+      ],
+      "qrels_sha256": "bf94ee91c4bbfd16f4c80d1ae5a4855b855dcb797de85a358afee373b53581c7",
+      "queries_sha256": "afb8f4682aaadee3afef7bdf2e1dfffd16b812a6bdcca9aafbafaea97a4e7f24",
+      "source": "https://huggingface.co/datasets/BeIR/scifact (split test)"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 0.4523720830002276,
+        "index_bytes": 6020723,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 5183
+      },
+      "config_id": "bm25",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 6020723,
+        "model_bytes": 0,
+        "peak_rss_gb": 0.3944,
+        "retrieval_ms_p50": 0.13962500088382512,
+        "retrieval_ms_p95": 0.17758299873094074
+      },
+      "metrics": {
+        "gold_in_context@5": 0.73,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6618348472096938,
+        "ndcg@100": 0.6855557055975097,
+        "recall@10": 0.7817777777777778,
+        "recall@100": 0.8852222222222222
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 0.14348747994517908,
+        "n": 300.0,
+        "p50": 0.13962500088382512,
+        "p95": 0.17758299873094074
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 0.5134347080020234,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "build": {
+        "build_seconds": 1.367781125001784,
+        "index_bytes": 5307520,
+        "model_bytes": 0,
+        "n_components": 256,
+        "n_docs": 5183,
+        "vocab": 35954
+      },
+      "config_id": "tfidf-svd",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 5307520,
+        "model_bytes": 0,
+        "peak_rss_gb": 0.7944,
+        "retrieval_ms_p50": 1.9963749982707668,
+        "retrieval_ms_p95": 2.2984589995758142
+      },
+      "metrics": {
+        "gold_in_context@5": 0.48,
+        "n_queries": 300.0,
+        "ndcg@10": 0.38708929685807236,
+        "ndcg@100": 0.45467160626147585,
+        "recall@10": 0.5433888888888889,
+        "recall@100": 0.8543333333333334
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 2.0380897199720494,
+        "n": 300.0,
+        "p50": 1.9963749982707668,
+        "p95": 2.2984589995758142
+      },
+      "retriever_id": "tfidf-svd",
+      "retriever_kind": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "retriever_params": {
+        "device": "cpu",
+        "n_components": 256
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 2.7979609579997486,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "build": {
+        "build_seconds": 132.26829475,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 7961133,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 5183,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 7961133,
+        "model_bytes": 493292828,
+        "peak_rss_gb": 1.7897,
+        "retrieval_ms_p50": 5.416249999825595,
+        "retrieval_ms_p95": 7.3246249999101565
+      },
+      "metrics": {
+        "gold_in_context@5": 0.7566666666666667,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6769970211725783,
+        "ndcg@100": 0.7029273310710533,
+        "recall@10": 0.8065555555555556,
+        "recall@100": 0.925
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 5.789319016664649,
+        "n": 300.0,
+        "p50": 5.416249999825595,
+        "p95": 7.3246249999101565
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 134.02715824999996,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "build": {
+        "build_seconds": 355.094801167,
+        "device": "cpu",
+        "dim": 768,
+        "index_bytes": 15922221,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-base",
+        "model_bytes": 1134534380,
+        "n_docs": 5183,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-base",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 15922221,
+        "model_bytes": 1134534380,
+        "peak_rss_gb": 2.5959,
+        "retrieval_ms_p50": 14.723125000045911,
+        "retrieval_ms_p95": 19.5256250001421
+      },
+      "metrics": {
+        "gold_in_context@5": 0.7766666666666666,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6938951849071131,
+        "ndcg@100": 0.7236038748492155,
+        "recall@10": 0.8072222222222222,
+        "recall@100": 0.9393333333333334
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 15.966267360004926,
+        "n": 300.0,
+        "p50": 14.723125000045911,
+        "p95": 19.5256250001421
+      },
+      "retriever_id": "e5-base",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-base+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-base"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 359.90736712500006,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "build": {
+        "build_seconds": 79.5733217500001,
+        "device": "cpu",
+        "dim": 256,
+        "index_bytes": 5307437,
+        "index_type": "flat",
+        "model": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+        "model_bytes": 99164889,
+        "n_docs": 5183,
+        "pooling": "cls",
+        "pooling_source": "declared ('mean' would have been used)"
+      },
+      "config_id": "simcse-cs-en",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 5307437,
+        "model_bytes": 99164889,
+        "peak_rss_gb": 1.0917,
+        "retrieval_ms_p50": 3.62729199991918,
+        "retrieval_ms_p95": 4.774042000008194
+      },
+      "metrics": {
+        "gold_in_context@5": 0.5966666666666667,
+        "n_queries": 300.0,
+        "ndcg@10": 0.515480709608345,
+        "ndcg@100": 0.5603922449742317,
+        "recall@10": 0.6772222222222222,
+        "recall@100": 0.8753333333333334
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 3.786932253337909,
+        "n": 300.0,
+        "p50": 3.62729199991918,
+        "p95": 4.774042000008194
+      },
+      "retriever_id": "simcse-cs-en",
+      "retriever_kind": "dense",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "simcse-cs-en"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 80.73016429199993,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "build": {
+        "build_seconds": 1392.243298125,
+        "device": "cpu",
+        "dim": 1024,
+        "index_bytes": 21229613,
+        "index_type": "flat",
+        "model": "BAAI/bge-m3",
+        "model_bytes": 2293331623,
+        "n_docs": 5183,
+        "pooling": "cls",
+        "pooling_source": "repo"
+      },
+      "config_id": "bge-m3",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 21229613,
+        "model_bytes": 2293331623,
+        "peak_rss_gb": 5.239,
+        "retrieval_ms_p50": 46.71370799997021,
+        "retrieval_ms_p95": 63.189415999659104
+      },
+      "metrics": {
+        "gold_in_context@5": 0.74,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6436624071293366,
+        "ndcg@100": 0.6710477806183086,
+        "recall@10": 0.7834444444444444,
+        "recall@100": 0.9036666666666667
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 49.83811902667185,
+        "n": 300.0,
+        "p50": 46.71370799997021,
+        "p95": 63.189415999659104
+      },
+      "retriever_id": "bge-m3",
+      "retriever_kind": "dense",
+      "retriever_name": "bge-m3+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "bge-m3"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1407.229965333,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.24 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.24 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "build": {
+        "build_seconds": 1120.8819559580006,
+        "device": "cpu",
+        "dim": 1024,
+        "index_bytes": 21229613,
+        "index_type": "flat",
+        "model": "BAAI/bge-m3",
+        "model_bytes": 2293331623,
+        "n_docs": 5183,
+        "pooling": "cls",
+        "pooling_source": "repo"
+      },
+      "config_id": "bge-m3-512",
+      "dataset": "beir-scifact",
+      "device": "cpu",
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": null,
+        "e2e_s_p95": null,
+        "gen_tokens_per_s": null,
+        "index_bytes": 21229613,
+        "model_bytes": 2293331623,
+        "peak_rss_gb": 4.6729,
+        "retrieval_ms_p50": 44.386499997926876,
+        "retrieval_ms_p95": 60.748124997189734
+      },
+      "metrics": {
+        "gold_in_context@5": 0.74,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6414978375862479,
+        "ndcg@100": 0.6706393768554632,
+        "recall@10": 0.7751111111111111,
+        "recall@100": 0.9036666666666667
+      },
+      "n_docs": 5183,
+      "n_queries": 300,
+      "retrieval_latency_ms": {
+        "mean": 48.227444176615485,
+        "n": 300.0,
+        "p50": 44.386499997926876,
+        "p95": 60.748124997189734
+      },
+      "retriever_id": "bge-m3-512",
+      "retriever_kind": "dense",
+      "retriever_name": "bge-m3-512+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "bge-m3-512"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1135.4004939170045,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.67 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.67 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 1137.08
+    }
+  ]
+}

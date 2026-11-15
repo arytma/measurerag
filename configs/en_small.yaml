@@ -1,0 +1,49 @@
+# English retrieval, small tier. BEIR SciFact: 5183 abstracts, 300 claims.
+# Small enough to finish on a cold CPU in minutes, hard enough to separate
+# lexical from dense retrieval.
+name: en_small
+device: cpu            # the target box is CPU-only; --device mps is opt-in
+seed: 20260101
+query_threads: 1      # deployed path: one query at a time, fixed threads
+timeout_s: 5400
+
+dataset:
+  name: scifact
+  fallbacks: [nfcorpus]
+  max_docs: 100000
+  max_queries: 2000
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: tfidf-svd
+    kind: tfidf-svd
+    n_components: 256
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: e5-base
+    kind: dense
+    model: e5-base
+  - id: simcse-cs-en
+    kind: dense
+    model: simcse-cs-en
+  - id: bge-m3
+    kind: dense
+    model: bge-m3
+  - id: bge-m3-512          # same weights at 512, so p95 compares like with like
+    kind: dense
+    model: bge-m3-512
+
+rag:
+  enabled: false

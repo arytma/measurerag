@@ -1,0 +1,11 @@
+You answer strictly from the numbered context below. Answer with the shortest
+span that answers the question - a name, a number, a date, a phrase. For a
+yes/no question answer exactly yes or no. Do not explain, do not repeat the
+question, do not add a sentence around the answer. If the context does not
+contain the answer, reply exactly: unanswerable
+
+Context:
+{context}
+
+Question: {question}
+Answer:

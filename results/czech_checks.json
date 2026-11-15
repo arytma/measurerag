@@ -1,0 +1,36 @@
+{
+ "archive": {
+  "handle": "http://hdl.handle.net/11234/1-3069",
+  "md5": "e5935598d999102c53237f44e69fd6f9",
+  "records": 13476,
+  "records_stated_on_lindat": 13477,
+  "stated_read": "2026-11-10"
+ },
+ "copy": {
+  "licence_governing": "LGPL-3.0 (LINDAT, http://hdl.handle.net/11234/1-3069)",
+  "repo_id": "Pehy/cs_sqad-3.0",
+  "revision": "f9e71384a8f7285412360cecabb7a852f49adbb9",
+  "rows": 7663,
+  "rows_with_same_id_and_question_in_the_archive": 7663
+ },
+ "filter_read_from_the_comparison": {
+  "answer_sentence_comes_later": {
+   "dropped": 0,
+   "kept": 7019
+  },
+  "answer_sentence_not_located": {
+   "dropped": 15,
+   "kept": 0
+  },
+  "answer_sentence_opens_the_article": {
+   "dropped": 5798,
+   "kept": 644
+  }
+ },
+ "measured": "2026-11-08",
+ "note": "Counts from comparing the Hugging Face copy with the LINDAT archive of SQAD 3.0. No SQAD text. scripts/sqad_copy_vs_archive.py recomputes every number here from the archive, whose MD5 it checks, and the pinned copy. The thresholds are the 90th percentile of the question-context overlap: on the archive with its windows reconstructed, and on the copy as it stands.",
+ "thresholds": {
+  "archive_p90": 0.137931,
+  "copy_p90": 0.1
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "copy_test": {
+  "differing_questions": [],
+  "questions": 843,
+  "top_10_differs": 0,
+  "top_10_same_ids_other_order": 0,
+  "top_3_differs": 0
+ },
+ "note": "e5-small encoded again on the Mac by scripts/retrieval_cache.py, against the shipped top 10",
+ "sqad32_test": {
+  "differing_questions": [],
+  "questions": 4771,
+  "top_10_differs": 0,
+  "top_10_same_ids_other_order": 0,
+  "top_3_differs": 0
+ }
+}

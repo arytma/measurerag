@@ -1,0 +1,48 @@
+# English retrieval, NFCorpus. The second of the three BEIR sets the specification asks
+# for, and the hardest of them: medical queries written by laypeople against
+# abstracts written by specialists, so lexical overlap between query and gold is
+# low. SciFact flatters BM25; this one should not.
+#
+# 3.6k documents, so it runs full scale with no cap.
+name: en_nfcorpus
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 10800
+
+dataset:
+  name: nfcorpus
+  max_docs: 100000       # above the corpus size: no cap actually applies
+  max_queries: 2000
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 5
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: tfidf-svd
+    kind: tfidf-svd
+    n_components: 256
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: e5-base
+    kind: dense
+    model: e5-base
+  - id: simcse-cs-en
+    kind: dense
+    model: simcse-cs-en
+  - id: bge-m3
+    kind: dense
+    model: bge-m3
+
+rag:
+  enabled: false

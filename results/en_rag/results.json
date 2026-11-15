@@ -1,0 +1,1154 @@
+{
+  "budgets": [
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret200ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret200ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram4g_ret500ms_e2e3s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram4g_ret500ms_e2e8s",
+      "ram_gb": 4.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret200ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret200ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram8g_ret500ms_e2e3s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram8g_ret500ms_e2e8s",
+      "ram_gb": 8.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret200ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret200ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 200.0
+    },
+    {
+      "e2e_s": 3.0,
+      "name": "ram16g_ret500ms_e2e3s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    },
+    {
+      "e2e_s": 8.0,
+      "name": "ram16g_ret500ms_e2e8s",
+      "ram_gb": 16.0,
+      "retrieval_ms": 500.0
+    }
+  ],
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 500,
+      "name": "hotpotqa-rag",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "en_rag",
+    "out_dir": "results/en_rag",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b",
+        "qwen2.5-3b"
+      ],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "hotpotqa-rag",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "d958b91ac99554395e6fbc3a572e199a119babeb2ac81e15bc71e0e271cb7130",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (HotpotQA, Yang et al. 2018; BEIR mirror)",
+      "n_answers": 500,
+      "n_docs": 100000,
+      "n_qrels": 1000,
+      "n_queries": 500,
+      "name": "hotpotqa-rag",
+      "notes": [
+        "Answers come from the distractor split; retrieval gold comes from BEIR qrels. They join on the HotpotQA question id.",
+        "Corpus capped by a seeded reservoir sample with every gold paragraph forced in, so recall is bounded by the retriever, not by the sampling.",
+        "Multi-hop: a question needs two paragraphs, so gold-in-context@k here means 'at least one', which is a floor, not the full evidence."
+      ],
+      "qrels_sha256": "f24b72dd80e299dcb70157434778b012c89d518c175e3073033f8fa556592ee0",
+      "queries_sha256": "091bb0a89f24f001dc3fd72ce3025991b07884dd22b986a9e5bad55e63921fa2",
+      "source": "BeIR/hotpotqa corpus + hotpotqa/hotpot_qa distractor/validation answers"
+    }
+  ],
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "26.6.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "results": [
+    {
+      "answers": {
+        "em": 0.028,
+        "f1": 0.03891111111111111,
+        "n_answered": 500.0
+      },
+      "build": {
+        "build_seconds": 12.478309666003042,
+        "index_bytes": 102400128,
+        "model_bytes": 0,
+        "n_components": 256,
+        "n_docs": 100000,
+        "vocab": 219059
+      },
+      "config_id": "tfidf-svd+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 1.7539084083180496,
+        "n": 500.0,
+        "p50": 1.6046933340039686,
+        "p95": 3.0159548749943497
+      },
+      "generator": {
+        "completion_tokens": 1496,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 1.7060486348413897
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 1.6046933340039686,
+        "e2e_s_p95": 3.0159548749943497,
+        "gen_tokens_per_s": 1.7060486348413897,
+        "index_bytes": 102400128,
+        "model_bytes": 1117320736,
+        "peak_rss_gb": 5.23,
+        "retrieval_ms_p50": 13.000749997445382,
+        "retrieval_ms_p95": 13.532541001040954
+      },
+      "metrics": {
+        "gold_in_context@5": 0.184,
+        "n_queries": 500.0,
+        "ndcg@10": 0.09528572391249754,
+        "ndcg@100": 0.12881065005965714,
+        "recall@10": 0.118,
+        "recall@100": 0.259
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 13.026413826155476,
+        "n": 500.0,
+        "p50": 13.000749997445382,
+        "p95": 13.532541001040954
+      },
+      "retriever_id": "tfidf-svd",
+      "retriever_kind": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "retriever_params": {
+        "device": "cpu",
+        "n_components": 256
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 898.5048778749988,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.23 GB > 4 GB",
+            "end-to-end p95 3.02 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.23 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.23 GB > 4 GB",
+            "end-to-end p95 3.02 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.23 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.02 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.02 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.02 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.02 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 900.31
+    },
+    {
+      "answers": {
+        "em": 0.05,
+        "f1": 0.05951457431457432,
+        "n_answered": 500.0
+      },
+      "build": {
+        "build_seconds": 12.345696415999555,
+        "index_bytes": 102400128,
+        "model_bytes": 0,
+        "n_components": 256,
+        "n_docs": 100000,
+        "vocab": 219059
+      },
+      "config_id": "tfidf-svd+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 3.5832592262819962,
+        "n": 500.0,
+        "p50": 3.3110383750026813,
+        "p95": 6.156340749999799
+      },
+      "generator": {
+        "completion_tokens": 1520,
+        "key": "qwen2.5-3b",
+        "model_bytes": 2104932768,
+        "model_path": "hf://Qwen/Qwen2.5-3B-Instruct-GGUF@7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.8484307670647812
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 3.3110383750026813,
+        "e2e_s_p95": 6.156340749999799,
+        "gen_tokens_per_s": 0.8484307670647812,
+        "index_bytes": 102400128,
+        "model_bytes": 2104932768,
+        "peak_rss_gb": 7.0049,
+        "retrieval_ms_p50": 13.041083002462983,
+        "retrieval_ms_p95": 13.723124997341074
+      },
+      "metrics": {
+        "gold_in_context@5": 0.184,
+        "n_queries": 500.0,
+        "ndcg@10": 0.09528572391249754,
+        "ndcg@100": 0.12881065005965714,
+        "recall@10": 0.118,
+        "recall@100": 0.259
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "retrieval_latency_ms": {
+        "mean": 13.093535341700772,
+        "n": 500.0,
+        "p50": 13.041083002462983,
+        "p95": 13.723124997341074
+      },
+      "retriever_id": "tfidf-svd",
+      "retriever_kind": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "retriever_params": {
+        "device": "cpu",
+        "n_components": 256
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1813.805166708,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.00 GB > 4 GB",
+            "end-to-end p95 6.16 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.00 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.00 GB > 4 GB",
+            "end-to-end p95 6.16 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 7.00 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 6.16 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 6.16 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 6.16 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 6.16 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ],
+      "wall_seconds": 1815.61
+    },
+    {
+      "answers": {
+        "em": 0.242,
+        "f1": 0.31439992931045563,
+        "n_answered": 500.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 2.3158591669998714,
+        "index_bytes": 33137170,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 100000
+      },
+      "config_id": "bm25+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 2.700867577172034,
+        "n": 500.0,
+        "p50": 2.6596813750002184,
+        "p95": 3.7897943329990085
+      },
+      "generator": {
+        "completion_tokens": 1699,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 1.2581958517905985
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 2.6596813750002184,
+        "e2e_s_p95": 3.7897943329990085,
+        "gen_tokens_per_s": 1.2581958517905985,
+        "index_bytes": 33137170,
+        "model_bytes": 1117320736,
+        "peak_rss_gb": 2.8833,
+        "retrieval_ms_p50": 1.111999999920954,
+        "retrieval_ms_p95": 1.4925840005162172
+      },
+      "metrics": {
+        "gold_in_context@5": 0.984,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8436853473698505,
+        "ndcg@100": 0.8652709809149706,
+        "recall@10": 0.851,
+        "recall@100": 0.935
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 1.1186468040323234,
+        "n": 500.0,
+        "p50": 1.111999999920954,
+        "p95": 1.4925840005162172
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1354.8808774999998,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.79 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.302,
+        "f1": 0.3909114774114774,
+        "n_answered": 500.0
+      },
+      "build": {
+        "b": 0.4,
+        "backend": "bm25s",
+        "build_seconds": 2.2477243329994963,
+        "index_bytes": 33137170,
+        "k1": 0.9,
+        "model_bytes": 0,
+        "n_docs": 100000
+      },
+      "config_id": "bm25+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 5.647715028417991,
+        "n": 500.0,
+        "p50": 5.522908958999324,
+        "p95": 7.986222374998761
+      },
+      "generator": {
+        "completion_tokens": 1769,
+        "key": "qwen2.5-3b",
+        "model_bytes": 2104932768,
+        "model_path": "hf://Qwen/Qwen2.5-3B-Instruct-GGUF@7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.6264712404330647
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 5.522908958999324,
+        "e2e_s_p95": 7.986222374998761,
+        "gen_tokens_per_s": 0.6264712404330647,
+        "index_bytes": 33137170,
+        "model_bytes": 2104932768,
+        "peak_rss_gb": 4.6912,
+        "retrieval_ms_p50": 1.1284590000286698,
+        "retrieval_ms_p95": 1.4943750011298107
+      },
+      "metrics": {
+        "gold_in_context@5": 0.984,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8436853473698505,
+        "ndcg@100": 0.8652709809149706,
+        "recall@10": 0.851,
+        "recall@100": 0.935
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 1.123624331990868,
+        "n": 500.0,
+        "p50": 1.1284590000286698,
+        "p95": 1.4943750011298107
+      },
+      "retriever_id": "bm25",
+      "retriever_kind": "bm25",
+      "retriever_name": "bm25",
+      "retriever_params": {
+        "device": "cpu"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 2829.015167374999,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.69 GB > 4 GB",
+            "end-to-end p95 7.99 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.69 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.69 GB > 4 GB",
+            "end-to-end p95 7.99 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 4.69 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.99 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.99 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.99 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.99 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.248,
+        "f1": 0.32539954489954487,
+        "n_answered": 500.0
+      },
+      "build": {
+        "build_seconds": 544.4458396659993,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 153600045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+qwen2.5-1.5b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 2.2779623165200427,
+        "n": 500.0,
+        "p50": 2.212461291999716,
+        "p95": 3.411460375000388
+      },
+      "generator": {
+        "completion_tokens": 1804,
+        "key": "qwen2.5-1.5b",
+        "model_bytes": 1117320736,
+        "model_path": "hf://Qwen/Qwen2.5-1.5B-Instruct-GGUF@91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 1.5839925656642582
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 2.212461291999716,
+        "e2e_s_p95": 3.411460375000388,
+        "gen_tokens_per_s": 1.5839925656642582,
+        "index_bytes": 153600045,
+        "model_bytes": 1610613564,
+        "peak_rss_gb": 3.8859,
+        "retrieval_ms_p50": 7.491416999982903,
+        "retrieval_ms_p95": 9.193500000037602
+      },
+      "metrics": {
+        "gold_in_context@5": 0.986,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8674010778783643,
+        "ndcg@100": 0.8829809653124853,
+        "recall@10": 0.879,
+        "recall@100": 0.939
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 7.827903252000397,
+        "n": 500.0,
+        "p50": 7.491416999982903,
+        "p95": 9.193500000037602
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 1688.842051333002,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 3.41 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "answers": {
+        "em": 0.324,
+        "f1": 0.41816373626373626,
+        "n_answered": 500.0
+      },
+      "build": {
+        "build_seconds": 553.6383428329973,
+        "device": "cpu",
+        "dim": 384,
+        "index_bytes": 153600045,
+        "index_type": "flat",
+        "model": "intfloat/multilingual-e5-small",
+        "model_bytes": 493292828,
+        "n_docs": 100000,
+        "pooling": "mean",
+        "pooling_source": "repo"
+      },
+      "config_id": "e5-small+qwen2.5-3b",
+      "dataset": "hotpotqa-rag",
+      "device": "cpu",
+      "e2e_latency_s": {
+        "mean": 4.725968350252151,
+        "n": 500.0,
+        "p50": 4.586231790999591,
+        "p95": 7.13006716700329
+      },
+      "generator": {
+        "completion_tokens": 1764,
+        "key": "qwen2.5-3b",
+        "model_bytes": 2104932768,
+        "model_path": "hf://Qwen/Qwen2.5-3B-Instruct-GGUF@7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+        "status": "ok",
+        "tokens_per_s": 0.7465460965080257
+      },
+      "language": "en",
+      "machine": {
+        "arch": "arm64",
+        "chip": "Apple M4",
+        "cpu_count": 10,
+        "os_name": "Darwin",
+        "os_version": "26.6.2",
+        "python_version": "3.12.13",
+        "ram_gb": 32.0
+      },
+      "measurement": {
+        "e2e_s_p50": 4.586231790999591,
+        "e2e_s_p95": 7.13006716700329,
+        "gen_tokens_per_s": 0.7465460965080257,
+        "index_bytes": 153600045,
+        "model_bytes": 2598225596,
+        "peak_rss_gb": 5.7079,
+        "retrieval_ms_p50": 7.51295800000662,
+        "retrieval_ms_p95": 9.218582999892533
+      },
+      "metrics": {
+        "gold_in_context@5": 0.986,
+        "n_queries": 500.0,
+        "ndcg@10": 0.8674010778783643,
+        "ndcg@100": 0.8829809653124853,
+        "recall@10": 0.879,
+        "recall@100": 0.939
+      },
+      "n_docs": 100000,
+      "n_queries": 500,
+      "rag_status": "ok",
+      "resumed": true,
+      "retrieval_latency_ms": {
+        "mean": 7.867767442083277,
+        "n": 500.0,
+        "p50": 7.51295800000662,
+        "p95": 9.218582999892533
+      },
+      "retriever_id": "e5-small",
+      "retriever_kind": "dense",
+      "retriever_name": "e5-small+faiss-flat",
+      "retriever_params": {
+        "device": "cpu",
+        "model": "e5-small"
+      },
+      "status": "ok",
+      "threads": {
+        "build": 10,
+        "query": 1
+      },
+      "total_seconds": 2922.4977279170016,
+      "verdicts": [
+        {
+          "budget": "ram4g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.71 GB > 4 GB",
+            "end-to-end p95 7.13 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret200ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.71 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.71 GB > 4 GB",
+            "end-to-end p95 7.13 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram4g_ret500ms_e2e8s",
+          "fits": false,
+          "reasons": [
+            "peak RSS 5.71 GB > 4 GB"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.13 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.13 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram8g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.13 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret200ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e3s",
+          "fits": false,
+          "reasons": [
+            "end-to-end p95 7.13 s > 3 s"
+          ]
+        },
+        {
+          "budget": "ram16g_ret500ms_e2e8s",
+          "fits": true,
+          "reasons": []
+        }
+      ]
+    }
+  ]
+}

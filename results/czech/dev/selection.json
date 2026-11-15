@@ -1,0 +1,227 @@
+{
+ "first_rule": {
+  "chosen": "v3",
+  "passed": false,
+  "shortfall": 0.05112359550561796
+ },
+ "gold_of_yes_no_questions": {
+  "ano": 60,
+  "ne": 40
+ },
+ "questions": 200,
+ "selection": {
+  "chosen": "v1",
+  "compliance_passed": true,
+  "lowest_compliance": 0.9764705882352941,
+  "passed": false,
+  "primary_metric": "em_yes_no_mapped",
+  "span_em_below_v1": {
+   "qwen2.5-1.5b": 0.19,
+   "qwen2.5-3b": 0.14
+  },
+  "span_passed": false
+ },
+ "variants": {
+  "v1": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 14,
+    "answered_ne": 2,
+    "classes": {
+     "ano or ne": 16,
+     "something else": 4,
+     "unanswerable": 14,
+     "yes or no in English": 66
+    },
+    "compliance": 0.18604651162790697,
+    "em_mapped_on_span": 0.39,
+    "em_on_span": 0.39,
+    "em_on_yes_no": 0.13,
+    "em_on_yes_no_mapped": 0.65,
+    "exploratory": {
+     "span_answered_ano": 4,
+     "span_answered_ano_or_ne": 4,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.47516666666668,
+    "span_answers_declined": 15,
+    "strict_share_of_all_yes_no": 0.16
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 42,
+    "answered_ne": 2,
+    "classes": {
+     "ano or ne": 44,
+     "something else": 22,
+     "unanswerable": 23,
+     "yes or no in English": 11
+    },
+    "compliance": 0.5714285714285714,
+    "em_mapped_on_span": 0.5,
+    "em_on_span": 0.5,
+    "em_on_yes_no": 0.32,
+    "em_on_yes_no_mapped": 0.41,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 0,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.59846031746034,
+    "span_answers_declined": 8,
+    "strict_share_of_all_yes_no": 0.44
+   }
+  },
+  "v2": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 79,
+    "answered_ne": 21,
+    "classes": {
+     "ano or ne": 100,
+     "something else": 0,
+     "unanswerable": 0,
+     "yes or no in English": 0
+    },
+    "compliance": 1.0,
+    "em_mapped_on_span": 0.38,
+    "em_on_span": 0.38,
+    "em_on_yes_no": 0.75,
+    "em_on_yes_no_mapped": 0.75,
+    "exploratory": {
+     "span_answered_ano": 5,
+     "span_answered_ano_or_ne": 6,
+     "span_answered_with_the_instructions_list": 1,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.47524628639335,
+    "span_answers_declined": 0,
+    "strict_share_of_all_yes_no": 1.0
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 11,
+    "answered_ne": 17,
+    "classes": {
+     "ano or ne": 28,
+     "something else": 61,
+     "unanswerable": 11,
+     "yes or no in English": 0
+    },
+    "compliance": 0.3146067415730337,
+    "em_mapped_on_span": 0.14,
+    "em_on_span": 0.14,
+    "em_on_yes_no": 0.21,
+    "em_on_yes_no_mapped": 0.21,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 0,
+     "span_answered_with_the_instructions_list": 51,
+     "yes_no_answered_with_the_instructions_list": 52
+    },
+    "f1_on_span": 0.22307142857143,
+    "span_answers_declined": 8,
+    "strict_share_of_all_yes_no": 0.28
+   }
+  },
+  "v3": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 60,
+    "answered_ne": 39,
+    "classes": {
+     "ano or ne": 99,
+     "something else": 1,
+     "unanswerable": 0,
+     "yes or no in English": 0
+    },
+    "compliance": 0.99,
+    "em_mapped_on_span": 0.06,
+    "em_on_span": 0.06,
+    "em_on_yes_no": 0.76,
+    "em_on_yes_no_mapped": 0.76,
+    "exploratory": {
+     "span_answered_ano": 37,
+     "span_answered_ano_or_ne": 40,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.08385566188198,
+    "span_answers_declined": 0,
+    "strict_share_of_all_yes_no": 0.99
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 47,
+    "answered_ne": 33,
+    "classes": {
+     "ano or ne": 80,
+     "something else": 9,
+     "unanswerable": 11,
+     "yes or no in English": 0
+    },
+    "compliance": 0.898876404494382,
+    "em_mapped_on_span": 0.25,
+    "em_on_span": 0.25,
+    "em_on_yes_no": 0.69,
+    "em_on_yes_no_mapped": 0.69,
+    "exploratory": {
+     "span_answered_ano": 1,
+     "span_answered_ano_or_ne": 4,
+     "span_answered_with_the_instructions_list": 15,
+     "yes_no_answered_with_the_instructions_list": 9
+    },
+    "f1_on_span": 0.29209090909091,
+    "span_answers_declined": 30,
+    "strict_share_of_all_yes_no": 0.8
+   }
+  },
+  "v4": {
+   "qwen2.5-1.5b": {
+    "answered_ano": 41,
+    "answered_ne": 58,
+    "classes": {
+     "ano or ne": 99,
+     "something else": 1,
+     "unanswerable": 0,
+     "yes or no in English": 0
+    },
+    "compliance": 0.99,
+    "em_mapped_on_span": 0.2,
+    "em_on_span": 0.2,
+    "em_on_yes_no": 0.62,
+    "em_on_yes_no_mapped": 0.62,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 27,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.27600000000001,
+    "span_answers_declined": 0,
+    "strict_share_of_all_yes_no": 0.99
+   },
+   "qwen2.5-3b": {
+    "answered_ano": 45,
+    "answered_ne": 38,
+    "classes": {
+     "ano or ne": 83,
+     "something else": 2,
+     "unanswerable": 15,
+     "yes or no in English": 0
+    },
+    "compliance": 0.9764705882352941,
+    "em_mapped_on_span": 0.36,
+    "em_on_span": 0.36,
+    "em_on_yes_no": 0.7,
+    "em_on_yes_no_mapped": 0.7,
+    "exploratory": {
+     "span_answered_ano": 0,
+     "span_answered_ano_or_ne": 5,
+     "span_answered_with_the_instructions_list": 0,
+     "yes_no_answered_with_the_instructions_list": 0
+    },
+    "f1_on_span": 0.43876190476191,
+    "span_answers_declined": 27,
+    "strict_share_of_all_yes_no": 0.83
+   }
+  }
+ },
+ "yes_no_questions": 100
+}

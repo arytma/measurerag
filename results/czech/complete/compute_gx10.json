@@ -1,0 +1,872 @@
+{
+ "finished_phases": {
+  "main": "2026-11-09 20:14:00",
+  "pilot": "2026-11-09 11:51:28"
+ },
+ "restarts": [],
+ "stages": {
+  "copy_debiased_bm25_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:25:54",
+   "generations": 742,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 742,
+   "restarts": 0,
+   "seconds": 120.0
+  },
+  "copy_debiased_bm25_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:41:46",
+   "generations": 742,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 742,
+   "restarts": 0,
+   "seconds": 135.0
+  },
+  "copy_debiased_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:16:50",
+   "generations": 1427,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 1427,
+   "restarts": 0,
+   "seconds": 240.0
+  },
+  "copy_debiased_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:23:52",
+   "generations": 1427,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 1427,
+   "restarts": 0,
+   "seconds": 420.0
+  },
+  "copy_debiased_dial_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:32:12",
+   "generations": 1427,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 1427,
+   "restarts": 0,
+   "seconds": 255.0
+  },
+  "copy_debiased_dial_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:39:29",
+   "generations": 1427,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 1427,
+   "restarts": 0,
+   "seconds": 435.0
+  },
+  "copy_debiased_retromae_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:27:55",
+   "generations": 736,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 736,
+   "restarts": 0,
+   "seconds": 120.0
+  },
+  "copy_debiased_retromae_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:44:03",
+   "generations": 736,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 736,
+   "restarts": 0,
+   "seconds": 135.0
+  },
+  "cross_32_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:47:15",
+   "generations": 1791,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 270.0
+  },
+  "cross_32_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:04:17",
+   "generations": 1791,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 495.0
+  },
+  "cross_32_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:14:34",
+   "generations": 1791,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 300.0
+  },
+  "cross_32_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:32:07",
+   "generations": 1791,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 510.0
+  },
+  "cross_32_ranking": {
+   "exit": 0,
+   "finished": "2026-11-09 17:37:44",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "cross_copy_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:42:44",
+   "generations": 1791,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 285.0
+  },
+  "cross_copy_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:56:01",
+   "generations": 1791,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 525.0
+  },
+  "cross_copy_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:09:33",
+   "generations": 1791,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 315.0
+  },
+  "cross_copy_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:23:36",
+   "generations": 1791,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 1791,
+   "restarts": 0,
+   "seconds": 540.0
+  },
+  "cross_copy_ranking": {
+   "exit": 0,
+   "finished": "2026-11-09 17:37:29",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "cross_ranking_check": {
+   "exit": 0,
+   "finished": "2026-11-09 17:37:59",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "dev_v1_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:22:11",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 30.0
+  },
+  "dev_v1_1.5b_repeat": {
+   "exit": 0,
+   "finished": "2026-11-09 11:28:12",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 30.0
+  },
+  "dev_v1_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:23:11",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 60.0
+  },
+  "dev_v1_3b_repeat": {
+   "exit": 0,
+   "finished": "2026-11-09 11:29:13",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 60.0
+  },
+  "dev_v2_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:23:41",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 30.0
+  },
+  "dev_v2_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:24:41",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 60.0
+  },
+  "dev_v3_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:25:12",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 30.0
+  },
+  "dev_v3_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:26:12",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 60.0
+  },
+  "dev_v4_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:26:42",
+   "generations": 200,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 30.0
+  },
+  "dev_v4_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 11:27:42",
+   "generations": 200,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 60.0
+  },
+  "extra010_copy_bm25_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:44:27",
+   "generations": 693,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 693,
+   "restarts": 0,
+   "seconds": 120.0
+  },
+  "extra010_copy_bm25_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:59:19",
+   "generations": 693,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 693,
+   "restarts": 0,
+   "seconds": 135.0
+  },
+  "extra010_copy_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:35:38",
+   "generations": 1325,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 1325,
+   "restarts": 0,
+   "seconds": 210.0
+  },
+  "extra010_copy_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:42:25",
+   "generations": 1325,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 1325,
+   "restarts": 0,
+   "seconds": 405.0
+  },
+  "extra010_copy_dial_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:50:15",
+   "generations": 1325,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 1325,
+   "restarts": 0,
+   "seconds": 240.0
+  },
+  "extra010_copy_dial_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:57:02",
+   "generations": 1325,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 1325,
+   "restarts": 0,
+   "seconds": 405.0
+  },
+  "extra010_copy_retromae_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 18:46:13",
+   "generations": 685,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 685,
+   "restarts": 0,
+   "seconds": 105.0
+  },
+  "extra010_copy_retromae_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 19:01:21",
+   "generations": 685,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 685,
+   "restarts": 0,
+   "seconds": 120.0
+  },
+  "extra010_sqad32_bm25_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 19:32:02",
+   "generations": 1857,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 1857,
+   "restarts": 0,
+   "seconds": 285.0
+  },
+  "extra010_sqad32_bm25_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 20:09:21",
+   "generations": 1857,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 1857,
+   "restarts": 0,
+   "seconds": 315.0
+  },
+  "extra010_sqad32_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 19:10:24",
+   "generations": 3634,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 3634,
+   "restarts": 0,
+   "seconds": 540.0
+  },
+  "extra010_sqad32_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 19:27:13",
+   "generations": 3634,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 3634,
+   "restarts": 0,
+   "seconds": 1005.0
+  },
+  "extra010_sqad32_dial_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 19:46:26",
+   "generations": 3634,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 3634,
+   "restarts": 0,
+   "seconds": 615.0
+  },
+  "extra010_sqad32_dial_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 20:04:01",
+   "generations": 3634,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 3634,
+   "restarts": 0,
+   "seconds": 1050.0
+  },
+  "extra010_sqad32_retromae_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 19:36:06",
+   "generations": 1886,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 1886,
+   "restarts": 0,
+   "seconds": 240.0
+  },
+  "extra010_sqad32_retromae_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 20:13:56",
+   "generations": 1886,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 1886,
+   "restarts": 0,
+   "seconds": 270.0
+  },
+  "pilot_check": {
+   "exit": 1,
+   "finished": "2026-11-09 11:51:28",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "pilot_rank_released_bm25": {
+   "exit": 0,
+   "finished": "2026-11-09 11:29:28",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "pilot_rank_released_e5-small": {
+   "exit": 0,
+   "finished": "2026-11-09 11:33:58",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 270.0
+  },
+  "pilot_rank_released_retromae-cs": {
+   "exit": 0,
+   "finished": "2026-11-09 11:36:28",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 150.0
+  },
+  "pilot_rank_sqad32_full_bm25": {
+   "exit": 0,
+   "finished": "2026-11-09 11:36:43",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "pilot_rank_sqad32_full_e5-small": {
+   "exit": 0,
+   "finished": "2026-11-09 11:45:58",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 555.0
+  },
+  "pilot_rank_sqad32_full_retromae-cs": {
+   "exit": 0,
+   "finished": "2026-11-09 11:51:13",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 315.0
+  },
+  "released_agree": {
+   "exit": 0,
+   "finished": "2026-11-09 13:55:25",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "released_agree_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:58:57",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "released_bench_bm25": {
+   "exit": 0,
+   "finished": "2026-11-09 13:36:54",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 45.0
+  },
+  "released_bench_bm25_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:45:39",
+   "generations": 200,
+   "kind": "bench_e2b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 45.0
+  },
+  "released_bench_e5-small": {
+   "exit": 0,
+   "finished": "2026-11-09 13:41:54",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 300.0
+  },
+  "released_bench_e5-small_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:50:54",
+   "generations": 200,
+   "kind": "bench_e2b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 315.0
+  },
+  "released_bench_finish": {
+   "exit": 0,
+   "finished": "2026-11-09 13:54:09",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "released_bench_retromae-cs": {
+   "exit": 0,
+   "finished": "2026-11-09 13:44:54",
+   "generations": 200,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 180.0
+  },
+  "released_bench_retromae-cs_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:53:54",
+   "generations": 200,
+   "kind": "bench_e2b",
+   "non_fatal": false,
+   "planned": 200,
+   "restarts": 0,
+   "seconds": 180.0
+  },
+  "released_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:55:09",
+   "generations": 367,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 367,
+   "restarts": 0,
+   "seconds": 60.0
+  },
+  "released_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:57:25",
+   "generations": 367,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 367,
+   "restarts": 0,
+   "seconds": 120.0
+  },
+  "released_dial_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 13:58:41",
+   "generations": 367,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 367,
+   "restarts": 0,
+   "seconds": 75.0
+  },
+  "released_dial_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 14:00:57",
+   "generations": 367,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 367,
+   "restarts": 0,
+   "seconds": 120.0
+  },
+  "sqad32_debiased_bm25_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 14:31:22",
+   "generations": 1855,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 1855,
+   "restarts": 0,
+   "seconds": 285.0
+  },
+  "sqad32_debiased_bm25_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:08:10",
+   "generations": 1855,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 1855,
+   "restarts": 0,
+   "seconds": 315.0
+  },
+  "sqad32_debiased_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 14:09:58",
+   "generations": 3635,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 3635,
+   "restarts": 0,
+   "seconds": 540.0
+  },
+  "sqad32_debiased_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 14:26:32",
+   "generations": 3635,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 3635,
+   "restarts": 0,
+   "seconds": 990.1
+  },
+  "sqad32_debiased_dial_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 14:45:30",
+   "generations": 3635,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 3635,
+   "restarts": 0,
+   "seconds": 615.0
+  },
+  "sqad32_debiased_dial_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:02:50",
+   "generations": 3635,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 3635,
+   "restarts": 0,
+   "seconds": 1035.0
+  },
+  "sqad32_debiased_retromae_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 14:35:11",
+   "generations": 1885,
+   "kind": "natural_1.5b",
+   "non_fatal": false,
+   "planned": 1885,
+   "restarts": 0,
+   "seconds": 225.0
+  },
+  "sqad32_debiased_retromae_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 15:12:45",
+   "generations": 1885,
+   "kind": "natural_e2b",
+   "non_fatal": false,
+   "planned": 1885,
+   "restarts": 0,
+   "seconds": 270.0
+  },
+  "sqad32_full_agree": {
+   "exit": 0,
+   "finished": "2026-11-09 16:52:28",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "sqad32_full_agree_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:19:38",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": true,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "sqad32_full_bench_bm25": {
+   "exit": 0,
+   "finished": "2026-11-09 15:49:05",
+   "generations": 1995,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 1995,
+   "restarts": 0,
+   "seconds": 300.0
+  },
+  "sqad32_full_bench_bm25_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 16:18:05",
+   "generations": 1995,
+   "kind": "bench_e2b",
+   "non_fatal": false,
+   "planned": 1995,
+   "restarts": 0,
+   "seconds": 345.0
+  },
+  "sqad32_full_bench_e5-small": {
+   "exit": 0,
+   "finished": "2026-11-09 16:03:05",
+   "generations": 1995,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 1995,
+   "restarts": 0,
+   "seconds": 840.0
+  },
+  "sqad32_full_bench_e5-small_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 16:32:50",
+   "generations": 1995,
+   "kind": "bench_e2b",
+   "non_fatal": false,
+   "planned": 1995,
+   "restarts": 0,
+   "seconds": 885.0
+  },
+  "sqad32_full_bench_finish": {
+   "exit": 0,
+   "finished": "2026-11-09 16:43:06",
+   "generations": 0,
+   "kind": "none",
+   "non_fatal": false,
+   "planned": 0,
+   "restarts": 0,
+   "seconds": 15.0
+  },
+  "sqad32_full_bench_retromae-cs": {
+   "exit": 0,
+   "finished": "2026-11-09 16:12:20",
+   "generations": 1995,
+   "kind": "bench_1.5b",
+   "non_fatal": false,
+   "planned": 1995,
+   "restarts": 0,
+   "seconds": 555.0
+  },
+  "sqad32_full_bench_retromae-cs_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 16:42:51",
+   "generations": 1995,
+   "kind": "bench_e2b",
+   "non_fatal": false,
+   "planned": 1995,
+   "restarts": 0,
+   "seconds": 600.0
+  },
+  "sqad32_full_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-09 16:52:10",
+   "generations": 3712,
+   "kind": "dial_1.5b",
+   "non_fatal": false,
+   "planned": 3712,
+   "restarts": 0,
+   "seconds": 540.0
+  },
+  "sqad32_full_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:08:59",
+   "generations": 3712,
+   "kind": "dial_3b",
+   "non_fatal": false,
+   "planned": 3712,
+   "restarts": 0,
+   "seconds": 990.0
+  },
+  "sqad32_full_dial_gemma-4-e2b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:19:19",
+   "generations": 3712,
+   "kind": "dial_e2b",
+   "non_fatal": false,
+   "planned": 3712,
+   "restarts": 0,
+   "seconds": 615.0
+  },
+  "sqad32_full_dial_gemma-4-e4b": {
+   "exit": 0,
+   "finished": "2026-11-09 17:37:09",
+   "generations": 3712,
+   "kind": "dial_e4b",
+   "non_fatal": false,
+   "planned": 3712,
+   "restarts": 0,
+   "seconds": 1050.0
+  }
+ },
+ "warnings": [
+  "2026-11-09 11:51: pilot_check exited 1: the check did not pass; see logs/complete_gx10/pilot_check.log"
+ ]
+}

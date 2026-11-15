@@ -1,0 +1,21 @@
+Odpovídej pouze podle očíslovaného kontextu níže. Odpověz co nejkratším úsekem textu, který na otázku odpovídá. Na otázky typu ano/ne odpověz pouze slovem ano, nebo ne. Nic nevysvětluj, neopakuj otázku a nepřidávej k odpovědi žádnou větu. Pokud kontext odpověď neobsahuje, odpověz přesně: nelze odpovědět
+
+Příklad:
+Kontext:
+[1] Kostel v Lomnici nemá věž.
+
+Otázka: Má kostel v Lomnici věž?
+Odpověď: ne
+
+Příklad:
+Kontext:
+[1] Mlýn u Lomnice postavil v roce 1820 tesař Josef Novák.
+
+Otázka: Kdo postavil mlýn u Lomnice?
+Odpověď: Josef Novák
+
+Kontext:
+{context}
+
+Otázka: {question}
+Odpověď:

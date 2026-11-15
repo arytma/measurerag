@@ -1,0 +1,134 @@
+{
+ "abandoned": {
+  "exit": 2,
+  "finished": "2026-11-08 15:21:40",
+  "generations_failed_check_and_diagnosis": 47,
+  "stage": "released_backfill",
+  "why": "a spot check in random order; an answer can depend on the prompt before it (docs/LIMITATIONS.md)"
+ },
+ "generations": 3138,
+ "generations_smoke_test": 40,
+ "max_generations": 3200,
+ "max_seconds": 43200,
+ "not_run": [
+  {
+   "stage": "extra010_sqad32_dial_1.5b",
+   "why": "the generation cap (3138 used, 114 needed)"
+  }
+ ],
+ "stages": {
+  "copy_debiased_bm25_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 22:19:10",
+   "generations": 13,
+   "seconds": 113.4
+  },
+  "copy_debiased_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 22:08:40",
+   "generations": 25,
+   "seconds": 229.1
+  },
+  "copy_debiased_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-08 22:17:14",
+   "generations": 25,
+   "seconds": 512.6
+  },
+  "copy_debiased_retromae_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 22:20:53",
+   "generations": 14,
+   "seconds": 101.8
+  },
+  "released_agree": {
+   "exit": 0,
+   "finished": "2026-11-08 16:24:13",
+   "generations": 0,
+   "seconds": 1.0
+  },
+  "released_bench": {
+   "exit": 0,
+   "finished": "2026-11-08 15:19:54",
+   "generations": 600,
+   "seconds": 5950.0
+  },
+  "released_copy_natural": {
+   "exit": 0,
+   "finished": "2026-11-08 17:56:37",
+   "generations": 0,
+   "seconds": 1.0
+  },
+  "released_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 16:24:11",
+   "generations": 367,
+   "seconds": 2799.0
+  },
+  "released_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-08 17:56:35",
+   "generations": 367,
+   "seconds": 5540.9
+  },
+  "sqad32_debiased_bm25_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 21:57:51",
+   "generations": 52,
+   "seconds": 463.2
+  },
+  "sqad32_debiased_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 21:28:03",
+   "generations": 100,
+   "seconds": 780.8
+  },
+  "sqad32_debiased_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-08 21:50:06",
+   "generations": 100,
+   "seconds": 1320.4
+  },
+  "sqad32_debiased_retromae_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 22:04:47",
+   "generations": 50,
+   "seconds": 412.9
+  },
+  "sqad32_full_agree": {
+   "exit": 0,
+   "finished": "2026-11-08 19:49:31",
+   "generations": 0,
+   "seconds": 1.0
+  },
+  "sqad32_full_bench": {
+   "exit": 0,
+   "finished": "2026-11-08 19:05:53",
+   "generations": 600,
+   "seconds": 4154.6
+  },
+  "sqad32_full_copy_natural": {
+   "exit": 0,
+   "finished": "2026-11-08 21:15:00",
+   "generations": 0,
+   "seconds": 1.1
+  },
+  "sqad32_full_dial_1.5b": {
+   "exit": 0,
+   "finished": "2026-11-08 19:49:28",
+   "generations": 369,
+   "seconds": 2614.0
+  },
+  "sqad32_full_dial_3b": {
+   "exit": 0,
+   "finished": "2026-11-08 21:14:56",
+   "generations": 369,
+   "seconds": 5125.2
+  }
+ },
+ "stopped": {
+  "stage": "extra010_sqad32_dial_1.5b",
+  "why": "the generation cap (3138 used, 114 needed)"
+ },
+ "wall_seconds": 31212.0
+}

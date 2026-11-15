@@ -1,0 +1,44 @@
+{
+ "copy": {
+  "repo_id": "Pehy/cs_sqad-3.0",
+  "revision": "f9e71384a8f7285412360cecabb7a852f49adbb9"
+ },
+ "identical_row_for_row": true,
+ "note": "Counts only, no SQAD text. scripts/sqad_copy_source.py recomputes them from the two pinned Hugging Face revisions.",
+ "source": {
+  "repo_id": "fewshot-goes-multilingual/cs_squad-3.0",
+  "revision": "e2a26bd1bc6d1ff15a33ab9d2ed118054151a784"
+ },
+ "splits": {
+  "test": {
+   "copy_rows": 843,
+   "ids_in_common": 843,
+   "only_in_copy": 0,
+   "only_in_source": 0,
+   "same_answers": 843,
+   "same_context": 843,
+   "same_question": 843,
+   "source_rows": 843
+  },
+  "train": {
+   "copy_rows": 6250,
+   "ids_in_common": 6250,
+   "only_in_copy": 0,
+   "only_in_source": 0,
+   "same_answers": 6250,
+   "same_context": 6250,
+   "same_question": 6250,
+   "source_rows": 6250
+  },
+  "validation": {
+   "copy_rows": 570,
+   "ids_in_common": 570,
+   "only_in_copy": 0,
+   "only_in_source": 0,
+   "same_answers": 570,
+   "same_context": 570,
+   "same_question": 570,
+   "source_rows": 570
+  }
+ }
+}

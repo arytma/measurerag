@@ -1,0 +1,359 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": null,
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 1995,
+      "name": "sqad32",
+      "options": {
+        "questions_file": "results/czech/plan/questions.json",
+        "questions_key": "sqad32_full"
+      }
+    },
+    "device": "cpu",
+    "name": "cz_v040_timed",
+    "out_dir": "results/cz_v040_timed",
+    "query_threads": 1,
+    "rag": {
+      "enabled": false,
+      "generators": [],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 3,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "bm25-nodiacritics",
+        "kind": "bm25",
+        "strip_diacritics": true
+      },
+      {
+        "id": "bm25-lemma",
+        "kind": "bm25",
+        "lemmatize": "cs"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "granite-107m",
+        "kind": "dense",
+        "model": "granite-107m"
+      },
+      {
+        "id": "granite-278m",
+        "kind": "dense",
+        "model": "granite-278m"
+      },
+      {
+        "id": "embeddinggemma",
+        "kind": "dense",
+        "model": "embeddinggemma"
+      },
+      {
+        "id": "simcse-cs-en",
+        "kind": "dense",
+        "model": "simcse-cs-en"
+      },
+      {
+        "id": "retromae-cs",
+        "kind": "dense",
+        "model": "retromae-cs"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 86400
+  },
+  "config_path": "configs/cz_v040_timed.yaml",
+  "config_sha256": "8926fecad65b06cdc004693574965923127e3c14141be970b44bf518799719f9",
+  "created_utc": "2026-11-11T02:45:19+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "sqad32",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "89a4a4764467aab5421f911968998e256cb763f9651c3844ed0ecfab5e213240",
+      "language": "cs",
+      "license": "CC BY-SA 3.0 (SQAD 3.2 on LINDAT, http://hdl.handle.net/11234/1-5019)",
+      "n_answers": 1995,
+      "n_docs": 14669,
+      "n_qrels": 1995,
+      "n_queries": 1995,
+      "name": "sqad-3.2-test",
+      "notes": [
+        "Czech QA. Corpus is every distinct context across all three splits; gold is the context cut around the question's answer sentence.",
+        "Contexts are reconstructed windows of whole sentences (cut_window), since 3.2 ships whole articles. Yes/no golds are mapped to ano and ne.",
+        "Answers are short spans, so EM is a meaningful metric; a generator that writes a sentence around the span will lose EM and keep F1."
+      ],
+      "qrels_sha256": "6169bc8308753ddbad00bb0acf84a3d1690d0a34c964fe40cf88a084532d3ae6",
+      "queries_sha256": "5173520ff455193e33f59c3b188fb43d663f0831b4c027507279695c0ae383ef",
+      "source": "http://hdl.handle.net/11234/1-5019"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 67711,
+      "sha256": "39769a49d23d601ae9c0a0e62069e575eb78cd788e72cb32b4493909c75b2bfb"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 71887,
+      "sha256": "9dd0b1289fda6aada1b6bed0c5320ffbe297d98aa0a6e2b61bc711bfabc41c35"
+    },
+    "results.csv": {
+      "bytes": 2673,
+      "sha256": "d983c214fec1a096c941148ee23fb3554a46d8637b956fd5a1090990241d2c60"
+    },
+    "results.json": {
+      "bytes": 29089,
+      "sha256": "e9f81f43c183a16118c9b6edbd127d1c6566538ad8cae9d76002fcb0c389eb1f"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.3.1",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": null,
+      "config_id": "bm25",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.8220551378446115,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7646873234019907,
+        "ndcg@100": 0.7748245555243354,
+        "recall@10": 0.9117794486215539,
+        "recall@100": 0.9578947368421052
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "bm25-nodiacritics",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.8230576441102757,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.769102991778245,
+        "ndcg@100": 0.778512213633266,
+        "recall@10": 0.9162907268170426,
+        "recall@100": 0.9588972431077695
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "bm25-nodiacritics",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "bm25-lemma",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.8380952380952381,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7847346582853681,
+        "ndcg@100": 0.7943138806064219,
+        "recall@10": 0.937844611528822,
+        "recall@100": 0.9809523809523809
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "bm25-lemma",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-small",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.8611528822055138,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8003878661712698,
+        "ndcg@100": 0.8064641696211979,
+        "recall@10": 0.9619047619047619,
+        "recall@100": 0.9894736842105263
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "e5-base",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.8751879699248121,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.8083726284613623,
+        "ndcg@100": 0.8146333236690961,
+        "recall@10": 0.9659147869674185,
+        "recall@100": 0.993483709273183
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "granite-107m",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.7949874686716792,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7385124977523806,
+        "ndcg@100": 0.7521153525491042,
+        "recall@10": 0.9122807017543859,
+        "recall@100": 0.9739348370927319
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "granite-107m",
+      "retriever_name": "granite-107m+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "granite-278m",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.7969924812030075,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7405846975063292,
+        "ndcg@100": 0.7554251601503149,
+        "recall@10": 0.9112781954887218,
+        "recall@100": 0.9789473684210527
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "granite-278m",
+      "retriever_name": "granite-278m+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "embeddinggemma",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.8451127819548873,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.7847800141782608,
+        "ndcg@100": 0.7946206647893117,
+        "recall@10": 0.9408521303258145,
+        "recall@100": 0.9859649122807017
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "embeddinggemma",
+      "retriever_name": "embeddinggemma+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "simcse-cs-en",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.6080200501253132,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5840347191516744,
+        "ndcg@100": 0.6197942004436613,
+        "recall@10": 0.7639097744360902,
+        "recall@100": 0.931328320802005
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "simcse-cs-en",
+      "retriever_name": "simcse-cs-en+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": null,
+      "config_id": "retromae-cs",
+      "dataset": "sqad-3.2-test",
+      "metrics": {
+        "gold_in_context@3": 0.5298245614035088,
+        "n_queries": 1995.0,
+        "ndcg@10": 0.5163316766563869,
+        "ndcg@100": 0.5569029907760653,
+        "recall@10": 0.6897243107769424,
+        "recall@100": 0.8832080200501253
+      },
+      "n_docs": 14669,
+      "n_queries": 1995,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "90e71c0d2eca9301cab55fc50b7a1026a8f216948b6d5941cd867ac16be6ea16",
+  "schema": "measurerag/manifest/1",
+  "seed": 20260101,
+  "wall_seconds": 9.96
+}

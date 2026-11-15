@@ -1,0 +1,482 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 200,
+      "name": "sqad",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "cz_rag",
+    "out_dir": "results/cz_rag",
+    "query_threads": 1,
+    "rag": {
+      "device": "cuda",
+      "enabled": true,
+      "generators": [
+        "qwen2.5-1.5b",
+        "gemma-4-e2b",
+        "ministral-3-3b",
+        "qwen3.5-2b",
+        "gemma-3n-e2b"
+      ],
+      "max_tokens": 256,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 3,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "retromae-cs",
+        "kind": "dense",
+        "model": "retromae-cs"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 604800
+  },
+  "config_path": "configs/cz_rag.yaml",
+  "config_sha256": "813fa55c455290bfbe5523dbb11a394fdfa872f66b9d360ff169bc3d0d50b76c",
+  "created_utc": "2026-11-11T12:52:32+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "sqad",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "5eab8e7ca1377a92803f453c01783639119b681cec3112a25f10884bc9c0b915",
+      "language": "cs",
+      "license": "LGPL-3.0 (SQAD 3.0 on LINDAT, http://hdl.handle.net/11234/1-3069; the upstream licence governs, the HF mirror's card says `mit`)",
+      "n_answers": 200,
+      "n_docs": 7535,
+      "n_qrels": 200,
+      "n_queries": 200,
+      "name": "sqad-3.0-test",
+      "notes": [
+        "Czech QA. Corpus is every distinct context paragraph across all three splits; gold is the paragraph the question was written from.",
+        "Licence checked on LINDAT on 8 Nov 2026: SQAD 3.0 is LGPL-3.0 (http://hdl.handle.net/11234/1-3069). The mirror's card says `mit`; the upstream licence governs.",
+        "Answers are short spans, so EM is a meaningful metric; a generator that writes a sentence around the span will lose EM and keep F1."
+      ],
+      "qrels_sha256": "3372a6e4f52c15dc9e3ea57ba67ab4e5830b5356c150c48dffa9b34ac88ec751",
+      "queries_sha256": "6cedc012e733f16c817e5a73f4a9ab2365eb279bca2ac97d2327096c22a65b24",
+      "source": "https://huggingface.co/datasets/Pehy/cs_sqad-3.0 (mirror of https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-3069)"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 77031,
+      "sha256": "2f16a1f98925c025f302c0ac0da0488fe9d50d882f4c124108b5886f0410a0ea"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 88192,
+      "sha256": "6daef9490798fa94454c8afa02e93bdc6971dee032013e978b9b80aba7cd7baf"
+    },
+    "results.csv": {
+      "bytes": 5053,
+      "sha256": "f4dd59bbf9587668adf4f6bd9d18bba1b94fd4595ea1721f9d66c567c98378ad"
+    },
+    "results.json": {
+      "bytes": 62478,
+      "sha256": "5533a77ea188aaa991c3a7deed1b4125d37d3f24eac56b6b4cdd3d0d9674c581"
+    }
+  },
+  "machine": {
+    "arch": "aarch64",
+    "chip": "aarch64",
+    "cpu_count": 20,
+    "os_name": "Linux",
+    "os_version": "7.0.0-1025-nvidia",
+    "python_version": "3.12.3",
+    "ram_gb": 121.63
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.3.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "Linux-7.0.0-1025-nvidia-aarch64-with-glibc2.39",
+  "python": "3.12.3",
+  "results_stable": [
+    {
+      "answers": {
+        "em": 0.305,
+        "f1": 0.4025186335403727,
+        "n_answered": 200.0
+      },
+      "config_id": "bm25+qwen2.5-1.5b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.82,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7759180830940706,
+        "ndcg@100": 0.7819378985503388,
+        "recall@10": 0.94,
+        "recall@100": 0.97
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.535,
+        "f1": 0.6786499333999333,
+        "n_answered": 200.0
+      },
+      "config_id": "bm25+gemma-4-e2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.82,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7759180830940706,
+        "ndcg@100": 0.7819378985503388,
+        "recall@10": 0.94,
+        "recall@100": 0.97
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.54,
+        "f1": 0.6691696792486266,
+        "n_answered": 200.0
+      },
+      "config_id": "bm25+ministral-3-3b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.82,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7759180830940706,
+        "ndcg@100": 0.7819378985503388,
+        "recall@10": 0.94,
+        "recall@100": 0.97
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.54,
+        "f1": 0.6591847041847042,
+        "n_answered": 200.0
+      },
+      "config_id": "bm25+qwen3.5-2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.82,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7759180830940706,
+        "ndcg@100": 0.7819378985503388,
+        "recall@10": 0.94,
+        "recall@100": 0.97
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.505,
+        "f1": 0.6231356421356421,
+        "n_answered": 200.0
+      },
+      "config_id": "bm25+gemma-3n-e2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.82,
+        "n_queries": 200.0,
+        "ndcg@10": 0.7759180830940706,
+        "ndcg@100": 0.7819378985503388,
+        "recall@10": 0.94,
+        "recall@100": 0.97
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.305,
+        "f1": 0.39520384615384613,
+        "n_answered": 200.0
+      },
+      "config_id": "e5-small+qwen2.5-1.5b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.835,
+        "n_queries": 200.0,
+        "ndcg@10": 0.8002040166775908,
+        "ndcg@100": 0.8091286589262974,
+        "recall@10": 0.955,
+        "recall@100": 0.995
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.565,
+        "f1": 0.7166874236874237,
+        "n_answered": 200.0
+      },
+      "config_id": "e5-small+gemma-4-e2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.835,
+        "n_queries": 200.0,
+        "ndcg@10": 0.8002040166775908,
+        "ndcg@100": 0.8091286589262974,
+        "recall@10": 0.955,
+        "recall@100": 0.995
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.535,
+        "f1": 0.6400230830076907,
+        "n_answered": 200.0
+      },
+      "config_id": "e5-small+ministral-3-3b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.835,
+        "n_queries": 200.0,
+        "ndcg@10": 0.8002040166775908,
+        "ndcg@100": 0.8091286589262974,
+        "recall@10": 0.955,
+        "recall@100": 0.995
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.53,
+        "f1": 0.651212864654725,
+        "n_answered": 200.0
+      },
+      "config_id": "e5-small+qwen3.5-2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.835,
+        "n_queries": 200.0,
+        "ndcg@10": 0.8002040166775908,
+        "ndcg@100": 0.8091286589262974,
+        "recall@10": 0.955,
+        "recall@100": 0.995
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.515,
+        "f1": 0.6667344233147804,
+        "n_answered": 200.0
+      },
+      "config_id": "e5-small+gemma-3n-e2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.835,
+        "n_queries": 200.0,
+        "ndcg@10": 0.8002040166775908,
+        "ndcg@100": 0.8091286589262974,
+        "recall@10": 0.955,
+        "recall@100": 0.995
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.185,
+        "f1": 0.26764014202172093,
+        "n_answered": 200.0
+      },
+      "config_id": "retromae-cs+qwen2.5-1.5b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.55,
+        "n_queries": 200.0,
+        "ndcg@10": 0.5202374728270796,
+        "ndcg@100": 0.5593349366783159,
+        "recall@10": 0.735,
+        "recall@100": 0.92
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.39,
+        "f1": 0.5150838744588744,
+        "n_answered": 200.0
+      },
+      "config_id": "retromae-cs+gemma-4-e2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.55,
+        "n_queries": 200.0,
+        "ndcg@10": 0.5202374728270796,
+        "ndcg@100": 0.5593349366783159,
+        "recall@10": 0.735,
+        "recall@100": 0.92
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.395,
+        "f1": 0.5097281895214226,
+        "n_answered": 200.0
+      },
+      "config_id": "retromae-cs+ministral-3-3b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.55,
+        "n_queries": 200.0,
+        "ndcg@10": 0.5202374728270796,
+        "ndcg@100": 0.5593349366783159,
+        "recall@10": 0.735,
+        "recall@100": 0.92
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.4,
+        "f1": 0.4931819131161237,
+        "n_answered": 200.0
+      },
+      "config_id": "retromae-cs+qwen3.5-2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.55,
+        "n_queries": 200.0,
+        "ndcg@10": 0.5202374728270796,
+        "ndcg@100": 0.5593349366783159,
+        "recall@10": 0.735,
+        "recall@100": 0.92
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.375,
+        "f1": 0.46815468975468977,
+        "n_answered": 200.0
+      },
+      "config_id": "retromae-cs+gemma-3n-e2b",
+      "dataset": "sqad-3.0-test",
+      "metrics": {
+        "gold_in_context@3": 0.55,
+        "n_queries": 200.0,
+        "ndcg@10": 0.5202374728270796,
+        "ndcg@100": 0.5593349366783159,
+        "recall@10": 0.735,
+        "recall@100": 0.92
+      },
+      "n_docs": 7535,
+      "n_queries": 200,
+      "retriever_id": "retromae-cs",
+      "retriever_name": "retromae-cs+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "506fa881164426e88a202acdcf5857824a81738a47a666bba5e9288b1682821a",
+  "schema": "measurerag/manifest/1",
+  "scrubbed": "absolute paths replaced by scripts/scrub_paths.py: hf://ORG/NAME@REV/FILE for Hugging Face cache files, repository-relative paths, ~/ for anything else under a home directory",
+  "seed": 20260101,
+  "wall_seconds": 1.09
+}

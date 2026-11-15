@@ -1,0 +1,98 @@
+{
+  "build": {
+    "build_seconds": 93.41412458295235,
+    "device": "cpu",
+    "dim": 256,
+    "index_bytes": 15021101,
+    "index_type": "flat",
+    "model": "Seznam/retromae-small-cs",
+    "model_bytes": 99167447,
+    "n_docs": 14669,
+    "pooling": "cls",
+    "pooling_source": "declared ('mean' would have been used)"
+  },
+  "config_id": "retromae-cs",
+  "dataset": "sqad-3.2-test",
+  "device": "cpu",
+  "language": "cs",
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "measurement": {
+    "e2e_s_p50": null,
+    "e2e_s_p95": null,
+    "gen_tokens_per_s": null,
+    "index_bytes": 15021101,
+    "model_bytes": 99167447,
+    "peak_rss_gb": 1.4633,
+    "retrieval_ms_p50": 3.2747500226832926,
+    "retrieval_ms_p95": 3.6479170084930956
+  },
+  "metrics": {
+    "gold_in_context@3": 0.5298245614035088,
+    "n_queries": 1995.0,
+    "ndcg@10": 0.5163316766563869,
+    "ndcg@100": 0.5569029907760653,
+    "recall@10": 0.6897243107769424,
+    "recall@100": 0.8832080200501253
+  },
+  "n_docs": 14669,
+  "n_queries": 1995,
+  "retrieval_latency_ms": {
+    "mean": 3.309597569298382,
+    "n": 1995.0,
+    "p50": 3.2747500226832926,
+    "p95": 3.6479170084930956
+  },
+  "retriever_id": "retromae-cs",
+  "retriever_kind": "dense",
+  "retriever_name": "retromae-cs+faiss-flat",
+  "retriever_params": {
+    "device": "cpu",
+    "model": "retromae-cs"
+  },
+  "status": "ok",
+  "threads": {
+    "build": 10,
+    "query": 1
+  },
+  "total_seconds": 100.06690625002375,
+  "verdicts": [
+    {
+      "budget": "ram4g_ret200ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram4g_ret500ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram8g_ret200ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram8g_ret500ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram16g_ret200ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram16g_ret500ms",
+      "fits": true,
+      "reasons": []
+    }
+  ]
+}

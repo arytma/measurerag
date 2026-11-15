@@ -1,0 +1,51 @@
+# Czech end-to-end RAG on SQAD 3.2, the same protocol as configs/cz_rag.yaml.
+# Only the data changes.
+#
+# SQAD 3.2 is CC BY-SA 3.0 (http://hdl.handle.net/11234/1-5019). The archive stays
+# in the git-ignored .local/data/sqad_3.2/; see src/measurerag/datasets/sqad32.py.
+name: cz_rag_32
+device: cpu
+seed: 20260101
+query_threads: 1
+timeout_s: 604800
+
+# Exactly the questions of this set: its first 200 stay inside it, and a seeded draw of a larger size
+# would not hold them. results/czech/plan/ says how they were chosen.
+dataset:
+  name: sqad32
+  max_docs: 100000
+  max_queries: 1995
+  options:
+    questions_file: results/czech/plan/questions.json
+    questions_key: sqad32_full
+
+retrieval:
+  top_k: 100
+  ks: [10, 100]
+  context_k: 3
+  quality_key: ndcg@10
+
+budgets:
+  ram_gb: [4, 8, 16]
+  retrieval_ms: [200, 500]
+  e2e_s: [3, 8]
+
+retrievers:
+  - id: bm25
+    kind: bm25
+  - id: e5-small
+    kind: dense
+    model: e5-small
+  - id: retromae-cs
+    kind: dense
+    model: retromae-cs
+
+# The Czech generations ran on a GX10's GPU, while retrieval stayed on its CPU. Gemma 4 and Qwen2.5 answered
+# together; Gemma 3n, Ministral 3 and Qwen3.5 were each run alone on the same machine.
+# On a machine without CUDA, set rag.device to cpu: the answers can then differ near a tie.
+rag:
+  enabled: true
+  generators: [qwen2.5-1.5b, gemma-4-e2b, ministral-3-3b, qwen3.5-2b, gemma-3n-e2b]
+  max_tokens: 256
+  n_ctx: 4096
+  device: cuda

@@ -1,0 +1,31 @@
+{
+ "copy_rows": 7663,
+ "gold_differs_after_normalising": 236,
+ "gold_same_after_normalising": 7108,
+ "gold_with_spaced_punctuation": {
+  "both": 28,
+  "copy": 28,
+  "only_copy": 0,
+  "only_sqad32": 4,
+  "sqad32": 32
+ },
+ "joined_by_split": {
+  "copy test, SQAD 3.2 eval": 85,
+  "copy test, SQAD 3.2 test": 233,
+  "copy test, SQAD 3.2 train": 496,
+  "copy train, SQAD 3.2 eval": 619,
+  "copy train, SQAD 3.2 test": 1783,
+  "copy train, SQAD 3.2 train": 3584,
+  "copy validation, SQAD 3.2 eval": 61,
+  "copy validation, SQAD 3.2 test": 151,
+  "copy validation, SQAD 3.2 train": 332
+ },
+ "joined_on_question_text": 7344,
+ "note": "SQAD record ids are not stable between versions, so these join on the question's text. Aggregate counts only.",
+ "sqad30_archive_md5": "e5935598d999102c53237f44e69fd6f9",
+ "sqad32_archive_md5": "39c29a416d2542ecc924542ad79b4cfd",
+ "sqad32_records_with_a_question": 16025,
+ "where_it_differs_sqad32_is_longer": 110,
+ "where_it_differs_the_copy_is_longer": 27,
+ "yes_no_gold": 1324
+}

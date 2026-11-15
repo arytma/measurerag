@@ -1,0 +1,378 @@
+{
+  "config": {
+    "budgets": {
+      "e2e_s": [
+        3,
+        8
+      ],
+      "ram_gb": [
+        4,
+        8,
+        16
+      ],
+      "retrieval_ms": [
+        200,
+        500
+      ]
+    },
+    "build_threads": null,
+    "dataset": {
+      "fallbacks": [],
+      "max_docs": 100000,
+      "max_queries": 300,
+      "name": "nq-rag",
+      "options": {}
+    },
+    "device": "cpu",
+    "name": "crossover_nq_k5_ministral",
+    "out_dir": "results/crossover/natural/nq_k5_ministral",
+    "query_threads": 1,
+    "rag": {
+      "enabled": true,
+      "generators": [
+        "ministral-3-3b",
+        "ministral-3-8b"
+      ],
+      "max_tokens": 64,
+      "n_ctx": 4096
+    },
+    "retrieval": {
+      "context_k": 5,
+      "ks": [
+        10,
+        100
+      ],
+      "quality_key": "ndcg@10",
+      "top_k": 100
+    },
+    "retrievers": [
+      {
+        "id": "tfidf-svd",
+        "kind": "tfidf-svd",
+        "n_components": 256
+      },
+      {
+        "id": "bm25",
+        "kind": "bm25"
+      },
+      {
+        "id": "e5-small",
+        "kind": "dense",
+        "model": "e5-small"
+      },
+      {
+        "id": "e5-base",
+        "kind": "dense",
+        "model": "e5-base"
+      },
+      {
+        "id": "bge-m3",
+        "kind": "dense",
+        "model": "bge-m3"
+      }
+    ],
+    "seed": 20260101,
+    "timeout_s": 36000
+  },
+  "config_path": "configs/crossover/nq_k5_ministral.yaml",
+  "config_sha256": "a7b36aedb9b8a5ad8c3b14f1e35cc94e61d698703f356966205022df9938a50a",
+  "created_utc": "2026-11-14T06:39:17+00:00",
+  "datasets": [
+    {
+      "attempts": [
+        {
+          "dataset": "nq-rag",
+          "role": "primary",
+          "status": "ok"
+        }
+      ],
+      "caps_applied": {},
+      "corpus_sha256": "a885583f91893f316e0190f465a9a6d514f6ac33b96f2a0bcf0946cc6a38c0f6",
+      "language": "en",
+      "license": "CC BY-SA 4.0 (BEIR nq); CC BY-SA 3.0 (NQ-open answers)",
+      "n_answers": 300,
+      "n_docs": 100000,
+      "n_qrels": 348,
+      "n_queries": 300,
+      "name": "nq-rag",
+      "notes": [
+        "Gold passages are MAPPED, not annotated: gold(q) = { d : BEIR nq qrels mark d relevant to q, and normalize(d.text) contains normalize(a) as a whole-token span for some nq-open answer a }; normalize = SQuAD answer normalisation (lowercase, strip punctuation and English articles, collapse whitespace); passage title not searched; questions joined BEIR<->nq-open on normalize_question(text) and kept only if gold(q) is non-empty",
+        "Mapping coverage: beir_test_queries_with_qrels=3452, joined_to_nq_open=2255, with_mapped_gold=2083, coverage_of_joined=0.9237, judged_passages_of_joined=2816, gold_passages_of_mapped=2425",
+        "Corpus capped by a seeded reservoir sample with every judged passage of a kept question forced in."
+      ],
+      "qrels_sha256": "58aeace199bcfd44463580af39ef8900f8d14d745cd33c0161df918fb0da58ad",
+      "queries_sha256": "c2546cb51e56638be28f315b4319ad46d7a3169e53bc268f8f8b39345605bef4",
+      "source": "BeIR/nq corpus + BeIR/nq-qrels test qrels + google-research-datasets/nq_open validation answers"
+    }
+  ],
+  "files": {
+    "curve_quality_vs_latency.png": {
+      "bytes": 62404,
+      "sha256": "96367f6a0a48c028a10bc9579f22548a8d36661d485e44c48eb902d307463681"
+    },
+    "curve_quality_vs_memory.png": {
+      "bytes": 70564,
+      "sha256": "2996e4d9ae62741376be1416c5942505e5f9d4c4fbb16c97aac8f6fc859111ff"
+    },
+    "results.csv": {
+      "bytes": 3666,
+      "sha256": "3071dd010d92a4283c5dd8ec2bd80935ca1eb84dd173e7bb07de1e3198892901"
+    },
+    "results.json": {
+      "bytes": 52416,
+      "sha256": "564f343385cd60dff134a512d2027e30e8cea800d5e40fcd8c8fed16552a6bd7"
+    }
+  },
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2.1",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "packages": {
+    "bm25s": "0.3.11",
+    "datasets": "4.8.5",
+    "faiss-cpu": "1.15.0",
+    "huggingface-hub": "0.36.2",
+    "llama-cpp-python": "0.3.35",
+    "measurerag": "0.4.0",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6"
+  },
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "python": "3.12.13",
+  "results_stable": [
+    {
+      "answers": {
+        "em": 0.04,
+        "f1": 0.04488888888888889,
+        "n_answered": 300.0
+      },
+      "config_id": "tfidf-svd+ministral-3-3b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.06,
+        "n_queries": 300.0,
+        "ndcg@10": 0.046330044989886764,
+        "ndcg@100": 0.07692660875249321,
+        "recall@10": 0.08833333333333333,
+        "recall@100": 0.2361111111111111
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.04666666666666667,
+        "f1": 0.05153846153846154,
+        "n_answered": 300.0
+      },
+      "config_id": "tfidf-svd+ministral-3-8b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.06,
+        "n_queries": 300.0,
+        "ndcg@10": 0.046330044989886764,
+        "ndcg@100": 0.07692660875249321,
+        "recall@10": 0.08833333333333333,
+        "recall@100": 0.2361111111111111
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "tfidf-svd",
+      "retriever_name": "tfidf-svd256",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.3433333333333333,
+        "f1": 0.4531127946127946,
+        "n_answered": 300.0
+      },
+      "config_id": "bm25+ministral-3-3b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.7333333333333333,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6212916739765688,
+        "ndcg@100": 0.6534747162209893,
+        "recall@10": 0.7577777777777778,
+        "recall@100": 0.8916666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.4166666666666667,
+        "f1": 0.5391508175919941,
+        "n_answered": 300.0
+      },
+      "config_id": "bm25+ministral-3-8b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.7333333333333333,
+        "n_queries": 300.0,
+        "ndcg@10": 0.6212916739765688,
+        "ndcg@100": 0.6534747162209893,
+        "recall@10": 0.7577777777777778,
+        "recall@100": 0.8916666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "bm25",
+      "retriever_name": "bm25",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.37666666666666665,
+        "f1": 0.5168213083213082,
+        "n_answered": 300.0
+      },
+      "config_id": "e5-small+ministral-3-3b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.9433333333333334,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8842303341948856,
+        "ndcg@100": 0.8922275451566342,
+        "recall@10": 0.9594444444444444,
+        "recall@100": 0.99
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.4866666666666667,
+        "f1": 0.6454278742699795,
+        "n_answered": 300.0
+      },
+      "config_id": "e5-small+ministral-3-8b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.9433333333333334,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8842303341948856,
+        "ndcg@100": 0.8922275451566342,
+        "recall@10": 0.9594444444444444,
+        "recall@100": 0.99
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "e5-small",
+      "retriever_name": "e5-small+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.4066666666666667,
+        "f1": 0.5249989328410382,
+        "n_answered": 300.0
+      },
+      "config_id": "e5-base+ministral-3-3b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.96,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8941736968556374,
+        "ndcg@100": 0.9006333089275143,
+        "recall@10": 0.9688888888888889,
+        "recall@100": 0.9966666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.5066666666666667,
+        "f1": 0.6496449534870588,
+        "n_answered": 300.0
+      },
+      "config_id": "e5-base+ministral-3-8b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.96,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8941736968556374,
+        "ndcg@100": 0.9006333089275143,
+        "recall@10": 0.9688888888888889,
+        "recall@100": 0.9966666666666667
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "e5-base",
+      "retriever_name": "e5-base+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.39,
+        "f1": 0.531270960813066,
+        "n_answered": 300.0
+      },
+      "config_id": "bge-m3+ministral-3-3b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.95,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8908068655739461,
+        "ndcg@100": 0.8974855257695685,
+        "recall@10": 0.9655555555555556,
+        "recall@100": 0.9933333333333333
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "bge-m3",
+      "retriever_name": "bge-m3+faiss-flat",
+      "status": "ok"
+    },
+    {
+      "answers": {
+        "em": 0.49666666666666665,
+        "f1": 0.6406280756280757,
+        "n_answered": 300.0
+      },
+      "config_id": "bge-m3+ministral-3-8b",
+      "dataset": "nq-rag",
+      "metrics": {
+        "gold_in_context@5": 0.95,
+        "n_queries": 300.0,
+        "ndcg@10": 0.8908068655739461,
+        "ndcg@100": 0.8974855257695685,
+        "recall@10": 0.9655555555555556,
+        "recall@100": 0.9933333333333333
+      },
+      "n_docs": 100000,
+      "n_queries": 300,
+      "retriever_id": "bge-m3",
+      "retriever_name": "bge-m3+faiss-flat",
+      "status": "ok"
+    }
+  ],
+  "results_stable_sha256": "88cdc4bd480fd12ecf44b26e5ccac3b7f3737f26df7af9ea70b2137680ed078d",
+  "schema": "measurerag/manifest/1",
+  "scrubbed": "absolute paths replaced by scripts/scrub_paths.py: hf://ORG/NAME@REV/FILE for Hugging Face cache files, repository-relative paths, ~/ for anything else under a home directory",
+  "seed": 20260101,
+  "wall_seconds": 7.31
+}

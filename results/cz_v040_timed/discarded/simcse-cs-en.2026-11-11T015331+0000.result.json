@@ -1,0 +1,98 @@
+{
+  "build": {
+    "build_seconds": 109.91725016699638,
+    "device": "cpu",
+    "dim": 256,
+    "index_bytes": 15021101,
+    "index_type": "flat",
+    "model": "Seznam/simcse-dist-mpnet-paracrawl-cs-en",
+    "model_bytes": 99167902,
+    "n_docs": 14669,
+    "pooling": "cls",
+    "pooling_source": "declared ('mean' would have been used)"
+  },
+  "config_id": "simcse-cs-en",
+  "dataset": "sqad-3.2-test",
+  "device": "cpu",
+  "language": "cs",
+  "machine": {
+    "arch": "arm64",
+    "chip": "Apple M4",
+    "cpu_count": 10,
+    "os_name": "Darwin",
+    "os_version": "27.2",
+    "python_version": "3.12.13",
+    "ram_gb": 32.0
+  },
+  "measurement": {
+    "e2e_s_p50": null,
+    "e2e_s_p95": null,
+    "gen_tokens_per_s": null,
+    "index_bytes": 15021101,
+    "model_bytes": 99167902,
+    "peak_rss_gb": 1.4629,
+    "retrieval_ms_p50": 3.2403749646618962,
+    "retrieval_ms_p95": 3.7204589461907744
+  },
+  "metrics": {
+    "gold_in_context@3": 0.6080200501253132,
+    "n_queries": 1995.0,
+    "ndcg@10": 0.5840347191516744,
+    "ndcg@100": 0.6197942004436613,
+    "recall@10": 0.7639097744360902,
+    "recall@100": 0.931328320802005
+  },
+  "n_docs": 14669,
+  "n_queries": 1995,
+  "retrieval_latency_ms": {
+    "mean": 3.293503088267394,
+    "n": 1995.0,
+    "p50": 3.2403749646618962,
+    "p95": 3.7204589461907744
+  },
+  "retriever_id": "simcse-cs-en",
+  "retriever_kind": "dense",
+  "retriever_name": "simcse-cs-en+faiss-flat",
+  "retriever_params": {
+    "device": "cpu",
+    "model": "simcse-cs-en"
+  },
+  "status": "ok",
+  "threads": {
+    "build": 10,
+    "query": 1
+  },
+  "total_seconds": 116.53502974996809,
+  "verdicts": [
+    {
+      "budget": "ram4g_ret200ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram4g_ret500ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram8g_ret200ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram8g_ret500ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram16g_ret200ms",
+      "fits": true,
+      "reasons": []
+    },
+    {
+      "budget": "ram16g_ret500ms",
+      "fits": true,
+      "reasons": []
+    }
+  ]
+}

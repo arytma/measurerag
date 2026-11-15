@@ -1,0 +1,1560 @@
+{
+  "agreement_per_gb": {
+    "both_have_roots": false,
+    "hotpotqa": {
+      "hi": 0.93,
+      "interval_censored": true,
+      "lo": 0.878,
+      "n_boot": 10000,
+      "n_no_root": 9999,
+      "no_root_above": 9999,
+      "no_root_below": 0,
+      "point": null
+    },
+    "intervals_overlap": false,
+    "nq": {
+      "hi": 0.85,
+      "interval_censored": true,
+      "lo": 0.76,
+      "n_boot": 10000,
+      "n_no_root": 9903,
+      "no_root_above": 9903,
+      "no_root_below": 0,
+      "point": null
+    }
+  },
+  "datasets": {
+    "hotpotqa": {
+      "break_even_gold_gain": [
+        {
+          "g_any": 0.992,
+          "p": 0.0,
+          "per_gb": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "n_censored": 10000,
+            "point": null,
+            "target_ratio": 0.346281
+          }
+        },
+        {
+          "g_any": 0.904,
+          "p": 0.2,
+          "per_gb": {
+            "hi": 0.058397,
+            "lo": 0.025083,
+            "n_censored": 1,
+            "point": 0.039085,
+            "target_ratio": 0.346281
+          }
+        },
+        {
+          "g_any": 0.774,
+          "p": 0.4,
+          "per_gb": {
+            "hi": 0.095364,
+            "lo": 0.041,
+            "n_censored": 0,
+            "point": 0.063023,
+            "target_ratio": 0.346281
+          }
+        },
+        {
+          "g_any": 0.568,
+          "p": 0.6,
+          "per_gb": {
+            "hi": 0.145103,
+            "lo": 0.049012,
+            "n_censored": 0,
+            "point": 0.085601,
+            "target_ratio": 0.346281
+          }
+        },
+        {
+          "g_any": 0.334,
+          "p": 0.8,
+          "per_gb": {
+            "hi": 0.131413,
+            "lo": 0.038091,
+            "n_censored": 0,
+            "point": 0.075027,
+            "target_ratio": 0.346281
+          }
+        },
+        {
+          "g_any": 0.0,
+          "p": 1.0,
+          "per_gb": {
+            "hi": 0.075749,
+            "lo": 0.0,
+            "n_censored": 0,
+            "point": 0.032384,
+            "target_ratio": 0.346281
+          }
+        }
+      ],
+      "budget": {
+        "bge-m3+3B@k5": {
+          "e2e_s_p50": 9.711527,
+          "e2e_s_p95": 13.86048,
+          "index_bytes": 409600045,
+          "max_tokens": 64,
+          "model_bytes": 4439829447,
+          "peak_rss_gb": 6.8845,
+          "retrieval_ms_p50": 69.230042,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "bge-m3+8B@k5": {
+          "e2e_s_p50": 24.268267,
+          "e2e_s_p95": 34.873507,
+          "index_bytes": 409600045,
+          "max_tokens": 64,
+          "model_bytes": 7491718343,
+          "peak_rss_gb": 9.6437,
+          "retrieval_ms_p50": 70.750208,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "bm25+3B@k5": {
+          "e2e_s_p50": 11.066301,
+          "e2e_s_p95": 15.741598,
+          "index_bytes": 33137170,
+          "max_tokens": 64,
+          "model_bytes": 2146497824,
+          "peak_rss_gb": 4.2943,
+          "retrieval_ms_p50": 1.128,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "bm25+8B@k5": {
+          "e2e_s_p50": 23.753799,
+          "e2e_s_p95": 33.385885,
+          "index_bytes": 33137170,
+          "max_tokens": 64,
+          "model_bytes": 5198386720,
+          "peak_rss_gb": 7.0587,
+          "retrieval_ms_p50": 1.333167,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "e5-base+3B@k5": {
+          "e2e_s_p50": 8.977902,
+          "e2e_s_p95": 14.032611,
+          "index_bytes": 307200045,
+          "max_tokens": 64,
+          "model_bytes": 3281032204,
+          "peak_rss_gb": 6.1388,
+          "retrieval_ms_p50": 36.850208,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "e5-base+8B@k5": {
+          "e2e_s_p50": 19.576659,
+          "e2e_s_p95": 31.243695,
+          "index_bytes": 307200045,
+          "max_tokens": 64,
+          "model_bytes": 6332921100,
+          "peak_rss_gb": 8.8704,
+          "retrieval_ms_p50": 28.048875,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "e5-small+3B@k5": {
+          "e2e_s_p50": 8.603849,
+          "e2e_s_p95": 13.539409,
+          "index_bytes": 153600045,
+          "max_tokens": 64,
+          "model_bytes": 2639790652,
+          "peak_rss_gb": 5.2402,
+          "retrieval_ms_p50": 10.704792,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "e5-small+8B@k5": {
+          "e2e_s_p50": 16.580372,
+          "e2e_s_p95": 28.171577,
+          "index_bytes": 153600045,
+          "max_tokens": 64,
+          "model_bytes": 5691679548,
+          "peak_rss_gb": 8.0042,
+          "retrieval_ms_p50": 10.8325,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "tfidf-svd+3B@k5": {
+          "e2e_s_p50": 5.982368,
+          "e2e_s_p95": 11.108323,
+          "index_bytes": 102400128,
+          "max_tokens": 64,
+          "model_bytes": 2146497824,
+          "peak_rss_gb": 5.9309,
+          "retrieval_ms_p50": 20.869916,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        },
+        "tfidf-svd+8B@k5": {
+          "e2e_s_p50": 13.938313,
+          "e2e_s_p95": 26.695695,
+          "index_bytes": 102400128,
+          "max_tokens": 64,
+          "model_bytes": 5198386720,
+          "peak_rss_gb": 9.1301,
+          "retrieval_ms_p50": 13.095458,
+          "source": "results/crossover/natural/hotpotqa_k5_ministral"
+        }
+      },
+      "costs": {
+        "generator_step": {
+          "at_retriever": "e5-base",
+          "fallback": false,
+          "from": "ministral-3-3b",
+          "gb": 2.7316,
+          "ms": 10598.757042,
+          "ms_total": 10589.955709,
+          "to": "ministral-3-8b"
+        },
+        "k": 5,
+        "latency_unit": "ms of added end-to-end p50 latency",
+        "memory_unit": "GB of peak resident set size (whole process: retriever, index, generator)",
+        "priced_retriever_step": {
+          "from": "bm25",
+          "gb": 0.9459,
+          "ms": -2462.452084,
+          "ms_total": -2452.875292,
+          "retrieval_ms": 9.576792,
+          "to": "e5-small"
+        },
+        "retriever_steps": [
+          {
+            "from": "tfidf-svd",
+            "gb": -1.6366,
+            "ms": 5083.933126,
+            "ms_total": 5064.19121,
+            "retrieval_ms": -19.741916,
+            "to": "bm25"
+          },
+          {
+            "from": "bm25",
+            "gb": 0.9459,
+            "ms": -2462.452084,
+            "ms_total": -2452.875292,
+            "retrieval_ms": 9.576792,
+            "to": "e5-small"
+          },
+          {
+            "from": "e5-small",
+            "gb": 0.8986,
+            "ms": 374.052667,
+            "ms_total": 400.198083,
+            "retrieval_ms": 26.145416,
+            "to": "e5-base"
+          },
+          {
+            "from": "e5-base",
+            "gb": 0.7457,
+            "ms": 733.625041,
+            "ms_total": 766.004875,
+            "retrieval_ms": 32.379834,
+            "to": "bge-m3"
+          }
+        ]
+      },
+      "per_gb": {
+        "per_gb|bm25->e5-small": {
+          "agree": false,
+          "generator_cost": 2.7316,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 9999,
+            "no_root_above": 9999,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.041804,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.004732
+          },
+          "points": {
+            "d": [
+              0.054064,
+              0.043574,
+              0.037073,
+              0.038784,
+              0.047735
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          },
+          "retriever_cost": 0.9459
+        },
+        "per_gb|e5-base->bge-m3": {
+          "agree": false,
+          "generator_cost": 2.7316,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.054156,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.017758
+          },
+          "points": {
+            "d": [
+              0.080176,
+              0.06628,
+              0.054103,
+              0.054111,
+              0.061926
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          },
+          "retriever_cost": 0.7457
+        },
+        "per_gb|e5-small->e5-base": {
+          "agree": false,
+          "generator_cost": 2.7316,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.044226,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.007286
+          },
+          "points": {
+            "d": [
+              0.059183,
+              0.048026,
+              0.040412,
+              0.041789,
+              0.050517
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          },
+          "retriever_cost": 0.8986
+        },
+        "per_gb|tfidf-svd->bm25": {
+          "generator_cost": 2.7316,
+          "reason": "a move that does not add cost has no per-unit price",
+          "retriever_cost": -1.6366,
+          "undefined": true
+        }
+      },
+      "per_gb_by_generator_rung": {
+        "bge-m3": {
+          "agree": false,
+          "generator_cost": 2.7592,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.041846,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.00517
+          },
+          "points": {
+            "d": [
+              0.054496,
+              0.043984,
+              0.037337,
+              0.038967,
+              0.047786
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          }
+        },
+        "bm25": {
+          "agree": false,
+          "generator_cost": 2.7644,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.041854,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.005252
+          },
+          "points": {
+            "d": [
+              0.054576,
+              0.04406,
+              0.037386,
+              0.039001,
+              0.047795
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          }
+        },
+        "e5-base": {
+          "agree": false,
+          "generator_cost": 2.7316,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 9999,
+            "no_root_above": 9999,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.041804,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.004732
+          },
+          "points": {
+            "d": [
+              0.054064,
+              0.043574,
+              0.037073,
+              0.038784,
+              0.047735
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          }
+        },
+        "e5-small": {
+          "agree": false,
+          "generator_cost": 2.764,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.041853,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.005245
+          },
+          "points": {
+            "d": [
+              0.05457,
+              0.044055,
+              0.037382,
+              0.038999,
+              0.047795
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          }
+        },
+        "tfidf-svd": {
+          "agree": false,
+          "generator_cost": 3.1992,
+          "isotonic": {
+            "hi": 0.93,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.93,
+            "intercept": 0.042419,
+            "interval_censored": true,
+            "lo": 0.878,
+            "n_boot": 10000,
+            "n_no_root": 10000,
+            "no_root_above": 10000,
+            "no_root_below": 0,
+            "point": null,
+            "slope": 0.011132
+          },
+          "points": {
+            "d": [
+              0.060378,
+              0.049567,
+              0.040926,
+              0.04146,
+              0.048484
+            ],
+            "g": [
+              0.904,
+              0.774,
+              0.568,
+              0.334,
+              0.0
+            ]
+          }
+        }
+      },
+      "price_table": [
+        {
+          "g_any": 0.904,
+          "gen_per_gb": 0.043198,
+          "p": 0.2,
+          "ret_per_gb": 0.097262
+        },
+        {
+          "g_any": 0.774,
+          "gen_per_gb": 0.041002,
+          "p": 0.4,
+          "ret_per_gb": 0.084576
+        },
+        {
+          "g_any": 0.568,
+          "gen_per_gb": 0.026358,
+          "p": 0.6,
+          "ret_per_gb": 0.063432
+        },
+        {
+          "g_any": 0.334,
+          "gen_per_gb": 0.018304,
+          "p": 0.8,
+          "ret_per_gb": 0.057088
+        },
+        {
+          "g_any": 0.0,
+          "gen_per_gb": 0.005125,
+          "p": 1.0,
+          "ret_per_gb": 0.05286
+        }
+      ]
+    },
+    "nq": {
+      "break_even_gold_gain": [
+        {
+          "g_any": 0.96,
+          "p": 0.0,
+          "per_gb": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "n_censored": 9998,
+            "point": null,
+            "target_ratio": 0.301188
+          }
+        },
+        {
+          "g_any": 0.806667,
+          "p": 0.2,
+          "per_gb": {
+            "hi": 0.118066,
+            "lo": 0.023234,
+            "n_censored": 88,
+            "point": 0.061576,
+            "target_ratio": 0.301188
+          }
+        },
+        {
+          "g_any": 0.64,
+          "p": 0.4,
+          "per_gb": {
+            "hi": 0.141845,
+            "lo": 0.016398,
+            "n_censored": 0,
+            "point": 0.063584,
+            "target_ratio": 0.301188
+          }
+        },
+        {
+          "g_any": 0.456667,
+          "p": 0.6,
+          "per_gb": {
+            "hi": 0.08804,
+            "lo": 0.006719,
+            "n_censored": 0,
+            "point": 0.040687,
+            "target_ratio": 0.301188
+          }
+        },
+        {
+          "g_any": 0.263333,
+          "p": 0.8,
+          "per_gb": {
+            "hi": 0.055803,
+            "lo": 0.0,
+            "n_censored": 0,
+            "point": 0.023821,
+            "target_ratio": 0.301188
+          }
+        },
+        {
+          "g_any": 0.0,
+          "p": 1.0,
+          "per_gb": {
+            "hi": 0.044599,
+            "lo": 0.0,
+            "n_censored": 0,
+            "point": 0.016996,
+            "target_ratio": 0.301188
+          }
+        }
+      ],
+      "budget": {
+        "bge-m3+3B@k5": {
+          "e2e_s_p50": 12.209782,
+          "e2e_s_p95": 19.681757,
+          "index_bytes": 409600045,
+          "max_tokens": 64,
+          "model_bytes": 4439829447,
+          "peak_rss_gb": 7.373,
+          "retrieval_ms_p50": 70.581708,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "bge-m3+8B@k5": {
+          "e2e_s_p50": 26.312579,
+          "e2e_s_p95": 40.063208,
+          "index_bytes": 409600045,
+          "max_tokens": 64,
+          "model_bytes": 7491718343,
+          "peak_rss_gb": 8.0929,
+          "retrieval_ms_p50": 70.967042,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "bm25+3B@k5": {
+          "e2e_s_p50": 13.384668,
+          "e2e_s_p95": 19.244267,
+          "index_bytes": 50022655,
+          "max_tokens": 64,
+          "model_bytes": 2146497824,
+          "peak_rss_gb": 4.4939,
+          "retrieval_ms_p50": 0.971458,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "bm25+8B@k5": {
+          "e2e_s_p50": 30.45972,
+          "e2e_s_p95": 44.783298,
+          "index_bytes": 50022655,
+          "max_tokens": 64,
+          "model_bytes": 5198386720,
+          "peak_rss_gb": 7.264,
+          "retrieval_ms_p50": 0.960125,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "e5-base+3B@k5": {
+          "e2e_s_p50": 12.402894,
+          "e2e_s_p95": 20.254705,
+          "index_bytes": 307200045,
+          "max_tokens": 64,
+          "model_bytes": 3281032204,
+          "peak_rss_gb": 6.166,
+          "retrieval_ms_p50": 27.228875,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "e5-base+8B@k5": {
+          "e2e_s_p50": 27.677542,
+          "e2e_s_p95": 45.443258,
+          "index_bytes": 307200045,
+          "max_tokens": 64,
+          "model_bytes": 6332921100,
+          "peak_rss_gb": 8.9357,
+          "retrieval_ms_p50": 27.048958,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "e5-small+3B@k5": {
+          "e2e_s_p50": 13.499981,
+          "e2e_s_p95": 21.334032,
+          "index_bytes": 153600045,
+          "max_tokens": 64,
+          "model_bytes": 2639790652,
+          "peak_rss_gb": 5.3281,
+          "retrieval_ms_p50": 10.785542,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "e5-small+8B@k5": {
+          "e2e_s_p50": 28.490304,
+          "e2e_s_p95": 45.886099,
+          "index_bytes": 153600045,
+          "max_tokens": 64,
+          "model_bytes": 5691679548,
+          "peak_rss_gb": 8.1016,
+          "retrieval_ms_p50": 10.55275,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "tfidf-svd+3B@k5": {
+          "e2e_s_p50": 4.645215,
+          "e2e_s_p95": 9.787548,
+          "index_bytes": 102400128,
+          "max_tokens": 64,
+          "model_bytes": 2146497824,
+          "peak_rss_gb": 6.5532,
+          "retrieval_ms_p50": 18.187416,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        },
+        "tfidf-svd+8B@k5": {
+          "e2e_s_p50": 11.639523,
+          "e2e_s_p95": 24.833194,
+          "index_bytes": 102400128,
+          "max_tokens": 64,
+          "model_bytes": 5198386720,
+          "peak_rss_gb": 9.2468,
+          "retrieval_ms_p50": 11.242083,
+          "source": "results/crossover/natural/nq_k5_ministral"
+        }
+      },
+      "costs": {
+        "generator_step": {
+          "at_retriever": "e5-base",
+          "fallback": false,
+          "from": "ministral-3-3b",
+          "gb": 2.7697,
+          "ms": 15274.648667,
+          "ms_total": 15274.46875,
+          "to": "ministral-3-8b"
+        },
+        "k": 5,
+        "latency_unit": "ms of added end-to-end p50 latency",
+        "memory_unit": "GB of peak resident set size (whole process: retriever, index, generator)",
+        "priced_retriever_step": {
+          "from": "bm25",
+          "gb": 0.8342,
+          "ms": 115.312999,
+          "ms_total": 125.127083,
+          "retrieval_ms": 9.814084,
+          "to": "e5-small"
+        },
+        "retriever_steps": [
+          {
+            "from": "tfidf-svd",
+            "gb": -2.0593,
+            "ms": 8739.452751,
+            "ms_total": 8722.236793,
+            "retrieval_ms": -17.215958,
+            "to": "bm25"
+          },
+          {
+            "from": "bm25",
+            "gb": 0.8342,
+            "ms": 115.312999,
+            "ms_total": 125.127083,
+            "retrieval_ms": 9.814084,
+            "to": "e5-small"
+          },
+          {
+            "from": "e5-small",
+            "gb": 0.8379,
+            "ms": -1097.0875,
+            "ms_total": -1080.644167,
+            "retrieval_ms": 16.443333,
+            "to": "e5-base"
+          },
+          {
+            "from": "e5-base",
+            "gb": 1.207,
+            "ms": -193.111208,
+            "ms_total": -149.758375,
+            "retrieval_ms": 43.352833,
+            "to": "bge-m3"
+          }
+        ]
+      },
+      "per_gb": {
+        "per_gb|bm25->e5-small": {
+          "agree": false,
+          "generator_cost": 2.7697,
+          "isotonic": {
+            "hi": 0.85,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9903,
+            "no_root_above": 9903,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.85,
+            "intercept": 0.100375,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9845,
+            "no_root_above": 9845,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.083515
+          },
+          "points": {
+            "d": [
+              0.043041,
+              0.037071,
+              0.059072,
+              0.077077,
+              0.104663
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          },
+          "retriever_cost": 0.8342
+        },
+        "per_gb|e5-base->bge-m3": {
+          "agree": false,
+          "generator_cost": 2.7697,
+          "isotonic": {
+            "hi": 0.846667,
+            "interval_censored": true,
+            "lo": 0.647075,
+            "n_boot": 10000,
+            "n_no_root": 9090,
+            "no_root_above": 9090,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.846667,
+            "intercept": 0.067684,
+            "interval_censored": true,
+            "lo": 0.706859,
+            "n_boot": 10000,
+            "n_no_root": 8619,
+            "no_root_above": 8619,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.066176
+          },
+          "points": {
+            "d": [
+              0.020826,
+              0.018559,
+              0.035623,
+              0.049925,
+              0.070106
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          },
+          "retriever_cost": 1.207
+        },
+        "per_gb|e5-small->e5-base": {
+          "agree": false,
+          "generator_cost": 2.7697,
+          "isotonic": {
+            "hi": 0.85,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9898,
+            "no_root_above": 9898,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.85,
+            "intercept": 0.099907,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9835,
+            "no_root_above": 9835,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.083267
+          },
+          "points": {
+            "d": [
+              0.042724,
+              0.036806,
+              0.058737,
+              0.076689,
+              0.104169
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          },
+          "retriever_cost": 0.8379
+        },
+        "per_gb|tfidf-svd->bm25": {
+          "generator_cost": 2.7697,
+          "reason": "a move that does not add cost has no per-unit price",
+          "retriever_cost": -2.0593,
+          "undefined": true
+        }
+      },
+      "per_gb_by_generator_rung": {
+        "bge-m3": {
+          "agree": true,
+          "generator_cost": 0.7199,
+          "isotonic": {
+            "hi": 0.816667,
+            "interval_censored": true,
+            "lo": 0.225368,
+            "n_boot": 10000,
+            "n_no_root": 1239,
+            "no_root_above": 1232,
+            "no_root_below": 7,
+            "point": 0.508653
+          },
+          "linear": {
+            "hi": 0.82,
+            "intercept": 0.084808,
+            "interval_censored": true,
+            "lo": 0.238262,
+            "n_boot": 10000,
+            "n_no_root": 1121,
+            "no_root_above": 1111,
+            "no_root_below": 10,
+            "point": 0.525237,
+            "slope": -0.161466
+          },
+          "points": {
+            "d": [
+              -0.039201,
+              -0.028038,
+              0.011097,
+              0.046236,
+              0.084102
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          }
+        },
+        "bm25": {
+          "agree": false,
+          "generator_cost": 2.7701,
+          "isotonic": {
+            "hi": 0.85,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9903,
+            "no_root_above": 9903,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.85,
+            "intercept": 0.100375,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9846,
+            "no_root_above": 9846,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.083511
+          },
+          "points": {
+            "d": [
+              0.043045,
+              0.037074,
+              0.059074,
+              0.077079,
+              0.104664
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          }
+        },
+        "e5-base": {
+          "agree": false,
+          "generator_cost": 2.7697,
+          "isotonic": {
+            "hi": 0.85,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9903,
+            "no_root_above": 9903,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.85,
+            "intercept": 0.100375,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9845,
+            "no_root_above": 9845,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.083515
+          },
+          "points": {
+            "d": [
+              0.043041,
+              0.037071,
+              0.059072,
+              0.077077,
+              0.104663
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          }
+        },
+        "e5-small": {
+          "agree": false,
+          "generator_cost": 2.7735,
+          "isotonic": {
+            "hi": 0.85,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9903,
+            "no_root_above": 9903,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.85,
+            "intercept": 0.100382,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9848,
+            "no_root_above": 9848,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.083478
+          },
+          "points": {
+            "d": [
+              0.043081,
+              0.037102,
+              0.059095,
+              0.077092,
+              0.104673
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          }
+        },
+        "tfidf-svd": {
+          "agree": false,
+          "generator_cost": 2.6936,
+          "isotonic": {
+            "hi": 0.85,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9885,
+            "no_root_above": 9885,
+            "no_root_below": 0,
+            "point": null
+          },
+          "linear": {
+            "hi": 0.85,
+            "intercept": 0.10022,
+            "interval_censored": true,
+            "lo": 0.76,
+            "n_boot": 10000,
+            "n_no_root": 9804,
+            "no_root_above": 9804,
+            "no_root_below": 0,
+            "point": null,
+            "slope": -0.084288
+          },
+          "points": {
+            "d": [
+              0.042225,
+              0.036425,
+              0.058596,
+              0.076771,
+              0.104459
+            ],
+            "g": [
+              0.806667,
+              0.64,
+              0.456667,
+              0.263333,
+              0.0
+            ]
+          }
+        }
+      },
+      "price_table": [
+        {
+          "g_any": 0.806667,
+          "gen_per_gb": 0.028884,
+          "p": 0.2,
+          "ret_per_gb": 0.071925
+        },
+        {
+          "g_any": 0.64,
+          "gen_per_gb": 0.022866,
+          "p": 0.4,
+          "ret_per_gb": 0.059938
+        },
+        {
+          "g_any": 0.456667,
+          "gen_per_gb": 0.016849,
+          "p": 0.6,
+          "ret_per_gb": 0.075921
+        },
+        {
+          "g_any": 0.263333,
+          "gen_per_gb": 0.010831,
+          "p": 0.8,
+          "ret_per_gb": 0.087909
+        },
+        {
+          "g_any": 0.0,
+          "gen_per_gb": 0.007221,
+          "p": 1.0,
+          "ret_per_gb": 0.111884
+        }
+      ]
+    }
+  },
+  "labels": {
+    "estimate": "estimate without the double-counted mapped pages (probe; see LIMITATIONS)",
+    "measured": "as measured, model file memory-mapped (library default)"
+  },
+  "note": "Peak RSS of the English Ministral 3 rows without the double-counted mapped pages: an estimate, beside the measured values in results/crossover.json. Written by scripts/crossover.py from results/crossover/mmap_probe.jsonl and the rows' results.json.",
+  "probe": {
+    "record": "results/crossover/mmap_probe.jsonl",
+    "surplus": {
+      "ministral-3-3b": {
+        "answers_identical": true,
+        "differences_gb": [
+          1.3611,
+          1.361,
+          1.3609,
+          1.3609,
+          1.3611
+        ],
+        "peak_off_gb": [
+          3.4015,
+          3.4016,
+          3.402,
+          3.4017,
+          3.4015
+        ],
+        "peak_on_gb": [
+          4.7626,
+          4.7626,
+          4.7629,
+          4.7626,
+          4.7626
+        ],
+        "repeats": 5,
+        "surplus_gb": 1.361
+      },
+      "ministral-3-8b": {
+        "answers_identical": true,
+        "differences_gb": [
+          3.6962,
+          3.7,
+          3.7006,
+          3.7006,
+          3.7006
+        ],
+        "peak_off_gb": [
+          6.1692,
+          6.1692,
+          6.1692,
+          6.1691,
+          6.1691
+        ],
+        "peak_on_gb": [
+          9.8654,
+          9.8692,
+          9.8698,
+          9.8697,
+          9.8697
+        ],
+        "repeats": 5,
+        "surplus_gb": 3.7006
+      }
+    }
+  },
+  "rows": [
+    {
+      "above_bound": true,
+      "bound_config": "tfidf-svd+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 4.3471,
+      "config_id": "tfidf-svd+ministral-3-3b",
+      "estimate_gb": 5.9309,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 5.9309,
+      "measured_peak_rss_gb": 7.2919,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "tfidf-svd+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 4.3471,
+      "config_id": "tfidf-svd+ministral-3-8b",
+      "estimate_gb": 9.1301,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 9.1301,
+      "measured_peak_rss_gb": 12.8307,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bm25+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 2.88,
+      "config_id": "bm25+ministral-3-3b",
+      "estimate_gb": 4.2943,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 4.2943,
+      "measured_peak_rss_gb": 5.6553,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bm25+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 2.88,
+      "config_id": "bm25+ministral-3-8b",
+      "estimate_gb": 7.0587,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 7.0587,
+      "measured_peak_rss_gb": 10.7593,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-small+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 3.8657,
+      "config_id": "e5-small+ministral-3-3b",
+      "estimate_gb": 5.2402,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 5.2402,
+      "measured_peak_rss_gb": 6.6012,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-small+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 3.8657,
+      "config_id": "e5-small+ministral-3-8b",
+      "estimate_gb": 8.0042,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 8.0042,
+      "measured_peak_rss_gb": 11.7048,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-base+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 4.6597,
+      "config_id": "e5-base+ministral-3-3b",
+      "estimate_gb": 6.1388,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 6.1388,
+      "measured_peak_rss_gb": 7.4998,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-base+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 4.6597,
+      "config_id": "e5-base+ministral-3-8b",
+      "estimate_gb": 8.8704,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 8.8704,
+      "measured_peak_rss_gb": 12.571,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bge-m3+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 5.8994,
+      "config_id": "bge-m3+ministral-3-3b",
+      "estimate_gb": 6.8845,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 6.8845,
+      "measured_peak_rss_gb": 8.2455,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bge-m3+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 5.8994,
+      "config_id": "bge-m3+ministral-3-8b",
+      "estimate_gb": 9.6437,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 9.6437,
+      "measured_peak_rss_gb": 13.3443,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/hotpotqa_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "tfidf-svd+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 5.3041,
+      "config_id": "tfidf-svd+ministral-3-3b",
+      "estimate_gb": 6.5532,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 6.5532,
+      "measured_peak_rss_gb": 7.9142,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "tfidf-svd+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 5.3041,
+      "config_id": "tfidf-svd+ministral-3-8b",
+      "estimate_gb": 9.2468,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 9.2468,
+      "measured_peak_rss_gb": 12.9474,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bm25+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 3.1451,
+      "config_id": "bm25+ministral-3-3b",
+      "estimate_gb": 4.4939,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 4.4939,
+      "measured_peak_rss_gb": 5.8549,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bm25+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 3.1451,
+      "config_id": "bm25+ministral-3-8b",
+      "estimate_gb": 7.264,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 7.264,
+      "measured_peak_rss_gb": 10.9646,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-small+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 3.9557,
+      "config_id": "e5-small+ministral-3-3b",
+      "estimate_gb": 5.3281,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 5.3281,
+      "measured_peak_rss_gb": 6.6891,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-small+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 3.9557,
+      "config_id": "e5-small+ministral-3-8b",
+      "estimate_gb": 8.1016,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 8.1016,
+      "measured_peak_rss_gb": 11.8022,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-base+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 4.7963,
+      "config_id": "e5-base+ministral-3-3b",
+      "estimate_gb": 6.166,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 6.166,
+      "measured_peak_rss_gb": 7.527,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "e5-base+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 4.7963,
+      "config_id": "e5-base+ministral-3-8b",
+      "estimate_gb": 8.9357,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 8.9357,
+      "measured_peak_rss_gb": 12.6363,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bge-m3+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 5.9186,
+      "config_id": "bge-m3+ministral-3-3b",
+      "estimate_gb": 7.373,
+      "generator": "ministral-3-3b",
+      "measured_minus_surplus_gb": 7.373,
+      "measured_peak_rss_gb": 8.734,
+      "surplus_gb": 1.361,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    },
+    {
+      "above_bound": true,
+      "bound_config": "bge-m3+qwen2.5-1.5b",
+      "bound_peak_rss_gb": 5.9186,
+      "config_id": "bge-m3+ministral-3-8b",
+      "estimate_gb": 8.0929,
+      "generator": "ministral-3-8b",
+      "measured_minus_surplus_gb": 8.0929,
+      "measured_peak_rss_gb": 11.7935,
+      "surplus_gb": 3.7006,
+      "sweep": "results/crossover/natural/nq_k5_ministral"
+    }
+  ],
+  "rule": "estimate = measured peak RSS minus the surplus of the row's generator, the median over the probe's repeats of (peak RSS with the model file mapped) minus (without); a row whose estimate is not above the peak of its retriever's row with qwen2.5-1.5b on the same slice, which bounds the index build from above, is given min(measured, max(that bound, the estimate))",
+  "settings": {
+    "bound": {
+      "hotpotqa": "results/crossover/natural/hotpotqa_k5",
+      "nq": "results/crossover/natural/nq_k5"
+    },
+    "bound_generator": "qwen2.5-1.5b",
+    "family": "ministral-3",
+    "probe": "results/crossover/mmap_probe.jsonl"
+  }
+}

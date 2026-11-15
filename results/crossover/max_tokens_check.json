@@ -1,0 +1,31 @@
+{
+  "generators": {
+    "qwen2.5-1.5b": {
+      "differing_strings": [],
+      "em_256_night_one": 0.17,
+      "em_64_tonight": 0.17,
+      "f1_256_night_one": 0.2606281496281496,
+      "f1_64_tonight": 0.2606281496281496,
+      "hit_cap": 0,
+      "identical_strings": 100,
+      "max_completion_tokens_at_64": 14,
+      "within_tolerance": true
+    },
+    "qwen2.5-3b": {
+      "differing_strings": [],
+      "em_256_night_one": 0.31,
+      "em_64_tonight": 0.31,
+      "f1_256_night_one": 0.44168253968253973,
+      "f1_64_tonight": 0.44168253968253973,
+      "hit_cap": 0,
+      "identical_strings": 100,
+      "max_completion_tokens_at_64": 9,
+      "within_tolerance": true
+    }
+  },
+  "k": 5,
+  "n_questions": 100,
+  "retriever": "e5-small",
+  "tolerance": 0.005,
+  "verdict": "use 64"
+}
